@@ -457,24 +457,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 lg:py-20 relative bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      <section className="py-10 lg:py-14 relative bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             {[
               { num: 500, suffix: "+", label: "Happy Clients", icon: Users },
-              { num: 50, prefix: "$", suffix: "M+", label: "Revenue Generated", icon: TrendingUp },
+              { num: 10, prefix: "$", suffix: "M+", label: "Revenue Generated", icon: TrendingUp },
               { num: 100, suffix: "+", label: "Services Offered", icon: Zap },
               { num: 98, suffix: "%", label: "Client Retention", icon: Shield },
             ].map((stat, i) => (
               <FadeInSection key={stat.label} delay={i * 0.1}>
-                <div className="relative bg-white rounded-2xl p-6 sm:p-8 text-center border border-gray-100 group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_50px_rgba(58,95,191,0.08)] hover:border-brand-blue/15">
-                  <div className="w-12 h-12 rounded-xl bg-brand-blue/8 flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-blue/12 transition-colors">
-                    <stat.icon className="w-5 h-5 text-brand-blue" />
+                <div className="relative bg-white rounded-xl p-4 sm:p-5 text-center border border-gray-100 group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(58,95,191,0.08)] hover:border-brand-blue/15">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-brand-blue/8 flex items-center justify-center mx-auto mb-2.5 group-hover:bg-brand-blue/12 transition-colors">
+                    <stat.icon className="w-4 h-4 sm:w-5 sm:h-5 text-brand-blue" />
                   </div>
-                  <div className="text-3xl sm:text-4xl text-brand-dark font-bold">
+                  <div className="text-xl sm:text-2xl lg:text-3xl text-brand-dark font-bold">
                     <AnimatedNumber value={stat.num} prefix={stat.prefix} suffix={stat.suffix} />
                   </div>
-                  <div className="text-sm text-gray-400 mt-2" style={{ fontFamily: "'Inter', sans-serif" }}>{stat.label}</div>
+                  <div className="text-xs sm:text-sm text-gray-400 mt-1" style={{ fontFamily: "'Inter', sans-serif" }}>{stat.label}</div>
                 </div>
               </FadeInSection>
             ))}
