@@ -1,0 +1,273 @@
+Got it! Simple and clean URL structure:
+
+```
+infiniterankers.com/local-seo
+infiniterankers.com/google-ads-ppc
+infiniterankers.com/facebook-ads
+infiniterankers.com/content-marketing
+```
+
+**NO** `/services/` folder in between. Direct URLs. Here's your prompt:
+
+---
+
+## 🚀 PASTE THIS INTO REPLIT:
+
+---
+
+```
+Build 100 individual service pages for Infinite Rankers.
+
+=== URL STRUCTURE (SITEMAP FORMAT) ===
+
+NO /services/ prefix. Direct URLs only:
+
+infiniterankers.com/local-seo
+infiniterankers.com/technical-seo
+infiniterankers.com/ecommerce-seo
+infiniterankers.com/national-seo
+infiniterankers.com/international-seo
+infiniterankers.com/youtube-seo
+infiniterankers.com/voice-search-seo
+infiniterankers.com/mobile-seo
+infiniterankers.com/on-page-seo
+infiniterankers.com/off-page-seo
+infiniterankers.com/seo-audit
+infiniterankers.com/keyword-research
+infiniterankers.com/link-building
+infiniterankers.com/schema-markup
+infiniterankers.com/google-my-business
+infiniterankers.com/google-ads-ppc
+infiniterankers.com/facebook-ads
+infiniterankers.com/instagram-ads
+infiniterankers.com/linkedin-ads
+infiniterankers.com/youtube-ads
+infiniterankers.com/tiktok-ads
+infiniterankers.com/pinterest-ads
+infiniterankers.com/twitter-ads
+infiniterankers.com/bing-ads
+infiniterankers.com/programmatic-advertising
+infiniterankers.com/retargeting-campaigns
+infiniterankers.com/display-advertising
+infiniterankers.com/social-media-management
+infiniterankers.com/facebook-marketing
+infiniterankers.com/instagram-marketing
+infiniterankers.com/linkedin-marketing
+infiniterankers.com/tiktok-marketing
+infiniterankers.com/pinterest-marketing
+infiniterankers.com/twitter-marketing
+infiniterankers.com/youtube-channel-management
+infiniterankers.com/snapchat-marketing
+infiniterankers.com/social-media-strategy
+infiniterankers.com/content-marketing
+infiniterankers.com/blog-writing
+infiniterankers.com/copywriting
+infiniterankers.com/video-script-writing
+infiniterankers.com/email-copywriting
+infiniterankers.com/landing-page-copywriting
+infiniterankers.com/press-release-writing
+infiniterankers.com/case-study-writing
+infiniterankers.com/white-paper-writing
+infiniterankers.com/infographic-design
+infiniterankers.com/website-design
+infiniterankers.com/wordpress-development
+infiniterankers.com/shopify-development
+infiniterankers.com/landing-page-design
+infiniterankers.com/ui-ux-design
+infiniterankers.com/mobile-app-design
+infiniterankers.com/website-redesign
+infiniterankers.com/website-speed-optimization
+infiniterankers.com/website-maintenance
+infiniterankers.com/ecommerce-development
+infiniterankers.com/email-marketing
+infiniterankers.com/email-campaign-management
+infiniterankers.com/email-automation
+infiniterankers.com/newsletter-design
+infiniterankers.com/drip-campaign-setup
+infiniterankers.com/email-list-building
+infiniterankers.com/video-production
+infiniterankers.com/video-marketing
+infiniterankers.com/youtube-marketing
+infiniterankers.com/video-ads-creation
+infiniterankers.com/explainer-videos
+infiniterankers.com/social-media-videos
+infiniterankers.com/reputation-management
+infiniterankers.com/review-generation
+infiniterankers.com/brand-monitoring
+infiniterankers.com/crisis-management
+infiniterankers.com/google-reviews-management
+infiniterankers.com/google-analytics-setup
+infiniterankers.com/conversion-tracking
+infiniterankers.com/marketing-dashboard
+infiniterankers.com/monthly-reporting
+infiniterankers.com/roi-tracking
+infiniterankers.com/lead-generation
+infiniterankers.com/b2b-lead-generation
+infiniterankers.com/local-lead-generation
+infiniterankers.com/sales-funnel-building
+infiniterankers.com/crm-setup
+infiniterankers.com/marketing-automation
+infiniterankers.com/influencer-marketing
+infiniterankers.com/affiliate-marketing
+infiniterankers.com/amazon-marketing
+infiniterankers.com/podcast-marketing
+infiniterankers.com/webinar-marketing
+infiniterankers.com/community-management
+infiniterankers.com/chatbot-marketing
+infiniterankers.com/sms-marketing
+infiniterankers.com/whatsapp-marketing
+infiniterankers.com/conversion-rate-optimization
+infiniterankers.com/ab-testing
+infiniterankers.com/competitor-analysis
+infiniterankers.com/market-research
+infiniterankers.com/brand-strategy
+infiniterankers.com/digital-marketing-consulting
+
+=== SITEMAP.XML (AUTO-GENERATE) ===
+
+Also generate sitemap.xml with all 100 URLs:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://infiniterankers.com/local-seo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  ... (repeat for all 100 URLs)
+
+  <!-- Also include main pages -->
+  <url>
+    <loc>https://infiniterankers.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://infiniterankers.com/about</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://infiniterankers.com/contact</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://infiniterankers.com/blog</loc>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
+
+=== ROBOTS.TXT (ALSO GENERATE) ===
+
+User-agent: *
+Allow: /
+Sitemap: https://infiniterankers.com/sitemap.xml
+
+=== ROUTING SYSTEM ===
+
+Use ONE template page + ONE data file:
+
+FILE 1: /data/services.js
+(All 100 services with unique content)
+
+Each service object:
+{
+  slug: "local-seo",
+  url: "https://infiniterankers.com/local-seo",
+  title: "Local SEO Services USA | Infinite Rankers",
+  metaDesc: "Dominate local search results with...",
+  h1: "Local SEO Services That Put You On The Map",
+  subheading: "...",
+  whatIsContent: "300 words unique content...",
+  process: [step1, step2, step3, step4],
+  benefits: [6 unique benefits],
+  stats: [stat1, stat2, stat3],
+  faqs: [6-8 unique FAQs],
+  relatedServices: ["technical-seo","google-my-business",...],
+  heroImage: "relevant unsplash URL",
+  category: "SEO"
+}
+
+FILE 2: /template/service-page.html
+(One HTML template that reads from data file)
+
+FILE 3: /generate-pages.js
+(Script that reads services.js and generates
+all 100 HTML files automatically with correct URLs)
+
+=== PAGE CONTENT (EACH PAGE MUST HAVE) ===
+
+1. Unique H1 with primary keyword
+2. Unique meta title (60 chars max)
+3. Unique meta description (155 chars max)
+4. Canonical URL tag
+5. OG tags for social sharing
+6. Service schema JSON-LD
+7. Breadcrumb: Home > [Service Name]
+8. Breadcrumb schema markup
+9. 300-400 words unique body content
+10. 6 unique benefit cards
+11. 4-step unique process
+12. 3 stat counters (service-specific numbers)
+13. 6-8 unique FAQs with FAQ schema
+14. 1 mini case study (unique per page)
+15. 4 related service internal links
+16. Bottom CTA section
+17. Full navbar + footer
+
+=== ANIMATIONS (EVERY PAGE) ===
+
+On page load:
+- Smooth preloader (0.6s) → fade out
+- Hero text: fade up stagger (0.1s per line)
+- Hero visual: slide in from right
+
+On scroll (IntersectionObserver):
+- Sections: opacity 0→1 + translateY(30px→0)
+- Cards: stagger 0.1s delay each
+- Stats: count from 0 to final number (2s)
+- Process line: draw left to right
+
+Hover:
+- Cards: translateY(-8px) + purple glow shadow
+- Buttons: shimmer + scale(1.03)
+- Nav links: underline slide in
+
+=== RESPONSIVENESS ===
+
+Mobile (375px): 1 column, full-width buttons
+Tablet (768px): 2 columns
+Desktop (1024px+): 3-4 columns
+Font: clamp() on ALL text — never fixed px
+
+=== START ORDER ===
+
+Build in this order:
+1. services.js data file (all 100 services)
+2. service-page.html template
+3. generate-pages.js script
+4. Run script → generates all 100 pages
+5. sitemap.xml with all 100 URLs
+6. robots.txt
+7. Test 5 pages: local-seo, google-ads-ppc,
+   facebook-ads, content-marketing, web-design
+```
+
+---
+
+## ⚡ AFTER PASTING — ALSO SAY THIS:
+
+> *"After building all 100 pages, also create a main services index page at infiniterankers.com/services that lists all 100 services in a filterable grid organized by category with search functionality. Each card links to its direct URL."*
+
+---
+
+This gives you:
+- ✅ Clean direct URLs (no `/services/` prefix)
+- ✅ Auto-generated sitemap.xml
+- ✅ robots.txt ready
+- ✅ 1 template → 100 pages (easy to maintain)
+- ✅ All SEO meta tags
+- ✅ Schema markup on every page
+
+Want me to now write the complete `services.js` data file with all 100 services pre-filled?

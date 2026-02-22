@@ -1,0 +1,389 @@
+Build 100 individual service pages for Infinite Rankers 
+(infiniterankers.com). Each page must be fully unique with 
+its own URL, content, images, animations, and SEO.
+
+════════════════════════════════════════
+SECTION 1: URL STRUCTURE
+════════════════════════════════════════
+
+Every page URL format:
+infiniterankers.com/services/[service-name]
+
+Examples:
+/services/local-seo
+/services/technical-seo
+/services/google-ads
+/services/facebook-ads
+/services/content-marketing
+... (100 total)
+
+════════════════════════════════════════
+SECTION 2: ALL 100 SERVICE NAMES
+════════════════════════════════════════
+
+SEO SERVICES (15 pages):
+1.  Local SEO
+2.  Technical SEO
+3.  E-commerce SEO
+4.  National SEO
+5.  International SEO
+6.  YouTube SEO
+7.  Voice Search SEO
+8.  Mobile SEO
+9.  On-Page SEO
+10. Off-Page SEO
+11. SEO Audits
+12. Keyword Research
+13. Link Building
+14. Schema Markup
+15. Google My Business Optimization
+
+PAID ADVERTISING (12 pages):
+16. Google Ads (PPC)
+17. Facebook Ads
+18. Instagram Ads
+19. LinkedIn Ads
+20. YouTube Ads
+21. TikTok Ads
+22. Pinterest Ads
+23. Twitter/X Ads
+24. Bing Ads
+25. Programmatic Advertising
+26. Retargeting Campaigns
+27. Display Advertising
+
+SOCIAL MEDIA (10 pages):
+28. Social Media Management
+29. Facebook Marketing
+30. Instagram Marketing
+31. LinkedIn Marketing
+32. TikTok Marketing
+33. Pinterest Marketing
+34. Twitter/X Marketing
+35. YouTube Channel Management
+36. Snapchat Marketing
+37. Social Media Strategy
+
+CONTENT MARKETING (10 pages):
+38. Content Marketing Strategy
+39. Blog Writing & Management
+40. Copywriting Services
+41. Video Script Writing
+42. Email Copywriting
+43. Landing Page Copywriting
+44. Press Release Writing
+45. Case Study Writing
+46. White Paper Writing
+47. Infographic Design & Content
+
+WEB DESIGN & DEVELOPMENT (10 pages):
+48. Website Design
+49. WordPress Development
+50. Shopify Development
+51. Landing Page Design
+52. UI/UX Design
+53. Mobile App Design
+54. Website Redesign
+55. Website Speed Optimization
+56. Website Maintenance
+57. E-commerce Website Development
+
+EMAIL MARKETING (6 pages):
+58. Email Marketing Strategy
+59. Email Campaign Management
+60. Email Automation
+61. Newsletter Design
+62. Drip Campaign Setup
+63. Email List Building
+
+VIDEO MARKETING (6 pages):
+64. Video Production
+65. Video Marketing Strategy
+66. YouTube Marketing
+67. Video Ads Creation
+68. Explainer Videos
+69. Social Media Video Content
+
+REPUTATION & REVIEWS (5 pages):
+70. Online Reputation Management
+71. Review Generation
+72. Brand Monitoring
+73. Crisis Management
+74. Google Reviews Management
+
+ANALYTICS & REPORTING (5 pages):
+75. Google Analytics Setup
+76. Conversion Tracking
+77. Marketing Dashboard Setup
+78. Monthly Reporting
+79. ROI Tracking & Analysis
+
+LEAD GENERATION (6 pages):
+80. Lead Generation Strategy
+81. B2B Lead Generation
+82. Local Lead Generation
+83. Sales Funnel Building
+84. CRM Setup & Integration
+85. Marketing Automation
+
+SPECIALIZED SERVICES (15 pages):
+86. Influencer Marketing
+87. Affiliate Marketing
+88. Amazon Marketing
+89. Podcast Marketing
+90. Webinar Marketing
+91. Community Management
+92. Chatbot Setup & Marketing
+93. SMS Marketing
+94. WhatsApp Marketing
+95. Conversion Rate Optimization
+96. A/B Testing
+97. Competitor Analysis
+98. Market Research
+99. Brand Strategy & Identity
+100. Digital Marketing Consulting
+
+════════════════════════════════════════
+SECTION 3: EVERY PAGE MUST HAVE
+════════════════════════════════════════
+
+A) UNIQUE SEO META TAGS:
+───────────────────────
+<title>[Service] Agency in USA | Infinite Rankers</title>
+<meta name="description" content="[Unique 155-char benefit-
+driven description for each service]">
+<meta name="keywords" content="[service-specific keywords]">
+<link rel="canonical" href="https://infiniterankers.com/
+services/[slug]">
+
+Structured Data (JSON-LD schema on every page):
+{
+  "@type": "Service",
+  "name": "[Service Name]",
+  "provider": "Infinite Rankers",
+  "areaServed": "USA",
+  "description": "[unique]",
+  "url": "https://infiniterankers.com/services/[slug]"
+}
+
+B) PAGE SECTIONS (IN ORDER):
+────────────────────────────
+
+1. NAVBAR (same site-wide navbar)
+
+2. SERVICE HERO SECTION:
+   - Unique H1: "[Service Name] Services That Drive Real Revenue"
+   - Unique subheading (2-3 lines, benefit-focused, SEO keywords)
+   - Badge: "Google Partner Agency"
+   - CTA buttons: "Get Free [Service] Audit" + "See Results"
+   - Background: animated gradient mesh (blue+purple)
+   - RIGHT SIDE: relevant service illustration or stats card
+     (unique image/visual for EACH service — no repeats)
+   - Entrance animation: text fades in left, visual fades in right
+
+3. TRUST BAR:
+   - "Trusted by 500+ businesses across the USA"
+   - Star rating: ⭐⭐⭐⭐⭐ 4.9/5
+   - Google Partner badge
+   - 3 quick stats relevant to that service
+
+4. WHAT IS [SERVICE] SECTION:
+   - H2: "What Is [Service Name] & Why Does Your Business Need It?"
+   - 300-400 words unique educational content per service
+   - Written for local business owners (easy to understand)
+   - Includes primary keyword naturally 4-6 times
+   - Includes secondary keywords naturally
+   - Left: text content
+   - Right: relevant professional image (Unsplash)
+   - Scroll-triggered fade-in animation
+
+5. HOW WE DO IT (Process):
+   - H2: "Our [Service] Process"
+   - 4 unique steps specific to THAT service
+   - Each step: number + icon + title + 2-line description
+   - Animated connecting line (GSAP DrawSVG or CSS)
+   - Steps animate in one by one on scroll
+
+6. KEY BENEFITS (Why choose Infinite Rankers for this service):
+   - H2: "What You Get With Our [Service]"
+   - 6 benefit cards in a 3x2 grid
+   - Each card: icon + title + 2-line benefit description
+   - All 6 benefits UNIQUE to each service (not generic)
+   - Hover: lift + blue-purple glow
+
+7. SERVICE-SPECIFIC RESULTS:
+   - H2: "What Our [Service] Clients Achieve"
+   - 3 animated stat counters:
+     Example for SEO page:
+     "↑ 340% Average Traffic Increase"
+     "↑ 156 Leads/Month Average"
+     "$50M+ Revenue Generated"
+   - Each stat different per service type
+   - Counters animate from 0 on scroll trigger
+
+8. MINI CASE STUDY:
+   - H2: "Real Results: [Industry] Business"
+   - Challenge: 2-3 lines
+   - Solution: 2-3 lines (specific to this service)
+   - Results: 3 metrics with icons
+   - Client quote (unique per page)
+   - CTA: "See All Case Studies →"
+
+9. WHO NEEDS THIS SERVICE:
+   - H2: "Is [Service] Right For Your Business?"
+   - Grid of 8 industry icons that benefit from this service
+   - Short 1-line description per industry
+   - Hover animation: highlight + scale
+
+10. PRICING TEASER:
+    - H2: "Transparent, Results-Driven Pricing"
+    - 3 plan tiers (Starter / Growth / Enterprise)
+    - Each plan: bullet list of what's included
+    - "Custom Quote" CTA (no hard prices)
+    - Cards with hover animation
+
+11. FAQ SECTION:
+    - H2: "Frequently Asked Questions"
+    - 6-8 unique FAQs per service page
+    - Accordion style (click to expand)
+    - Smooth open/close animation
+    - FAQ schema markup for Google rich results
+
+12. TESTIMONIAL (SERVICE-SPECIFIC):
+    - 2-3 testimonials from clients who used THIS service
+    - Name + business type + star rating + quote
+    - Fade-in animation on scroll
+
+13. RELATED SERVICES:
+    - H2: "Services That Work Well With [Service]"
+    - 4 related service cards with links
+    - Creates internal linking structure for SEO
+
+14. BOTTOM CTA BANNER:
+    - "Ready to Grow With [Service]?"
+    - Animated gradient background
+    - "Book Free Strategy Call" + "Chat Now" buttons
+    - Urgency text: "Limited spots available this month"
+
+15. FOOTER (site-wide footer)
+
+════════════════════════════════════════
+SECTION 4: ANIMATIONS (EVERY PAGE)
+════════════════════════════════════════
+
+Page Load:
+- Preloader: logo appears, fades out (0.8s)
+- Hero text: staggered char-by-char reveal
+- Hero visual: slides in from right with fade
+- Stats counter: triggers on scroll
+
+Scroll Animations (IntersectionObserver):
+- Every section fades up: opacity 0→1, translateY 30px→0
+- Stagger delay on grid children: 0.1s, 0.2s, 0.3s...
+- Process line draws from left to right on scroll
+- Stat counters count from 0 to final number (2s ease)
+- Benefit cards pop in with slight scale: 0.95→1
+
+Hover Interactions:
+- Cards: translateY(-8px) + box-shadow glow
+- Buttons: shimmer sweep + slight scale(1.03)
+- Nav links: underline slides in from left
+- Images: subtle zoom (scale 1→1.05)
+- Related service cards: border gradient reveal
+
+Custom Cursor (site-wide):
+- Outer ring: 32px, border 1.5px solid #3A5FBF
+- Inner dot: 5px solid #8B5CF6
+- rAF lerp: 0.13 (fast, smooth, no lag)
+- On hover links: ring scales to 52px, fills blue 10% opacity
+
+════════════════════════════════════════
+SECTION 5: RESPONSIVENESS RULES
+════════════════════════════════════════
+
+Mobile (375px–767px):
+- Hero: stack column (text top, visual bottom)
+- All grids: 1 column
+- Font: H1 clamp(38px, 6vw, 52px)
+- Buttons: full width, stacked
+- Hide: custom cursor (use default on touch)
+- Hamburger menu: full screen overlay
+
+Tablet (768px–1023px):
+- Hero: 2 column (60/40 split)
+- Grids: 2 columns
+- Font: H1 clamp(44px, 5vw, 64px)
+
+Desktop (1024px+):
+- Hero: 2 column (55/45 split)
+- Grids: 3-4 columns
+- Full animations active
+- Custom cursor active
+
+════════════════════════════════════════
+SECTION 6: TECHNICAL REQUIREMENTS
+════════════════════════════════════════
+
+File Structure:
+/services/
+  local-seo/index.html
+  technical-seo/index.html
+  google-ads/index.html
+  ... (100 folders)
+
+OR if using React/Next.js:
+/pages/services/[slug].jsx (dynamic routing)
+/data/services.js (all 100 service data objects)
+
+Shared files:
+/css/global.css
+/css/service-page.css
+/js/animations.js
+/js/cursor.js
+/js/counter.js
+/components/navbar.html
+/components/footer.html
+
+Performance:
+- Lazy load all images
+- Preconnect Google Fonts
+- Defer non-critical JS
+- WebP image format
+- Target: Lighthouse 90+
+
+Internal Linking:
+- Each service page links to 4 related services
+- All services listed on /services main page
+- Breadcrumb: Home > Services > [Service Name]
+- Breadcrumb schema markup
+
+════════════════════════════════════════
+SECTION 7: CONTENT WRITING RULES
+════════════════════════════════════════
+
+Every page content must be:
+- 100% unique (no duplicate content between pages)
+- Written for USA local business owners
+- Benefit-first (not feature-first)
+- Primary keyword in: H1, first paragraph, 
+  2-3 subheadings, meta description
+- Secondary keywords: naturally throughout body
+- Reading level: Grade 8 (clear, simple, powerful)
+- CTA in every section (not just bottom)
+- No filler content — every line must earn its place
+- Tone: professional, confident, results-focused
+
+START WITH THESE 10 PAGES FIRST:
+1. /services/local-seo
+2. /services/google-ads
+3. /services/social-media-management
+4. /services/content-marketing
+5. /services/web-design
+6. /services/facebook-ads
+7. /services/email-marketing
+8. /services/link-building
+9. /services/reputation-management
+10. /services/conversion-rate-optimization
+
+Then build remaining 90 pages using same template.
+Each page = unique content, unique visuals, same quality."
