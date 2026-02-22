@@ -12,7 +12,6 @@ import Results from "@/pages/results";
 import Blog from "@/pages/blog";
 import Contact from "@/pages/contact";
 import NotFound from "@/pages/not-found";
-import CustomCursor from "@/components/custom-cursor";
 import SmoothScroll from "@/components/smooth-scroll";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
@@ -44,7 +43,6 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <SmoothScroll />
-        <CustomCursor />
         <ScrollToTop />
         <Navbar />
         <main>
