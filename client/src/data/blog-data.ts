@@ -1,3 +1,9 @@
+export interface InlineImage {
+  src: string;
+  alt: string;
+  afterParagraph: number;
+}
+
 export interface BlogPost {
   slug: string;
   category: string;
@@ -8,6 +14,7 @@ export interface BlogPost {
   featured: boolean;
   image: string;
   content: string[];
+  inlineImages?: InlineImage[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -31,6 +38,10 @@ export const blogPosts: BlogPost[] = [
       "Create location-specific content that addresses the unique needs of your community. Write about local events, provide area-specific guides, and create service pages for each location you serve. This hyper-local content signals relevance to Google.",
       "Social signals play an increasingly important role in local SEO. Maintain active social media profiles, share local content, and engage with your community online. While social signals aren't a direct ranking factor, they contribute to your overall online presence and brand authority.",
       "Track your local SEO performance with the right metrics. Monitor your Google Business Profile insights, track local keyword rankings, measure website traffic from local searches, and analyze your conversion rates. Data-driven decisions will help you refine your strategy and maximize results."
+    ],
+    inlineImages: [
+      { src: "/images/blog-local-seo-inline1.jpg", alt: "Local business search results on smartphone with Google Maps", afterParagraph: 2 },
+      { src: "/images/blog-local-seo-inline2.jpg", alt: "Customer leaving a five-star review on mobile phone", afterParagraph: 6 }
     ]
   },
   {
@@ -53,6 +64,10 @@ export const blogPosts: BlogPost[] = [
       "Geographic targeting refinement can eliminate wasted spend. If you're a local business, narrow your targeting to your actual service area. Use radius targeting around your business location and bid adjustments based on distance from your storefront.",
       "Remarketing campaigns are typically 2-3x more cost-effective than cold traffic campaigns. Set up remarketing lists for website visitors, cart abandoners, and past customers. These audiences are already familiar with your brand and are more likely to convert.",
       "Regular A/B testing is essential for continuous improvement. Test different ad copy, landing pages, bidding strategies, and targeting options. Small improvements compound over time, leading to significant cost reductions."
+    ],
+    inlineImages: [
+      { src: "/images/blog-google-ads-inline1.jpg", alt: "Google Ads PPC campaign dashboard with analytics and performance metrics", afterParagraph: 3 },
+      { src: "/images/blog-google-ads-inline2.jpg", alt: "Marketing team analyzing digital advertising budget and ROI", afterParagraph: 7 }
     ]
   },
   {
@@ -75,6 +90,10 @@ export const blogPosts: BlogPost[] = [
       "Instagram Shopping features allow product-based businesses to tag products directly in posts and stories. Set up your Instagram Shop to make it easy for followers to browse and purchase your products without leaving the app.",
       "Consistency beats perfection on Instagram. Aim to post at least 3-4 times per week on your feed and daily on Stories. Use a content calendar to plan ahead and batch-create content to save time.",
       "Measure what matters. Track engagement rate (likes + comments / followers), reach, profile visits, website clicks, and direct messages. Use Instagram Insights to understand which content performs best and refine your strategy accordingly."
+    ],
+    inlineImages: [
+      { src: "/images/blog-instagram-inline1.jpg", alt: "Person browsing Instagram app on smartphone with colorful feed", afterParagraph: 3 },
+      { src: "/images/blog-instagram-inline2.jpg", alt: "Small business owner creating product photos for social media", afterParagraph: 6 }
     ]
   },
   {
@@ -97,6 +116,10 @@ export const blogPosts: BlogPost[] = [
       "Customer lifetime value (CLV) should factor into your ROI calculations. A blog post that attracts customers who stay for years and make repeat purchases has far more value than its initial conversion suggests.",
       "Benchmark your metrics against industry standards. B2B companies typically see a 3-5x ROI on content marketing within 12-18 months. B2C companies often see faster returns but need to maintain consistent publishing to sustain results.",
       "Create a monthly content performance report that tracks KPIs across all stages of the funnel. Share these insights with stakeholders to demonstrate value and secure continued investment in content marketing."
+    ],
+    inlineImages: [
+      { src: "/images/blog-content-roi-inline1.jpg", alt: "Content marketing analytics dashboard showing ROI metrics", afterParagraph: 2 },
+      { src: "/images/blog-content-roi-inline2.jpg", alt: "Team brainstorming content strategy with whiteboard", afterParagraph: 6 }
     ]
   },
   {
@@ -119,6 +142,10 @@ export const blogPosts: BlogPost[] = [
       "Form optimization can double your lead generation. Reduce form fields to the absolute minimum, use multi-step forms for complex information gathering, add progress indicators, and auto-fill where possible. Each additional field reduces form completion rates by approximately 10%.",
       "White space is not wasted space — it's a design tool that improves readability and guides the eye toward important elements. Cluttered pages overwhelm visitors and reduce the effectiveness of your key messages and CTAs.",
       "A/B testing removes guesswork from website optimization. Test one element at a time — headlines, CTAs, images, layouts — and let data drive your decisions. Even small improvements in conversion rate can result in significant revenue increases over time."
+    ],
+    inlineImages: [
+      { src: "/images/blog-web-design-inline1.jpg", alt: "Modern website design on laptop with clean UI/UX interface", afterParagraph: 2 },
+      { src: "/images/blog-web-design-inline2.jpg", alt: "Website speed and performance optimization on mobile device", afterParagraph: 5 }
     ]
   },
   {
@@ -141,6 +168,10 @@ export const blogPosts: BlogPost[] = [
       "Internal linking distributes authority throughout your site and helps search engines discover content. Create a logical linking structure, use descriptive anchor text, and ensure every important page is accessible within 3 clicks from the homepage.",
       "Mobile-first indexing means Google primarily uses the mobile version of your site for ranking. Ensure your mobile site has the same content, structured data, and meta tags as your desktop version. Test with Google's Mobile-Friendly Test tool.",
       "Regular technical SEO audits catch issues before they impact rankings. Use tools like Screaming Frog, Google Search Console, and Ahrefs to identify crawl errors, broken links, missing meta tags, and other technical issues. Schedule monthly audits to maintain your site's technical health."
+    ],
+    inlineImages: [
+      { src: "/images/blog-technical-seo-inline1.jpg", alt: "Technical SEO audit with HTML code on computer screen", afterParagraph: 2 },
+      { src: "/images/blog-technical-seo-inline2.jpg", alt: "Website sitemap structure and SEO architecture planning", afterParagraph: 6 }
     ]
   },
   {
@@ -163,6 +194,10 @@ export const blogPosts: BlogPost[] = [
       "Segmentation dramatically improves email performance. Segment by purchase history, engagement level, demographics, and interests. Personalized emails based on segmentation generate 6x higher transaction rates than generic broadcasts.",
       "Timing and frequency matter. Test different send times for your audience — B2B emails typically perform best Tuesday through Thursday mornings, while B2C emails often see higher engagement on weekends. Avoid sending more than 3-4 emails per week to prevent fatigue.",
       "Track the right metrics: open rate, click-through rate, conversion rate, revenue per email, and unsubscribe rate. Set benchmarks for each sequence and continuously optimize based on performance data. Even small improvements in email performance compound significantly over time."
+    ],
+    inlineImages: [
+      { src: "/images/blog-email-inline1.jpg", alt: "Email marketing automation workflow on laptop screen", afterParagraph: 2 },
+      { src: "/images/blog-email-inline2.jpg", alt: "Professional writing an email newsletter campaign", afterParagraph: 6 }
     ]
   },
   {
@@ -185,6 +220,10 @@ export const blogPosts: BlogPost[] = [
       "Data retention settings affect how long you can analyze historical data. Set retention to 14 months (the maximum for free accounts) and enable the Reset on new activity option. Consider BigQuery export for long-term data storage and advanced analysis.",
       "Cross-domain tracking ensures accurate measurement across multiple websites. Configure domains in the data stream settings to maintain user sessions when visitors move between your main site, blog, e-commerce store, or landing pages.",
       "Regular audits ensure data quality. Check for tracking gaps, verify conversion tracking, review spam and bot traffic filtering, and ensure all important pages are properly tracked. Clean, accurate data is the foundation of good marketing decisions."
+    ],
+    inlineImages: [
+      { src: "/images/blog-ga4-inline1.jpg", alt: "Google Analytics dashboard with data charts on monitor", afterParagraph: 2 },
+      { src: "/images/blog-ga4-inline2.jpg", alt: "Marketing data visualization with conversion tracking metrics", afterParagraph: 6 }
     ]
   },
   {
@@ -207,6 +246,10 @@ export const blogPosts: BlogPost[] = [
       "Reporting in Performance Max is more limited than other campaign types, but there are ways to gain insights. Use the Insights tab to understand search categories driving performance, check asset group performance for creative optimization, and monitor placement reports to see where ads appear.",
       "Seasonality adjustments help Performance Max respond to predictable changes in conversion rates. Use bid strategy adjustments for events like Black Friday, holiday seasons, or industry-specific peak periods to prevent the algorithm from making incorrect optimization decisions.",
       "Test and iterate continuously. Compare Performance Max against standard Search and Shopping campaigns, test different asset combinations, experiment with audience signals, and regularly refresh creative assets to prevent ad fatigue."
+    ],
+    inlineImages: [
+      { src: "/images/blog-pmax-inline1.jpg", alt: "Google Shopping ecommerce product ads online campaign", afterParagraph: 3 },
+      { src: "/images/blog-pmax-inline2.jpg", alt: "Digital advertising campaign performance metrics on tablet", afterParagraph: 7 }
     ]
   },
   {
@@ -229,6 +272,10 @@ export const blogPosts: BlogPost[] = [
       "Paid social media advertising amplifies your best organic content. Start with a small budget ($5-10/day) boosting your highest-performing posts. As you learn what works, create dedicated ad campaigns with specific targeting for lead generation or sales.",
       "User-generated content is the most trusted form of marketing. Encourage customers to share their experiences with your products or services. Create a branded hashtag, run photo contests, and feature customer stories on your profiles. UGC costs nothing and converts better than branded content.",
       "Review your analytics monthly and adjust your strategy quarterly. Track engagement rates, reach, website clicks, and conversions. Double down on what's working and eliminate what's not. Social media algorithms change frequently, so flexibility and data-driven decisions are essential."
+    ],
+    inlineImages: [
+      { src: "/images/blog-social-inline1.jpg", alt: "Social media content calendar planning with phone and laptop", afterParagraph: 4 },
+      { src: "/images/blog-social-inline2.jpg", alt: "Team discussing social media engagement analytics", afterParagraph: 7 }
     ]
   }
 ];

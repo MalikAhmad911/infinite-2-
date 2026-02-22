@@ -109,13 +109,31 @@ export default function BlogPost() {
       </section>
 
       <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 lg:pb-20">
-        {post.content.map((paragraph, i) => (
-          <FadeIn key={i} delay={i * 0.05}>
-            <p className="text-base sm:text-lg leading-relaxed text-gray-700 mb-6" style={{ fontFamily: "'Inter', sans-serif" }}>
-              {paragraph}
-            </p>
-          </FadeIn>
-        ))}
+        {post.content.map((paragraph, i) => {
+          const inlineImage = post.inlineImages?.find(img => img.afterParagraph === i);
+          return (
+            <div key={i}>
+              <FadeIn delay={i * 0.05}>
+                <p className="text-base sm:text-lg leading-relaxed text-gray-700 mb-6" style={{ fontFamily: "'Inter', sans-serif" }}>
+                  {paragraph}
+                </p>
+              </FadeIn>
+              {inlineImage && (
+                <FadeIn delay={i * 0.05 + 0.02}>
+                  <div className="my-8 sm:my-10">
+                    <img
+                      src={inlineImage.src}
+                      alt={inlineImage.alt}
+                      className="w-full h-56 sm:h-72 lg:h-80 object-cover rounded-2xl shadow-md"
+                      loading="lazy"
+                    />
+                    <p className="text-xs sm:text-sm text-gray-400 mt-2 text-center italic">{inlineImage.alt}</p>
+                  </div>
+                </FadeIn>
+              )}
+            </div>
+          );
+        })}
 
         <FadeIn>
           <div className="mt-10 pt-8 border-t border-gray-200">
