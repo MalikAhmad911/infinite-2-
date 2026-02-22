@@ -3,7 +3,7 @@ import { useEffect } from "react";
 interface SEOProps {
   title: string;
   description: string;
-  schema?: object;
+  schema?: object | object[];
   canonical?: string;
   ogImage?: string;
 }
@@ -48,13 +48,15 @@ export default function SEO({ title, description, schema, canonical, ogImage }: 
     }
 
     if (schema) {
-      let existing = document.querySelector('script[data-seo-component="true"]');
-      if (existing) existing.remove();
-      const script = document.createElement("script");
-      script.type = "application/ld+json";
-      script.setAttribute("data-seo-component", "true");
-      script.textContent = JSON.stringify(schema);
-      document.head.appendChild(script);
+      document.querySelectorAll('script[data-seo-component="true"]').forEach(el => el.remove());
+      const schemas = Array.isArray(schema) ? schema : [schema];
+      schemas.forEach((s, i) => {
+        const script = document.createElement("script");
+        script.type = "application/ld+json";
+        script.setAttribute("data-seo-component", "true");
+        script.textContent = JSON.stringify(s);
+        document.head.appendChild(script);
+      });
     }
   }, [title, description, schema, canonical, ogImage]);
 

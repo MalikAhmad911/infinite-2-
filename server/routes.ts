@@ -37,6 +37,19 @@ const serviceSlugs = [
   "sms-marketing","whatsapp-marketing","ab-testing","competitor-analysis","digital-marketing-consulting"
 ];
 
+const landingPageSlugs = [
+  "seo-services-usa",
+  "local-seo-google-maps-usa",
+  "ppc-google-ads-usa",
+  "ai-marketing-automation-usa",
+  "technical-seo-website-performance-usa",
+  "wordpress-website-development-usa",
+  "content-marketing-backlink-strategy-usa",
+  "social-media-marketing-usa",
+  "landing-page-conversion-optimization-usa",
+  "ecommerce-seo-usa"
+];
+
 const blogSlugs = [
   "local-seo-strategies-2025",
   "cut-google-ads-spend-40-percent",
@@ -151,9 +164,10 @@ export async function registerRoutes(
     const urls = pages.map(p => `  <url>\n    <loc>${base}${p.path}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${p.freq}</changefreq>\n    <priority>${p.priority}</priority>\n  </url>`);
     const serviceUrls = serviceSlugs.map(s => `  <url>\n    <loc>${base}/${s}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`);
     const blogUrls = blogSlugs.map(s => `  <url>\n    <loc>${base}/${s}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>`);
+    const landingUrls = landingPageSlugs.map(s => `  <url>\n    <loc>${base}/${s}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.85</priority>\n  </url>`);
     res.set("Content-Type", "application/xml");
     res.set("Cache-Control", "public, max-age=3600");
-    res.send(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${urls.join("\n")}\n${serviceUrls.join("\n")}\n${blogUrls.join("\n")}\n</urlset>`);
+    res.send(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${urls.join("\n")}\n${serviceUrls.join("\n")}\n${blogUrls.join("\n")}\n${landingUrls.join("\n")}\n</urlset>`);
   });
 
   app.get("/robots.txt", (_req, res) => {

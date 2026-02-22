@@ -2,8 +2,10 @@ import { useParams } from "wouter";
 import { getBlogBySlug } from "@/data/blog-data";
 import BlogPost from "@/pages/blog-post";
 import ServicePage from "@/pages/service-page";
+import LandingPage from "@/pages/landing-page";
 import NotFound from "@/pages/not-found";
 import { getServiceBySlug } from "@/data/services-data";
+import { getLandingPageBySlug } from "@/data/landing-pages-data";
 
 export default function SlugResolver() {
   const { slug } = useParams<{ slug: string }>();
@@ -15,6 +17,9 @@ export default function SlugResolver() {
 
   const service = getServiceBySlug(slug);
   if (service) return <ServicePage />;
+
+  const landingPage = getLandingPageBySlug(slug);
+  if (landingPage) return <LandingPage />;
 
   return <NotFound />;
 }
