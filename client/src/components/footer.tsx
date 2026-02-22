@@ -64,8 +64,8 @@ export default function Footer() {
               <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
               <span className="text-sm text-white/70 font-medium">24/7 Support — Weekends too</span>
             </div>
-            <div className="inline-block rounded-xl bg-white px-6 py-5 mb-3">
-              <img src="/images/google-partner-badge.svg" alt="Google Partner Badge" className="h-20 w-auto" />
+            <div className="inline-block rounded-lg bg-white px-3 py-2.5 mb-3">
+              <img src="/images/google-partner-badge.svg" alt="Google Partner Badge" className="h-14 w-auto" />
             </div>
             <div>
               <a href="https://infiniterankers.io" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-brand-blue hover:text-brand-blue/80 transition-colors">
