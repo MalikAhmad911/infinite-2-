@@ -221,18 +221,97 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* WHAT IS SECTION */}
+      {/* WHAT IS SECTION + SIDEBAR */}
       <section className="py-12 sm:py-16 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto lg:mx-0">
-            <FadeInSection>
-              <h2 className="font-bold tracking-tight mb-4 sm:mb-6" style={{ fontSize: "clamp(22px, 3vw, 38px)", color: "#1A1A2E" }}>
-                {service.whatIsTitle}
-              </h2>
-              <div className="text-sm sm:text-base leading-relaxed space-y-3 sm:space-y-4" style={{ color: "#4A4A6A" }}>
-                {service.whatIsContent.split('\n\n').map((p, i) => <p key={i}>{p}</p>)}
-              </div>
-            </FadeInSection>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-8 lg:gap-12">
+            <div>
+              <FadeInSection>
+                <h2 className="font-bold tracking-tight mb-4 sm:mb-6" style={{ fontSize: "clamp(22px, 3vw, 38px)", color: "#1A1A2E" }}>
+                  {service.whatIsTitle}
+                </h2>
+                <div className="text-sm sm:text-base leading-relaxed space-y-3 sm:space-y-4" style={{ color: "#4A4A6A" }}>
+                  {service.whatIsContent.split('\n\n').map((p, i) => <p key={i}>{p}</p>)}
+                </div>
+              </FadeInSection>
+            </div>
+
+            <div className="lg:sticky lg:top-28 lg:self-start space-y-5">
+              <FadeInSection delay={0.2}>
+                <div className="rounded-2xl border border-brand-blue/10 bg-gradient-to-br from-brand-blue/[0.03] to-brand-violet/[0.03] p-5 sm:p-6">
+                  <h3 className="font-bold text-sm sm:text-base mb-3" style={{ color: "#1A1A2E" }}>Get a Free {service.category} Audit</h3>
+                  <p className="text-xs sm:text-sm leading-relaxed mb-4" style={{ color: "#4A4A6A" }}>
+                    Discover exactly how we can improve your {service.category.toLowerCase()} performance with a no-obligation strategy session.
+                  </p>
+                  <Link href="/contact">
+                    <span className="flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-brand-blue text-white font-semibold rounded-lg text-sm shadow-[0_4px_16px_rgba(58,95,191,0.25)] hover:shadow-[0_6px_24px_rgba(58,95,191,0.35)] transition-shadow group">
+                      Book Free Call
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </Link>
+                  <a href="tel:+17034159373" className="flex items-center justify-center gap-2 w-full px-4 py-2.5 border border-gray-200 font-medium rounded-lg text-sm mt-2.5 hover:border-brand-blue/30 transition-colors" style={{ color: "#4A4A6A" }}>
+                    <Phone className="w-3.5 h-3.5" />
+                    (703) 415-9373
+                  </a>
+                </div>
+              </FadeInSection>
+
+              <FadeInSection delay={0.3}>
+                <div className="rounded-2xl border border-gray-100 bg-white p-5 sm:p-6 shadow-[0_2px_12px_rgba(0,0,0,0.03)]">
+                  <h3 className="font-bold text-sm sm:text-base mb-3" style={{ color: "#1A1A2E" }}>Key Results</h3>
+                  <div className="space-y-2.5">
+                    {service.stats.map((stat, i) => (
+                      <div key={i} className="flex items-center gap-3 p-2.5 rounded-lg bg-brand-blue/[0.03]">
+                        <div className="text-base sm:text-lg font-bold text-brand-blue" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                          {stat.value}
+                        </div>
+                        <div className="text-[10px] sm:text-xs font-medium" style={{ color: "#4A4A6A" }}>{stat.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </FadeInSection>
+
+              <FadeInSection delay={0.4}>
+                <div className="rounded-2xl border border-gray-100 bg-white p-5 sm:p-6 shadow-[0_2px_12px_rgba(0,0,0,0.03)]">
+                  <h3 className="font-bold text-sm sm:text-base mb-3" style={{ color: "#1A1A2E" }}>Related Services</h3>
+                  <div className="space-y-2">
+                    {relatedServices.slice(0, 4).map((rs) => rs && (
+                      <Link key={rs.slug} href={`/${rs.slug}`}>
+                        <div className="flex items-center gap-2.5 p-2.5 rounded-lg hover:bg-brand-blue/[0.04] transition-colors cursor-pointer group">
+                          <div className="w-7 h-7 rounded-md bg-brand-violet/10 flex items-center justify-center flex-shrink-0">
+                            {categoryIcons[rs.category] || <Zap className="w-3.5 h-3.5 text-brand-violet" />}
+                          </div>
+                          <div className="min-w-0">
+                            <div className="text-xs sm:text-sm font-medium group-hover:text-brand-blue transition-colors truncate" style={{ color: "#1A1A2E" }}>
+                              {rs.h1.length > 28 ? rs.h1.substring(0, 28) + "..." : rs.h1}
+                            </div>
+                            <div className="text-[10px] text-brand-blue/60">{rs.category}</div>
+                          </div>
+                          <ArrowRight className="w-3 h-3 text-brand-blue/40 group-hover:text-brand-blue group-hover:translate-x-0.5 transition-all ml-auto flex-shrink-0" />
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </FadeInSection>
+
+              <FadeInSection delay={0.5}>
+                <div className="rounded-2xl border border-brand-violet/10 bg-brand-violet/[0.03] p-5 sm:p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Shield className="w-4 h-4 text-brand-violet" />
+                    <h3 className="font-bold text-sm" style={{ color: "#1A1A2E" }}>Google Partner</h3>
+                  </div>
+                  <p className="text-xs leading-relaxed mb-3" style={{ color: "#4A4A6A" }}>
+                    Certified agency with proven expertise across all Google platforms.
+                  </p>
+                  <div className="flex items-center gap-0.5">
+                    {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 text-yellow-400 fill-yellow-400" />)}
+                    <span className="text-xs font-semibold ml-1.5" style={{ color: "#1A1A2E" }}>4.9/5 Rating</span>
+                  </div>
+                </div>
+              </FadeInSection>
+            </div>
           </div>
         </div>
       </section>
