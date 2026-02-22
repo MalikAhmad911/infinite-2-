@@ -1,0 +1,122 @@
+Below is a **structured prompt template for Replit** to generate **10 new SEO-focused landing pages** (keyword-optimized, backlink-oriented) based on your competitor analysis and services from **Infinite Rankers** and **Absolute Rankers** — so you can rank higher in the USA for Google 📈.
+
+---
+
+## 🔍 **Competitor & Source Summary**
+
+### Your main competitor:
+
+**Absolute Rankers**
+A full-service digital marketing & SEO agency offering: SEO Optimization, Website Development, Google Maps & Local SEO, Social Media Marketing, PPC, AIO strategies, content creation & technical SEO. ([absoluterankers.io][1])
+
+### Target site to extract services from:
+
+**Infinite Rankers** (infiniterankers.io) — AI-driven SEO & marketing focused on revenue growth, automation, lead gen, AI systems, PPC & conversion funnels. ([infiniterankers.io][2])
+
+---
+
+## 📌 **10 SEO Landing Page Ideas for USA Targeting**
+
+Below is a **Replit prompt** that you can use with an AI writer to generate high-authority pages (optimized for Google USA SERPs) incorporating services, keywords, US targeting, and rich SEO features:
+
+---
+
+### 🧠 **Replit Prompt (Copy & Paste into Your AI Tool)**
+
+```
+Create 10 long-form SEO landing pages for a digital marketing & SEO agency targeting United States (USA) search queries.
+
+Each page should be:
+• 1200–1800 words
+• Optimized with US-focused keywords (e.g., “SEO services in USA”, “Local SEO Google Maps USA”, “AI marketing automation USA”, “Digital marketing for US businesses”)
+• Include schema, strong CTAs, internal links suggestions, FAQ, and trust signals
+
+Target audience: small and medium US businesses seeking SEO, PPC, AI automation and revenue growth.
+
+Use services and concepts from these sources:
+• Infinite Rankers: AI Revenue Growth, AI automation, SEO, PPC campaigns, landing page optimization, lead generation funnels, chatbots, CRM automation. :contentReference[oaicite:3]{index=3}
+• Absolute Rankers: On-page SEO, Off-page SEO, Technical SEO, Local SEO, Google Maps listing, social media marketing, WordPress development, AIO strategies. :contentReference[oaicite:4]{index=4}
+
+Generate each page with:
+• Unique Title Tag (70–80 chars)
+• Meta Description (150–160 chars)
+• H1, H2, H3 tags
+• Targeted LSI keywords
+• Internal & suggested backlink anchor text strategy
+• US city geo-modifiers where relevant
+• FAQ section with schema markup
+• Conversion-oriented CTA (free audit, quote form, phone)
+
+Output them as separate HTML blocks.
+
+Pages to generate:
+1. SEO Services for Small Business USA
+2. Local SEO & Google Maps Optimization USA
+3. PPC & Paid Ads Management for US Businesses
+4. AI Marketing Automation & Lead Qualification in USA
+5. Technical SEO & Website Performance for US Rankings
+6. WordPress & Website Development for American Brands
+7. Content Marketing & Backlink Strategies USA
+8. Social Media Management & SMM Services USA
+9. Landing Page Optimization & Conversion Funnels USA
+10. E-Commerce SEO Services for US Stores
+
+Include in each:
+• Primary keyword + 6–8 LSI variants
+• Schema JSON-LD for FAQ
+• Suggested backlinking plan with anchor texts
+• CTA blocks: phone, email, quote form
+• US cities variations (e.g., New York, Los Angeles, Chicago)
+```
+
+---
+
+## 📊 **SEO / On-Page Action Plan Suggestions**
+
+To **overtake your competitor** in search results:
+
+🔹 **Title & Meta Optimization** – use US keywords early
+🔹 **Schema (FAQ + Breadcrumb + LocalBusiness)** – improves SERP visibility
+🔹 **Internal Linking** – Each landing page links to others with keyword anchor text
+🔹 **Backlink Plan**
+• Guest posts on high DA sites (tech, business)
+• Local citations + Google Business optimized pages
+• EDU/ GOV links via scholarships, tools, guides
+🔹 **Content Depth** – 1600+ words + integrated data charts + case studies
+🔹 **AI + SEO Combined** – include AI automation use cases & bots for lead qualification (unique from competitors)
+
+---
+
+## 🧠 **Keyword Focus Examples (USA)**
+
+| Primary Intent | Example Keywords                                                |
+| -------------- | --------------------------------------------------------------- |
+| SEO Services   | SEO services USA, SEO expert America, top SEO agency USA        |
+| Local SEO      | Local SEO USA, Google Maps optimization, local ranking services |
+| PPC            | Google Ads management USA, PPC campaigns USA                    |
+| AI Automation  | AI marketing automation, AI sales bots, CRM automation USA      |
+| Technical SEO  | site speed optimization, schema markup USA, mobile SEO USA      |
+| E-Commerce     | e-commerce SEO USA, Shopify SEO services                        |
+
+---
+
+## 🔧 **Technical & Backlink Strategy (Quick Checklist)**
+
+✅ Create geo-targeted landing pages for major US cities
+✅ Use internal anchor texts like:
+
+* “SEO services in Los Angeles”
+* “Local SEO experts in Chicago”
+* “AI lead automation for Dallas businesses”
+  ✅ Build context-specific backlinks:
+* “AI marketing automation case study”
+* “Local SEO Google Maps USA guide”
+* “PPC vs SEO ROI”
+  ✅ Use schema FAQ JSON-LD on all pages
+
+---
+
+If you want, I can also help you **write the actual content** for all 10 pages in structured HTML/CMS format ready for upload.
+
+[1]: https://absoluterankers.io/services/?utm_source=chatgpt.com "Services – Absolute Rankers"
+[2]: https://infiniterankers.io/?utm_source=chatgpt.com "Infinite Rankers - AI Revenue Growth Agency"
