@@ -227,11 +227,44 @@ export default function ServicePage() {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-8 lg:gap-12">
             <div>
               <FadeInSection>
-                <h2 className="font-bold tracking-tight mb-4 sm:mb-6" style={{ fontSize: "clamp(22px, 3vw, 38px)", color: "#1A1A2E" }}>
+                <h2 className="font-bold tracking-tight mb-6 sm:mb-8" style={{ fontSize: "clamp(22px, 3vw, 38px)", color: "#1A1A2E" }}>
                   {service.whatIsTitle}
                 </h2>
-                <div className="text-sm sm:text-base leading-relaxed space-y-3 sm:space-y-4" style={{ color: "#4A4A6A" }}>
-                  {service.whatIsContent.split('\n\n').map((p, i) => <p key={i}>{p}</p>)}
+              </FadeInSection>
+              <div className="space-y-5 sm:space-y-6">
+                {service.whatIsContent.split('\n\n').map((p, i) => (
+                  <FadeInSection key={i} delay={i * 0.08}>
+                    {i === 0 ? (
+                      <p className="text-base sm:text-lg leading-[1.8] sm:leading-[1.85] font-medium" style={{ color: "#1A1A2E" }}>{p}</p>
+                    ) : (
+                      <p className="text-sm sm:text-base leading-[1.8] sm:leading-[1.85]" style={{ color: "#4A4A6A" }}>{p}</p>
+                    )}
+                    {i === 1 && (
+                      <div className="mt-5 sm:mt-6 p-4 sm:p-5 rounded-xl bg-gradient-to-r from-brand-blue/[0.04] to-brand-violet/[0.04] border-l-4 border-brand-blue">
+                        <div className="flex items-start gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
+                          <p className="text-sm sm:text-base font-medium leading-relaxed" style={{ color: "#1A1A2E" }}>
+                            Our {service.category.toLowerCase()} experts have helped 500+ businesses achieve measurable growth through proven strategies.
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                  </FadeInSection>
+                ))}
+              </div>
+              <FadeInSection delay={0.4}>
+                <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <Link href="/contact">
+                    <span className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 bg-brand-blue text-white font-semibold rounded-lg text-sm group shadow-[0_4px_16px_rgba(58,95,191,0.25)] hover:shadow-[0_6px_24px_rgba(58,95,191,0.35)] transition-shadow w-full sm:w-auto">
+                      Get Started Today
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </Link>
+                  <Link href="/results">
+                    <span className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 border border-gray-200 font-semibold rounded-lg text-sm hover:border-brand-blue/30 transition-colors w-full sm:w-auto" style={{ color: "#4A4A6A" }}>
+                      View Case Studies
+                    </span>
+                  </Link>
                 </div>
               </FadeInSection>
             </div>
