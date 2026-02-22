@@ -60,10 +60,11 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 sm:h-[72px]">
             <Link href="/">
               <div className="flex items-center gap-1.5 group">
-                <span className="font-heading text-xl sm:text-2xl font-bold tracking-tight text-gray-900">
+                <img src="/logo.webp" alt="INFINITE RANKERS logo" className="h-8 w-8 sm:h-9 sm:w-9" />
+                <span style={{ fontFamily: "'Inter', sans-serif", color: "#1A1A2E" }} className="text-xl sm:text-2xl font-bold tracking-tight">
                   INFINITE
                 </span>
-                <span className="font-heading text-xl sm:text-2xl font-bold tracking-tight text-brand-blue">
+                <span style={{ fontFamily: "'Inter', sans-serif" }} className="text-xl sm:text-2xl font-bold tracking-tight text-brand-blue">
                   RANKERS
                 </span>
               </div>
@@ -76,8 +77,9 @@ export default function Navbar() {
                     className={`px-3.5 py-2 text-sm font-medium transition-colors rounded-md ${
                       location === link.path
                         ? "text-brand-blue bg-brand-blue/5"
-                        : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
+                        : "hover:bg-gray-50"
                     }`}
+                    style={{ color: location === link.path ? undefined : "#4A4A6A" }}
                   >
                     {link.label}
                   </span>
@@ -91,7 +93,7 @@ export default function Navbar() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-50"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                <span className="text-xs text-gray-500 font-medium">Google Partner</span>
+                <span className="text-xs font-medium" style={{ color: "#4A4A6A" }}>Google Partner</span>
               </div>
               <Link href="/contact">
                 <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-blue text-white text-sm font-semibold rounded-lg group shadow-sm hover:shadow-md transition-shadow">
@@ -102,7 +104,8 @@ export default function Navbar() {
             </div>
 
             <button
-              className="lg:hidden p-2 text-gray-900"
+              className="lg:hidden p-2"
+              style={{ color: "#1A1A2E" }}
               onClick={() => setMobileOpen(!mobileOpen)}
             >
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -121,18 +124,36 @@ export default function Navbar() {
             transition={{ duration: 0.25 }}
           >
             <div className="flex flex-col items-center gap-5">
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0 }}
+              >
+                <Link href="/">
+                  <div className="flex items-center gap-1.5">
+                    <img src="/logo.webp" alt="INFINITE RANKERS logo" className="h-8 w-8" />
+                    <div className="flex items-center gap-1">
+                      <span style={{ fontFamily: "'Inter', sans-serif", color: "#1A1A2E" }} className="text-xl font-bold tracking-tight">
+                        INFINITE
+                      </span>
+                      <span style={{ fontFamily: "'Inter', sans-serif" }} className="text-xl font-bold tracking-tight text-brand-blue">
+                        RANKERS
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.path}
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.06 }}
+                  transition={{ delay: (i + 1) * 0.06 }}
                 >
                   <Link href={link.path}>
                     <span
-                      className={`font-heading text-3xl font-bold tracking-tight ${
-                        location === link.path ? "text-brand-blue" : "text-gray-900"
-                      }`}
+                      style={{ fontFamily: "'Inter', sans-serif", color: location === link.path ? "#6B8FD4" : "#1A1A2E" }}
+                      className="text-3xl font-bold tracking-tight"
                     >
                       {link.label}
                     </span>
@@ -142,7 +163,7 @@ export default function Navbar() {
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
+                transition={{ delay: 0.46 }}
               >
                 <Link href="/contact">
                   <span className="inline-flex items-center gap-2 px-7 py-3 bg-brand-blue text-white font-semibold rounded-lg mt-4">

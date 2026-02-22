@@ -42,11 +42,11 @@
   --chart-3: 217 50% 63%;
   --chart-4: 263 70% 82%;
   --chart-5: 162 80% 55%;
-  --font-sans: "DM Sans", sans-serif;
+  --font-sans: "Inter", sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: "JetBrains Mono", monospace;
-  --font-display: "Clash Display", "Bebas Neue", sans-serif;
-  --font-heading: "Syne", sans-serif;
+  --font-display: "Space Mono", "Inter", sans-serif;
+  --font-heading: "Inter", sans-serif;
   --font-stat: "JetBrains Mono", monospace;
   --radius: .5rem;
   --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.04);

@@ -3,9 +3,10 @@ import { useEffect } from "react";
 interface SEOProps {
   title: string;
   description: string;
+  schema?: object;
 }
 
-export default function SEO({ title, description }: SEOProps) {
+export default function SEO({ title, description, schema }: SEOProps) {
   useEffect(() => {
     document.title = title;
 
@@ -23,7 +24,16 @@ export default function SEO({ title, description }: SEOProps) {
     if (ogDesc) {
       ogDesc.setAttribute("content", description);
     }
-  }, [title, description]);
+
+    if (schema) {
+      let existing = document.querySelector('script[type="application/ld+json"]');
+      if (existing) existing.remove();
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
+    }
+  }, [title, description, schema]);
 
   return null;
 }

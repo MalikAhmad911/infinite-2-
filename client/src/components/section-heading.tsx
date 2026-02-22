@@ -31,8 +31,8 @@ export default function SectionHeading({ badge, title, subtitle, center = true, 
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="font-heading font-bold tracking-tight text-gray-900"
-        style={{ fontSize: "clamp(26px, 3vw, 40px)" }}
+        className="font-heading font-bold tracking-tight"
+        style={{ fontSize: "clamp(26px, 3vw, 40px)", fontFamily: "'Inter', sans-serif", color: "#1A1A2E" }}
       >
         {title}
       </motion.h2>
@@ -41,8 +41,8 @@ export default function SectionHeading({ badge, title, subtitle, center = true, 
           initial={{ opacity: 0, y: 15 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className={`mt-3 text-gray-500 max-w-2xl leading-relaxed ${center ? "mx-auto" : ""}`}
-          style={{ fontSize: "clamp(14px, 1.1vw, 16px)" }}
+          className={`mt-3 max-w-2xl leading-relaxed ${center ? "mx-auto" : ""}`}
+          style={{ fontSize: "clamp(14px, 1.1vw, 16px)", color: "#4A4A6A" }}
         >
           {subtitle}
         </motion.p>
