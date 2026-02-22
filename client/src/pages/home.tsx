@@ -8,7 +8,7 @@ import {
   Wrench, Car, Scissors, Dumbbell, Hotel, Landmark,
   CheckCircle2, Star, ChevronRight, ChevronLeft, Play, Zap, Target,
   ArrowUpRight, Clock, Phone, Activity, Award, Eye, HeartHandshake,
-  FileText, Sparkles, Quote
+  FileText, Sparkles, Quote, Settings, Database, Layers, MonitorPlay
 } from "lucide-react";
 import SectionHeading from "@/components/section-heading";
 import SEO from "@/components/seo";
@@ -854,6 +854,119 @@ export default function Home() {
               </span>
             </Link>
           </FadeInSection>
+        </div>
+      </section>
+
+      {/* GROWTH INFRASTRUCTURE */}
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-brand-blue/[0.02] to-white" />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeInSection className="text-center mb-16">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-brand-violet mb-3 block">
+              Full-Service Marketing Engine
+            </span>
+            <h2 className="font-bold tracking-tight" style={{ fontSize: "clamp(26px, 3.5vw, 44px)", color: "#1A1A2E" }}>
+              Your Complete Growth System
+            </h2>
+            <p className="mt-3 text-base max-w-lg mx-auto" style={{ color: "#4A4A6A" }}>
+              Every component of your digital presence, connected and optimized for revenue.
+            </p>
+          </FadeInSection>
+
+          <div className="relative">
+            {/* Vertical connector line - desktop only */}
+            <div className="hidden lg:block absolute left-1/2 top-8 bottom-8 w-px bg-gradient-to-b from-brand-blue/20 via-brand-violet/30 to-brand-blue/20 -translate-x-1/2" />
+
+            {/* Row 1 - left card */}
+            <FadeInSection className="relative mb-8 lg:mb-0">
+              <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div className="flex items-center gap-4 p-5 rounded-xl border border-gray-100 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_24px_rgba(58,95,191,0.1)] transition-shadow lg:mr-8">
+                  <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-brand-blue/10 flex items-center justify-center">
+                    <Settings className="w-5 h-5 text-brand-blue" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-sm" style={{ color: "#1A1A2E" }}>SEO & Strategy Hub</h3>
+                    <p className="text-xs mt-0.5" style={{ color: "#6B6B8B" }}>Centralized campaign intelligence</p>
+                  </div>
+                </div>
+                <div className="hidden lg:flex items-center justify-start pl-8">
+                  <div className="w-3 h-3 rounded-full bg-brand-blue shadow-[0_0_8px_rgba(58,95,191,0.4)]" />
+                </div>
+              </div>
+            </FadeInSection>
+
+            {/* Row 2 - right card */}
+            <FadeInSection className="relative mb-8 lg:mb-0 lg:mt-6">
+              <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div className="hidden lg:flex items-center justify-end pr-8">
+                  <div className="w-3 h-3 rounded-full bg-brand-blue shadow-[0_0_8px_rgba(58,95,191,0.4)]" />
+                </div>
+                <div className="flex items-center gap-4 p-5 rounded-xl border border-gray-100 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_24px_rgba(58,95,191,0.1)] transition-shadow lg:ml-8">
+                  <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-brand-violet/10 flex items-center justify-center">
+                    <Database className="w-5 h-5 text-brand-violet" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-sm" style={{ color: "#1A1A2E" }}>Analytics Pipeline</h3>
+                    <p className="text-xs mt-0.5" style={{ color: "#6B6B8B" }}>Real-time performance tracking</p>
+                  </div>
+                </div>
+              </div>
+            </FadeInSection>
+
+            {/* Row 3 - left card */}
+            <FadeInSection className="relative mb-8 lg:mb-0 lg:mt-6">
+              <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div className="flex items-center gap-4 p-5 rounded-xl border border-gray-100 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_24px_rgba(58,95,191,0.1)] transition-shadow lg:mr-8">
+                  <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-brand-blue/10 flex items-center justify-center">
+                    <Layers className="w-5 h-5 text-brand-blue" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-sm" style={{ color: "#1A1A2E" }}>Multi-Channel Engine</h3>
+                    <p className="text-xs mt-0.5" style={{ color: "#6B6B8B" }}>SEO, PPC, Social & Content</p>
+                  </div>
+                </div>
+                <div className="hidden lg:flex items-center justify-start pl-8">
+                  <div className="w-3 h-3 rounded-full bg-brand-violet shadow-[0_0_8px_rgba(139,92,246,0.4)]" />
+                </div>
+              </div>
+            </FadeInSection>
+
+            {/* Row 4 - right card */}
+            <FadeInSection className="relative mb-8 lg:mb-0 lg:mt-6">
+              <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div className="hidden lg:flex items-center justify-end pr-8">
+                  <div className="w-3 h-3 rounded-full bg-brand-violet shadow-[0_0_8px_rgba(139,92,246,0.4)]" />
+                </div>
+                <div className="flex items-center gap-4 p-5 rounded-xl border border-gray-100 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_24px_rgba(58,95,191,0.1)] transition-shadow lg:ml-8">
+                  <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-brand-violet/10 flex items-center justify-center">
+                    <MonitorPlay className="w-5 h-5 text-brand-violet" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-sm" style={{ color: "#1A1A2E" }}>Ad Platforms</h3>
+                    <p className="text-xs mt-0.5" style={{ color: "#6B6B8B" }}>Google, Meta, LinkedIn, YouTube</p>
+                  </div>
+                </div>
+              </div>
+            </FadeInSection>
+
+            {/* Row 5 - left card */}
+            <FadeInSection className="relative lg:mt-6">
+              <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div className="flex items-center gap-4 p-5 rounded-xl border border-gray-100 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_24px_rgba(58,95,191,0.1)] transition-shadow lg:mr-8">
+                  <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-brand-blue/10 flex items-center justify-center">
+                    <TrendingUp className="w-5 h-5 text-brand-blue" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-sm" style={{ color: "#1A1A2E" }}>Revenue System</h3>
+                    <p className="text-xs mt-0.5" style={{ color: "#6B6B8B" }}>Predictable, scalable growth</p>
+                  </div>
+                </div>
+                <div className="hidden lg:flex items-center justify-start pl-8">
+                  <div className="w-3 h-3 rounded-full bg-brand-blue shadow-[0_0_8px_rgba(58,95,191,0.4)]" />
+                </div>
+              </div>
+            </FadeInSection>
+          </div>
         </div>
       </section>
 

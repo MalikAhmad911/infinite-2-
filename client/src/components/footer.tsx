@@ -39,8 +39,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <span className="font-display text-3xl tracking-wider text-white">INFINITE</span>
-              <span className="font-display text-3xl tracking-wider text-brand-blue">RANKERS</span>
+              <img src="/logo.webp" alt="Infinite Rankers logo" className="h-9 w-9" />
+              <span style={{ fontFamily: "'Inter', sans-serif" }} className="text-2xl font-bold tracking-tight text-white">INFINITE</span>
+              <span style={{ fontFamily: "'Inter', sans-serif" }} className="text-2xl font-bold tracking-tight text-brand-blue">RANKERS</span>
             </div>
             <p className="text-white/50 text-sm leading-relaxed max-w-sm mb-6">
               USA's premier digital marketing agency helping local businesses dominate search,
