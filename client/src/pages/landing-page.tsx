@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import {
   ArrowRight, CheckCircle2, ChevronDown, Phone, Award, Target,
   TrendingUp, Users, BarChart3, Search, Globe, MapPin, Star,
-  Zap, Shield, Building2, ExternalLink, ArrowUpRight
+  Shield, Building2, ExternalLink, ArrowUpRight
 } from "lucide-react";
 import SEO from "@/components/seo";
 import { getLandingPageBySlug } from "@/data/landing-pages-data";
@@ -192,21 +192,6 @@ export default function LandingPage() {
                   {para}
                 </p>
               ))}
-            </div>
-          </FadeIn>
-          <FadeIn delay={0.1}>
-            <div className="mt-8 p-6 rounded-xl bg-gradient-to-r from-brand-blue/5 to-brand-violet/5 border border-brand-blue/10">
-              <div className="flex items-start gap-3">
-                <Zap className="w-5 h-5 text-brand-blue mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="font-semibold text-sm mb-1" style={{ color: "#1A1A2E" }}>Keywords We Target</p>
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    {page.lsiKeywords.map((kw, i) => (
-                      <span key={i} className="px-3 py-1 rounded-full bg-white border border-brand-blue/10 text-xs text-brand-muted">{kw}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
             </div>
           </FadeIn>
         </div>
