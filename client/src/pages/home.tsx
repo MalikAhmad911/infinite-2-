@@ -374,7 +374,6 @@ export default function Home() {
         title="Infinite Rankers - USA's Premier Digital Marketing Agency | Google Partner"
         description="Infinite Rankers is a USA-based Google Partner digital marketing agency offering 100+ services. We help local businesses dominate search, generate leads, and scale revenue."
       />
-
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-mesh" />
         <div className="absolute inset-0 noise-bg" />
@@ -391,7 +390,7 @@ export default function Home() {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-blue/15 bg-white/60 backdrop-blur-sm mb-8"
               >
                 <div className="w-2 h-2 rounded-full bg-emerald-500" />
-                <span className="text-sm font-medium text-gray-600" style={{ fontFamily: "'Inter', sans-serif" }}>Google Partner Agency — USA</span>
+                <span className="text-sm font-medium text-gray-600" style={{ fontFamily: "'Inter', sans-serif" }}>Google Partner </span>
               </motion.div>
 
               <motion.h1
@@ -456,7 +455,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       <section className="py-10 lg:py-14 relative bg-white border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
@@ -481,7 +479,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section className="py-10 border-b border-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 mb-5">
           <p className="text-center text-[11px] uppercase tracking-[0.2em] text-gray-400 font-medium">
@@ -503,7 +500,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section className="py-20 lg:py-28 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -559,7 +555,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section className="py-20 lg:py-28 relative bg-gray-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -595,7 +590,6 @@ export default function Home() {
           </FadeInSection>
         </div>
       </section>
-
       <section className="py-20 lg:py-28 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -646,7 +640,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section className="py-20 lg:py-28 relative bg-gray-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -699,7 +692,6 @@ export default function Home() {
           </FadeInSection>
         </div>
       </section>
-
       <section className="py-20 lg:py-28 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -731,7 +723,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section className="py-20 lg:py-28 relative bg-gray-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -767,7 +758,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section className="py-20 lg:py-28 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -788,7 +778,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section className="py-20 lg:py-28 relative bg-gray-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -832,7 +821,6 @@ export default function Home() {
           </FadeInSection>
         </div>
       </section>
-
       <section className="py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/5 via-brand-violet/4 to-brand-blue-light/3" />
         <div className="absolute inset-0 noise-bg" />
