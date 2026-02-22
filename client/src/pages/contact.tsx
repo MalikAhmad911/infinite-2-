@@ -82,8 +82,9 @@ export default function Contact() {
       <SEO
         title="Contact Us - Get Your Free Marketing Audit | Infinite Rankers"
         description="Contact Infinite Rankers for a free digital marketing audit. Get expert recommendations to grow your business online. No obligations, response within 24 hours."
+        canonical="https://infiniterankers.io/contact"
       />
-      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden">
+      <section className="relative pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-44 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-30" />
         <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-brand-blue/5 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-brand-violet/5 rounded-full blur-[120px]" />
@@ -91,7 +92,7 @@ export default function Contact() {
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-blue/20 bg-brand-blue/5 text-brand-blue text-xs font-semibold uppercase tracking-widest mb-6"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-blue/20 bg-brand-blue/5 text-brand-blue text-xs font-semibold uppercase tracking-widest mb-4 sm:mb-6"
           >
             Contact Us
           </motion.span>
@@ -99,7 +100,8 @@ export default function Contact() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="font-heading font-bold text-4xl sm:text-5xl lg:text-7xl text-brand-dark tracking-tight"
+            className="font-heading font-bold text-brand-dark tracking-tight"
+            style={{ fontSize: "clamp(1.75rem, 5vw, 4.5rem)" }}
           >
             Let's Start Your
             <br />
@@ -109,7 +111,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="mt-6 text-lg text-brand-muted max-w-2xl mx-auto"
+            className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg text-brand-muted max-w-2xl mx-auto"
           >
             Get your free marketing audit and discover exactly how we can help your
             business grow online. No obligations, no pressure.
@@ -117,68 +119,68 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-32">
+      <section className="py-12 sm:py-16 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-16">
             <div className="lg:col-span-3">
               <FadeIn>
-                <div className="glass-card rounded-xl p-6 sm:p-8 lg:p-10">
-                  <h2 className="font-heading font-bold text-2xl text-brand-dark mb-2">Get Your Free Audit</h2>
-                  <p className="text-sm text-brand-muted mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
+                <div className="glass-card rounded-xl p-4 sm:p-6 lg:p-10">
+                  <h2 className="font-heading font-bold text-brand-dark mb-2" style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.5rem)" }}>Get Your Free Audit</h2>
+                  <p className="text-xs sm:text-sm text-brand-muted mb-6 sm:mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
 
-                  <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <form className="space-y-4 sm:space-y-6" onSubmit={(e) => e.preventDefault()}>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                       <div>
-                        <label className="text-sm text-brand-muted font-medium mb-2 block">First Name</label>
+                        <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">First Name</label>
                         <input
                           type="text"
                           data-testid="input-first-name"
                           placeholder="John"
-                          className="w-full px-4 py-3 rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm"
+                          className="w-full px-3 sm:px-4 py-3 min-h-[44px] rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm"
                         />
                       </div>
                       <div>
-                        <label className="text-sm text-brand-muted font-medium mb-2 block">Last Name</label>
+                        <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">Last Name</label>
                         <input
                           type="text"
                           data-testid="input-last-name"
                           placeholder="Doe"
-                          className="w-full px-4 py-3 rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm"
+                          className="w-full px-3 sm:px-4 py-3 min-h-[44px] rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm"
                         />
                       </div>
                     </div>
                     <div>
-                      <label className="text-sm text-brand-muted font-medium mb-2 block">Email Address</label>
+                      <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">Email Address</label>
                       <input
                         type="email"
                         data-testid="input-email"
                         placeholder="john@company.com"
-                        className="w-full px-4 py-3 rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm"
+                        className="w-full px-3 sm:px-4 py-3 min-h-[44px] rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm"
                       />
                     </div>
                     <div>
-                      <label className="text-sm text-brand-muted font-medium mb-2 block">Phone Number</label>
+                      <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">Phone Number</label>
                       <input
                         type="tel"
                         data-testid="input-phone"
                         placeholder="(555) 123-4567"
-                        className="w-full px-4 py-3 rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm"
+                        className="w-full px-3 sm:px-4 py-3 min-h-[44px] rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm"
                       />
                     </div>
                     <div>
-                      <label className="text-sm text-brand-muted font-medium mb-2 block">Website URL</label>
+                      <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">Website URL</label>
                       <input
                         type="url"
                         data-testid="input-website"
                         placeholder="https://yourwebsite.com"
-                        className="w-full px-4 py-3 rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm"
+                        className="w-full px-3 sm:px-4 py-3 min-h-[44px] rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm"
                       />
                     </div>
                     <div>
-                      <label className="text-sm text-brand-muted font-medium mb-2 block">What services are you interested in?</label>
+                      <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">What services are you interested in?</label>
                       <select
                         data-testid="select-service"
-                        className="w-full px-4 py-3 rounded-md bg-white border border-brand-blue/10 text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm appearance-none"
+                        className="w-full px-3 sm:px-4 py-3 min-h-[44px] rounded-md bg-white border border-brand-blue/10 text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm appearance-none"
                       >
                         <option value="">Select a service...</option>
                         <option value="seo">SEO Services</option>
@@ -192,18 +194,18 @@ export default function Contact() {
                       </select>
                     </div>
                     <div>
-                      <label className="text-sm text-brand-muted font-medium mb-2 block">Tell us about your goals</label>
+                      <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">Tell us about your goals</label>
                       <textarea
                         data-testid="textarea-message"
                         rows={4}
                         placeholder="What are your main marketing challenges and goals?"
-                        className="w-full px-4 py-3 rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm resize-none"
+                        className="w-full px-3 sm:px-4 py-3 rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm resize-none"
                       />
                     </div>
                     <button
                       type="submit"
                       data-testid="button-submit-form"
-                      className="relative w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-blue text-white font-semibold rounded-md cursor-pointer group overflow-hidden"
+                      className="relative w-full inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[44px] bg-brand-blue text-white font-semibold rounded-md cursor-pointer group overflow-hidden"
                     >
                       <span className="relative z-10">Get My Free Audit</span>
                       <Send className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -211,27 +213,27 @@ export default function Contact() {
                     </button>
                   </form>
 
-                  <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-brand-muted">
-                    <span className="flex items-center gap-1"><CheckCircle2 className="w-3 h-3 text-green-500" /> Free consultation</span>
-                    <span className="flex items-center gap-1"><CheckCircle2 className="w-3 h-3 text-green-500" /> No obligation</span>
-                    <span className="flex items-center gap-1"><CheckCircle2 className="w-3 h-3 text-green-500" /> Response within 24hrs</span>
+                  <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-2 sm:gap-4 text-xs text-brand-muted">
+                    <span className="flex items-center gap-1 min-h-[44px] sm:min-h-0"><CheckCircle2 className="w-3 h-3 text-green-500" /> Free consultation</span>
+                    <span className="flex items-center gap-1 min-h-[44px] sm:min-h-0"><CheckCircle2 className="w-3 h-3 text-green-500" /> No obligation</span>
+                    <span className="flex items-center gap-1 min-h-[44px] sm:min-h-0"><CheckCircle2 className="w-3 h-3 text-green-500" /> Response within 24hrs</span>
                   </div>
                 </div>
               </FadeIn>
             </div>
 
-            <div className="lg:col-span-2 space-y-4">
+            <div className="lg:col-span-2 space-y-3 sm:space-y-4">
               {contactMethods.map((method, i) => (
                 <FadeIn key={method.title} delay={i * 0.08}>
-                  <div className="glass-card glass-card-hover rounded-xl p-6 transition-all duration-300">
-                    <div className="flex items-start gap-4">
+                  <div className="glass-card glass-card-hover rounded-xl p-4 sm:p-5 lg:p-6 transition-all duration-300">
+                    <div className="flex items-start gap-3 sm:gap-4">
                       <div className="w-10 h-10 rounded-md bg-brand-blue/10 flex items-center justify-center flex-shrink-0">
                         <method.icon className="w-5 h-5 text-brand-blue" />
                       </div>
-                      <div>
+                      <div className="min-w-0">
                         <h3 className="font-heading font-semibold text-brand-dark text-sm">{method.title}</h3>
                         <p className="text-xs text-brand-muted mt-0.5">{method.desc}</p>
-                        <p className="text-sm text-brand-dark-secondary mt-2 font-medium">{method.value}</p>
+                        <p className="text-sm text-brand-dark-secondary mt-2 font-medium break-words">{method.value}</p>
                       </div>
                     </div>
                   </div>
@@ -239,8 +241,8 @@ export default function Contact() {
               ))}
 
               <FadeIn delay={0.4}>
-                <div className="glass-card rounded-xl p-6 mt-6">
-                  <div className="flex items-center gap-2 mb-3">
+                <div className="glass-card rounded-xl p-4 sm:p-5 lg:p-6 mt-4 sm:mt-6">
+                  <div className="flex items-center gap-2 mb-2 sm:mb-3">
                     <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
                     <span className="text-sm text-brand-muted font-medium">Google Partner</span>
                   </div>
@@ -255,19 +257,19 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-32 bg-gradient-section">
+      <section className="py-12 sm:py-16 lg:py-32 bg-gradient-section">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="FAQs"
             title="Frequently Asked Questions"
             subtitle="Got questions? We've got answers."
           />
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {faqs.map((faq, i) => (
               <FadeIn key={i} delay={i * 0.05}>
-                <div className="glass-card rounded-xl p-6">
-                  <h3 className="font-heading font-semibold text-brand-dark mb-3">{faq.q}</h3>
-                  <p className="text-sm text-brand-muted leading-relaxed">{faq.a}</p>
+                <div className="glass-card rounded-xl p-4 sm:p-5 lg:p-6">
+                  <h3 className="font-heading font-semibold text-brand-dark mb-2 sm:mb-3" style={{ fontSize: "clamp(0.875rem, 1.5vw, 1rem)" }}>{faq.q}</h3>
+                  <p className="text-xs sm:text-sm text-brand-muted leading-relaxed">{faq.a}</p>
                 </div>
               </FadeIn>
             ))}

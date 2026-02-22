@@ -103,8 +103,9 @@ export default function Results() {
       <SEO
         title="Case Studies & Results - Proven Digital Marketing Success | Infinite Rankers"
         description="See real results from our digital marketing campaigns. Explore case studies showing 340% revenue growth, 520% traffic increases, and more for businesses across industries."
+        canonical="https://infiniterankers.io/results"
       />
-      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden">
+      <section className="relative pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-44 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-30" />
         <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-brand-blue/5 rounded-full blur-[120px] animate-blob-1" />
         <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-brand-violet/5 rounded-full blur-[120px]" />
@@ -112,7 +113,7 @@ export default function Results() {
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-blue/20 bg-brand-blue/5 text-brand-blue text-xs font-semibold uppercase tracking-widest mb-6"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-blue/20 bg-brand-blue/5 text-brand-blue text-xs font-semibold uppercase tracking-widest mb-4 sm:mb-6"
           >
             Case Studies
           </motion.span>
@@ -120,7 +121,8 @@ export default function Results() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="font-heading font-bold text-4xl sm:text-5xl lg:text-7xl text-brand-dark tracking-tight"
+            className="font-heading font-bold text-brand-dark tracking-tight"
+            style={{ fontSize: "clamp(1.75rem, 5vw, 4.5rem)" }}
           >
             Real Businesses.
             <br />
@@ -130,7 +132,7 @@ export default function Results() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="mt-6 text-lg text-brand-muted max-w-2xl mx-auto"
+            className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg text-brand-muted max-w-2xl mx-auto"
           >
             See how we've helped businesses across diverse industries achieve extraordinary
             growth through data-driven digital marketing strategies.
@@ -138,9 +140,9 @@ export default function Results() {
         </div>
       </section>
 
-      <section className="py-16 border-y border-brand-blue/10">
+      <section className="py-12 sm:py-16 border-y border-brand-blue/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-8">
             <AnimatedCounter end={500} suffix="+" label="Clients Served" />
             <AnimatedCounter end={50} prefix="$" suffix="M+" label="Revenue Generated" />
             <AnimatedCounter end={340} suffix="%" label="Avg. Traffic Growth" />
@@ -149,22 +151,22 @@ export default function Results() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-32">
+      <section className="py-12 sm:py-16 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-8">
+          <div className="space-y-4 sm:space-y-6 lg:space-y-8">
             {caseStudies.map((study, i) => (
               <FadeIn key={study.title} delay={0.05}>
-                <div className="glass-card rounded-xl p-6 sm:p-8 lg:p-10 hover:border-brand-blue/20 transition-all duration-500">
-                  <div className="flex flex-col lg:flex-row gap-8">
+                <div className="glass-card rounded-xl p-4 sm:p-6 lg:p-10 hover:border-brand-blue/20 transition-all duration-500">
+                  <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8">
                     <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-4">
+                      <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
                         <span className="px-3 py-1 rounded-full bg-brand-blue/10 text-brand-blue text-xs font-semibold uppercase tracking-wider">
                           {study.industry}
                         </span>
                         <span className="text-xs text-brand-muted">{study.timeframe}</span>
                       </div>
-                      <h3 className="font-heading font-bold text-xl sm:text-2xl text-brand-dark mb-3">{study.title}</h3>
-                      <div className="space-y-3 text-sm">
+                      <h3 className="font-heading font-bold text-brand-dark mb-2 sm:mb-3" style={{ fontSize: "clamp(1.125rem, 2vw, 1.5rem)" }}>{study.title}</h3>
+                      <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm">
                         <div>
                           <span className="text-brand-blue font-semibold">Challenge:</span>
                           <span className="text-brand-muted ml-2">{study.challenge}</span>
@@ -175,12 +177,12 @@ export default function Results() {
                         </div>
                       </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-4 lg:w-80 flex-shrink-0">
+                    <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4 lg:w-80 flex-shrink-0">
                       {study.results.map((r) => (
-                        <div key={r.label} className="bg-gray-50 rounded-md p-4 text-center">
-                          <r.icon className="w-5 h-5 text-brand-blue mx-auto mb-2" />
-                          <div className="font-stat text-2xl text-brand-dark tracking-wider">{r.value}</div>
-                          <div className="text-xs text-brand-muted mt-1">{r.label}</div>
+                        <div key={r.label} className="bg-gray-50 rounded-md p-3 sm:p-4 text-center">
+                          <r.icon className="w-4 h-4 sm:w-5 sm:h-5 text-brand-blue mx-auto mb-1 sm:mb-2" />
+                          <div className="font-stat text-brand-dark tracking-wider" style={{ fontSize: "clamp(1.125rem, 2vw, 1.5rem)" }}>{r.value}</div>
+                          <div className="text-[10px] sm:text-xs text-brand-muted mt-1">{r.label}</div>
                         </div>
                       ))}
                     </div>
@@ -192,27 +194,27 @@ export default function Results() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-32 relative overflow-hidden noise-bg">
+      <section className="py-12 sm:py-16 lg:py-32 relative overflow-hidden noise-bg">
         <div className="absolute inset-0 bg-gradient-cta" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-brand-blue/10 rounded-full blur-[150px]" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-brand-dark tracking-tight">
+            <h2 className="font-heading font-bold text-brand-dark tracking-tight" style={{ fontSize: "clamp(1.5rem, 4vw, 3rem)" }}>
               Want Results Like These?
             </h2>
-            <p className="mt-4 text-brand-muted text-lg max-w-xl mx-auto">
+            <p className="mt-3 sm:mt-4 text-brand-muted text-sm sm:text-base lg:text-lg max-w-xl mx-auto">
               Let's discuss how we can create a custom strategy that delivers similar results for your business.
             </p>
-            <div className="mt-8">
+            <div className="mt-6 sm:mt-8">
               <Link href="/contact">
-                <span className="relative inline-flex items-center gap-2 px-8 py-4 bg-brand-blue text-white font-semibold rounded-md cursor-pointer group overflow-hidden">
+                <span className="relative inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 min-h-[44px] bg-brand-blue text-white font-semibold rounded-md cursor-pointer group overflow-hidden">
                   <span className="relative z-10">Start Your Success Story</span>
                   <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
                 </span>
               </Link>
             </div>
-            <a href="https://infiniterankers.io" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block text-sm text-brand-muted hover:text-brand-blue transition-colors" data-testid="link-results-site">View more on infiniterankers.io →</a>
+            <a href="https://infiniterankers.io" target="_blank" rel="noopener noreferrer" className="mt-4 sm:mt-6 inline-block text-sm text-brand-muted hover:text-brand-blue transition-colors min-h-[44px] leading-[44px]" data-testid="link-results-site">View more on infiniterankers.io →</a>
           </FadeIn>
         </div>
       </section>

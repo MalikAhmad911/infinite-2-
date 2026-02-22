@@ -347,32 +347,32 @@ function InfiniteTestimonialCarousel() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
       <div
         ref={scrollRef}
-        className="flex gap-5 overflow-hidden"
+        className="flex gap-3 sm:gap-4 lg:gap-5 overflow-hidden"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {allTestimonials.map((t, i) => (
-          <div key={i} className="flex-shrink-0 w-[380px]">
-            <div className="bg-white rounded-xl p-6 h-full border border-gray-100 transition-all duration-300 hover:shadow-[0_12px_40px_rgba(139,92,246,0.08)] hover:border-brand-violet/15">
-              <div className="flex items-center gap-0.5 mb-4">
+          <div key={i} className="flex-shrink-0 w-[280px] sm:w-[340px] lg:w-[380px]">
+            <div className="bg-white rounded-xl p-4 sm:p-5 lg:p-6 h-full border border-gray-100 transition-all duration-300 hover:shadow-[0_12px_40px_rgba(139,92,246,0.08)] hover:border-brand-violet/15">
+              <div className="flex items-center gap-0.5 mb-3 sm:mb-4">
                 {Array.from({ length: t.rating }).map((_, s) => (
-                  <Star key={s} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  <Star key={s} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <p className="text-sm leading-relaxed mb-6" style={{ color: "#4A4A6A" }}>
+              <p className="text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6" style={{ color: "#4A4A6A" }}>
                 "{t.quote}"
               </p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-blue to-brand-violet flex items-center justify-center text-white text-sm font-semibold">
+              <div className="flex items-center gap-2.5 sm:gap-3">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-brand-blue to-brand-violet flex items-center justify-center text-white text-xs sm:text-sm font-semibold">
                   {t.name.charAt(0)}
                 </div>
                 <div>
-                  <div className="font-semibold text-sm" style={{ color: "#1A1A2E" }}>{t.name}</div>
-                  <div className="text-xs text-gray-400">{t.business}</div>
+                  <div className="font-semibold text-xs sm:text-sm" style={{ color: "#1A1A2E" }}>{t.name}</div>
+                  <div className="text-[10px] sm:text-xs text-gray-400">{t.business}</div>
                 </div>
               </div>
             </div>
@@ -389,14 +389,14 @@ export default function Home() {
       <SEO
         title="Infinite Rankers — #1 Digital Marketing Agency USA | Google Partner"
         description="Infinite Rankers is a USA-based Google Partner digital marketing agency offering 100+ services including SEO, PPC, social media, and web design. 500+ businesses trust us to generate leads and scale revenue."
+        canonical="https://infiniterankers.io/"
         schema={{
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
           "name": "Infinite Rankers",
-          "description": "USA-based Google Partner digital marketing agency offering 100+ services",
           "url": "https://infiniterankers.io",
-          "telephone": "+1-703-415-9373",
-          "email": "contact@infiniterankers.io",
+          "logo": "https://infiniterankers.io/logo.webp",
+          "description": "USA's Premier Digital Marketing Agency. Google Partner. SEO, PPC, Social Media, Web Design & 100+ services.",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "203 N Caroline Pl",
@@ -405,14 +405,61 @@ export default function Home() {
             "postalCode": "19904",
             "addressCountry": "US"
           },
+          "telephone": "+17034159373",
+          "email": "contact@infiniterankers.io",
+          "priceRange": "$$",
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
-            "reviewCount": "500",
+            "reviewCount": "127",
             "bestRating": "5"
           },
-          "areaServed": "United States",
-          "priceRange": "$$"
+          "sameAs": ["https://www.google.com/partners"],
+          "areaServed": {
+            "@type": "Country",
+            "name": "United States"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Digital Marketing Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "SEO Services"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "PPC Advertising"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Social Media Marketing"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Web Design"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Content Marketing"
+                }
+              }
+            ]
+          }
         }}
       />
 
@@ -420,20 +467,20 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-mesh" />
         <div className="absolute inset-0 noise-bg" />
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-brand-blue/8 rounded-full blur-[150px] animate-blob-1" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-brand-violet/8 rounded-full blur-[130px] animate-blob-2" />
+        <div className="absolute top-1/4 left-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-brand-blue/8 rounded-full blur-[150px] animate-blob-1" />
+        <div className="absolute bottom-1/4 right-1/4 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-brand-violet/8 rounded-full blur-[130px] animate-blob-2" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 sm:py-36 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
             <div className="lg:col-span-7">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-blue/15 bg-white/60 backdrop-blur-sm mb-8"
+                className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-brand-blue/15 bg-white/60 backdrop-blur-sm mb-6 sm:mb-8"
               >
                 <Award className="w-4 h-4 text-brand-blue" />
-                <span className="text-sm font-medium" style={{ color: "#4A4A6A" }}>Google Partner Agency — USA</span>
+                <span className="text-xs sm:text-sm font-medium" style={{ color: "#4A4A6A" }}>Google Partner Agency — USA</span>
               </motion.div>
 
               <motion.h1
@@ -441,7 +488,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.15 }}
                 className="leading-[1.08] tracking-tight"
-                style={{ fontSize: "clamp(36px, 5.5vw, 68px)", fontWeight: 700, fontFamily: "'Inter', sans-serif" }}
+                style={{ fontSize: "clamp(28px, 5.5vw, 68px)", fontWeight: 700, fontFamily: "'Inter', sans-serif" }}
               >
                 <span style={{ color: "#1A1A2E" }}>Turn Local Search Clicks</span>
                 <br />
@@ -454,8 +501,8 @@ export default function Home() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="mt-6 max-w-xl leading-relaxed"
-                style={{ fontSize: "clamp(15px, 1.1vw, 18px)", color: "#4A4A6A" }}
+                className="mt-4 sm:mt-6 max-w-xl leading-relaxed"
+                style={{ fontSize: "clamp(14px, 1.1vw, 18px)", color: "#4A4A6A" }}
               >
                 Infinite Rankers helps local businesses across the USA grow qualified leads and revenue through 100+ digital marketing services. We don't rank you for vanity metrics — we rank you for revenue.
               </motion.p>
@@ -464,17 +511,17 @@ export default function Home() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.45 }}
-                className="mt-8 flex flex-col sm:flex-row items-start gap-4"
+                className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-start gap-3 sm:gap-4"
               >
                 <Link href="/contact">
-                  <span className="relative inline-flex items-center gap-2 px-7 py-3.5 bg-brand-blue text-white font-semibold rounded-lg group overflow-hidden shadow-[0_4px_20px_rgba(58,95,191,0.3)] hover:shadow-[0_6px_30px_rgba(58,95,191,0.4)] transition-shadow">
+                  <span className="relative inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-7 py-3.5 min-h-[44px] bg-brand-blue text-white font-semibold rounded-lg group overflow-hidden shadow-[0_4px_20px_rgba(58,95,191,0.3)] hover:shadow-[0_6px_30px_rgba(58,95,191,0.4)] transition-shadow text-sm sm:text-base">
                     <span className="relative z-10">Schedule Free Strategy Call</span>
                     <ArrowRight className="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent animate-shimmer" />
                   </span>
                 </Link>
                 <Link href="/results">
-                  <span className="inline-flex items-center gap-2 px-7 py-3.5 border border-gray-200 font-semibold rounded-lg hover:border-brand-blue/30 hover:text-brand-blue transition-all" style={{ color: "#4A4A6A" }}>
+                  <span className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-7 py-3.5 min-h-[44px] border border-gray-200 font-semibold rounded-lg hover:border-brand-blue/30 hover:text-brand-blue transition-all text-sm sm:text-base" style={{ color: "#4A4A6A" }}>
                     See Case Studies
                     <Play className="w-4 h-4" />
                   </span>
@@ -485,16 +532,16 @@ export default function Home() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
-                className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2"
+                className="mt-6 sm:mt-8 flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-2"
               >
                 {[
                   "500+ Businesses Trusted Us",
                   "$50M+ Revenue Generated",
                   "98% Client Retention",
                 ].map((item) => (
-                  <div key={item} className="flex items-center gap-2">
+                  <div key={item} className="flex items-center gap-2 min-h-[44px]">
                     <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                    <span className="text-sm font-medium" style={{ color: "#4A4A6A" }}>{item}</span>
+                    <span className="text-xs sm:text-sm font-medium" style={{ color: "#4A4A6A" }}>{item}</span>
                   </div>
                 ))}
               </motion.div>
@@ -506,7 +553,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2">
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
@@ -567,7 +614,7 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section className="py-20 lg:py-28 relative bg-gray-50/50">
+      <section className="py-12 sm:py-16 lg:py-28 relative bg-gray-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Our Services"
@@ -575,17 +622,17 @@ export default function Home() {
             subtitle="100+ Digital Marketing Services. One Expert Team. Every channel, every strategy, every result — under one roof."
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
             {services.map((service, i) => (
               <FadeInSection key={service.title} delay={i * 0.04}>
-                <div className="bg-white rounded-xl p-6 h-full border border-gray-100 group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(58,95,191,0.1)] hover:border-brand-blue/15">
-                  <div className="w-11 h-11 rounded-lg bg-brand-blue/8 flex items-center justify-center mb-4 group-hover:bg-brand-blue/12 transition-colors">
+                <div className="bg-white rounded-xl p-4 sm:p-5 lg:p-6 h-full border border-gray-100 group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(58,95,191,0.1)] hover:border-brand-blue/15">
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-brand-blue/8 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-brand-blue/12 transition-colors">
                     <service.icon className="w-5 h-5 text-brand-blue" />
                   </div>
-                  <h3 className="font-semibold mb-2" style={{ color: "#1A1A2E" }}>{service.title}</h3>
-                  <p className="text-sm leading-relaxed mb-3" style={{ color: "#4A4A6A" }}>{service.desc}</p>
+                  <h3 className="font-semibold text-sm sm:text-base mb-2" style={{ color: "#1A1A2E" }}>{service.title}</h3>
+                  <p className="text-xs sm:text-sm leading-relaxed mb-3" style={{ color: "#4A4A6A" }}>{service.desc}</p>
                   <p className="text-xs font-medium" style={{ color: "#6B6B8B" }}>{service.example}</p>
-                  <div className="flex items-center gap-1 mt-4 text-brand-blue text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="flex items-center gap-1 mt-3 sm:mt-4 text-brand-blue text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity min-h-[44px]">
                     Learn More <ArrowRight className="w-3 h-3" />
                   </div>
                 </div>
@@ -593,9 +640,9 @@ export default function Home() {
             ))}
           </div>
 
-          <FadeInSection className="text-center mt-10">
+          <FadeInSection className="text-center mt-8 sm:mt-10">
             <Link href="/services">
-              <span className="inline-flex items-center gap-2 px-7 py-3.5 bg-brand-blue text-white font-semibold rounded-lg group overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <span className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-7 py-3.5 min-h-[44px] bg-brand-blue text-white font-semibold rounded-lg group overflow-hidden shadow-sm hover:shadow-md transition-shadow text-sm sm:text-base">
                 View All 100+ Services
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
@@ -605,10 +652,10 @@ export default function Home() {
       </section>
 
       {/* GROWTH INFRASTRUCTURE */}
-      <section className="py-20 lg:py-28 relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-white via-brand-blue/[0.02] to-white" />
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeInSection className="text-center mb-16">
+          <FadeInSection className="text-center mb-10 sm:mb-12 lg:mb-16">
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-brand-violet mb-3 block">
               Full-Service Marketing Engine
             </span>
@@ -625,8 +672,8 @@ export default function Home() {
 
             <FadeInSection className="relative mb-8 lg:mb-0">
               <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-                <div className="flex items-center gap-4 p-5 rounded-xl border border-gray-100 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_24px_rgba(58,95,191,0.1)] transition-shadow lg:mr-8">
-                  <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-brand-blue/10 flex items-center justify-center">
+                <div className="flex items-center gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl border border-gray-100 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_24px_rgba(58,95,191,0.1)] transition-shadow lg:mr-8">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-brand-blue/10 flex items-center justify-center">
                     <Settings className="w-5 h-5 text-brand-blue" />
                   </div>
                   <div>
@@ -645,8 +692,8 @@ export default function Home() {
                 <div className="hidden lg:flex items-center justify-end pr-8">
                   <div className="w-3 h-3 rounded-full bg-brand-blue shadow-[0_0_8px_rgba(58,95,191,0.4)]" />
                 </div>
-                <div className="flex items-center gap-4 p-5 rounded-xl border border-gray-100 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_24px_rgba(58,95,191,0.1)] transition-shadow lg:ml-8">
-                  <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-brand-violet/10 flex items-center justify-center">
+                <div className="flex items-center gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl border border-gray-100 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_24px_rgba(58,95,191,0.1)] transition-shadow lg:ml-8">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-brand-violet/10 flex items-center justify-center">
                     <Database className="w-5 h-5 text-brand-violet" />
                   </div>
                   <div>
@@ -659,8 +706,8 @@ export default function Home() {
 
             <FadeInSection className="relative mb-8 lg:mb-0 lg:mt-6">
               <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-                <div className="flex items-center gap-4 p-5 rounded-xl border border-gray-100 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_24px_rgba(58,95,191,0.1)] transition-shadow lg:mr-8">
-                  <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-brand-blue/10 flex items-center justify-center">
+                <div className="flex items-center gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl border border-gray-100 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_24px_rgba(58,95,191,0.1)] transition-shadow lg:mr-8">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-brand-blue/10 flex items-center justify-center">
                     <Layers className="w-5 h-5 text-brand-blue" />
                   </div>
                   <div>
@@ -679,8 +726,8 @@ export default function Home() {
                 <div className="hidden lg:flex items-center justify-end pr-8">
                   <div className="w-3 h-3 rounded-full bg-brand-violet shadow-[0_0_8px_rgba(139,92,246,0.4)]" />
                 </div>
-                <div className="flex items-center gap-4 p-5 rounded-xl border border-gray-100 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_24px_rgba(58,95,191,0.1)] transition-shadow lg:ml-8">
-                  <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-brand-violet/10 flex items-center justify-center">
+                <div className="flex items-center gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl border border-gray-100 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_24px_rgba(58,95,191,0.1)] transition-shadow lg:ml-8">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-brand-violet/10 flex items-center justify-center">
                     <MonitorPlay className="w-5 h-5 text-brand-violet" />
                   </div>
                   <div>
@@ -693,8 +740,8 @@ export default function Home() {
 
             <FadeInSection className="relative lg:mt-6">
               <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-                <div className="flex items-center gap-4 p-5 rounded-xl border border-gray-100 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_24px_rgba(58,95,191,0.1)] transition-shadow lg:mr-8">
-                  <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-brand-blue/10 flex items-center justify-center">
+                <div className="flex items-center gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl border border-gray-100 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_24px_rgba(58,95,191,0.1)] transition-shadow lg:mr-8">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-brand-blue/10 flex items-center justify-center">
                     <TrendingUp className="w-5 h-5 text-brand-blue" />
                   </div>
                   <div>
@@ -712,26 +759,26 @@ export default function Home() {
       </section>
 
       {/* WHY CHOOSE US */}
-      <section className="py-20 lg:py-28 relative">
+      <section className="py-12 sm:py-16 lg:py-28 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-start">
             <FadeInSection>
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-violet/15 bg-brand-violet/5 text-brand-violet text-xs font-semibold uppercase tracking-widest mb-6">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-violet/15 bg-brand-violet/5 text-brand-violet text-xs font-semibold uppercase tracking-widest mb-4 sm:mb-6">
                 Why Choose Us
               </span>
-              <h2 className="font-bold tracking-tight leading-tight" style={{ fontSize: "clamp(28px, 3.5vw, 44px)", color: "#1A1A2E" }}>
+              <h2 className="font-bold tracking-tight leading-tight" style={{ fontSize: "clamp(24px, 3.5vw, 44px)", color: "#1A1A2E" }}>
                 Why Infinite Rankers
                 <br />
                 <span className="text-gradient-violet">Stands Apart</span>
               </h2>
-              <p className="mt-5 leading-relaxed" style={{ color: "#4A4A6A" }}>
+              <p className="mt-3 sm:mt-5 text-sm sm:text-base leading-relaxed" style={{ color: "#4A4A6A" }}>
                 We're not just another agency. We're your dedicated growth partner with
                 a proven track record of delivering measurable results that impact your bottom line.
               </p>
             </FadeInSection>
 
             <FadeInSection delay={0.1}>
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 {[
                   { icon: Award, title: "Google Partner Certified", desc: "We're officially verified by Google for PPC excellence. Your ads are managed by certified experts with access to exclusive tools and beta features." },
                   { icon: TrendingUp, title: "Revenue-First Strategy", desc: "We don't optimize for vanity metrics. Every campaign is designed to generate qualified leads and actual sales that grow your bottom line." },
@@ -742,7 +789,7 @@ export default function Home() {
                 ].map((feature, i) => (
                   <motion.div
                     key={feature.title}
-                    className="flex gap-4 p-4 rounded-xl bg-white border border-gray-100 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(139,92,246,0.08)] hover:border-brand-violet/15"
+                    className="flex gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-white border border-gray-100 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(139,92,246,0.08)] hover:border-brand-violet/15"
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
@@ -764,7 +811,7 @@ export default function Home() {
       </section>
 
       {/* CASE STUDIES */}
-      <section className="py-20 lg:py-28 relative bg-gray-50/50">
+      <section className="py-12 sm:py-16 lg:py-28 relative bg-gray-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Case Studies"
@@ -772,26 +819,26 @@ export default function Home() {
             subtitle="See how we've helped businesses across industries achieve extraordinary growth with proven digital marketing strategies."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {caseStudies.map((study, i) => (
               <FadeInSection key={study.industry} delay={i * 0.1}>
                 <div className="bg-white rounded-xl overflow-hidden h-full border border-gray-100 group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_50px_rgba(58,95,191,0.1)]">
                   <div className="h-1.5 bg-gradient-to-r from-brand-blue to-brand-violet" />
-                  <div className="p-6 sm:p-8">
+                  <div className="p-4 sm:p-6 lg:p-8">
                     <div className="flex items-center gap-3 mb-3">
                       <span className="px-3 py-1 rounded-full bg-brand-blue/8 text-brand-blue text-xs font-semibold uppercase tracking-wider">
                         {study.industry}
                       </span>
                     </div>
                     <h3 className="font-semibold text-sm mb-1" style={{ color: "#1A1A2E" }}>{study.business}</h3>
-                    <p className="text-sm mb-2" style={{ color: "#6B6B8B" }}>{study.challenge}</p>
-                    <p className="text-xs font-medium text-brand-blue mb-5">Solution: {study.solution}</p>
+                    <p className="text-xs sm:text-sm mb-2" style={{ color: "#6B6B8B" }}>{study.challenge}</p>
+                    <p className="text-xs font-medium text-brand-blue mb-4 sm:mb-5">Solution: {study.solution}</p>
 
-                    <div className="space-y-4 mb-6">
+                    <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
                       {study.metrics.map((metric) => (
                         <div key={metric.label} className="flex items-center justify-between">
                           <span className="text-xs font-medium" style={{ color: "#6B6B8B" }}>{metric.label}</span>
-                          <span className="text-2xl font-bold" style={{ color: "#1A1A2E" }}>
+                          <span className="text-xl sm:text-2xl font-bold" style={{ color: "#1A1A2E" }}>
                             <AnimatedNumber
                               value={metric.value}
                               prefix={metric.prefix}
@@ -803,7 +850,7 @@ export default function Home() {
                       ))}
                     </div>
 
-                    <div className="pt-4 border-t border-gray-100">
+                    <div className="pt-3 sm:pt-4 border-t border-gray-100">
                       <p className="text-xs italic leading-relaxed mb-2" style={{ color: "#4A4A6A" }}>"{study.quote}"</p>
                       <p className="text-xs font-semibold" style={{ color: "#1A1A2E" }}>— {study.author}, {study.role}</p>
                     </div>
@@ -813,9 +860,9 @@ export default function Home() {
             ))}
           </div>
 
-          <FadeInSection className="text-center mt-10">
+          <FadeInSection className="text-center mt-8 sm:mt-10">
             <Link href="/results">
-              <span className="inline-flex items-center gap-2 px-7 py-3 border border-gray-200 font-semibold rounded-lg hover:border-brand-blue/30 hover:text-brand-blue transition-colors" style={{ color: "#4A4A6A" }}>
+              <span className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-7 py-3 min-h-[44px] border border-gray-200 font-semibold rounded-lg hover:border-brand-blue/30 hover:text-brand-blue transition-colors text-sm sm:text-base" style={{ color: "#4A4A6A" }}>
                 View All Case Studies
                 <ArrowRight className="w-4 h-4" />
               </span>
@@ -825,7 +872,7 @@ export default function Home() {
       </section>
 
       {/* PROCESS */}
-      <section className="py-20 lg:py-28 relative">
+      <section className="py-12 sm:py-16 lg:py-28 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Our Process"
@@ -835,16 +882,17 @@ export default function Home() {
 
           <div className="relative">
             <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-blue/15 to-transparent -translate-y-1/2" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="absolute lg:hidden left-6 top-0 bottom-0 w-px bg-gradient-to-b from-brand-blue/20 via-brand-violet/30 to-brand-blue/20 sm:hidden" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
               {processSteps.map((step, i) => (
                 <FadeInSection key={step.num} delay={i * 0.12}>
-                  <div className="relative bg-white rounded-xl p-6 h-full text-center border border-gray-100 group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(58,95,191,0.08)]">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-brand-blue to-brand-violet text-white font-stat text-lg font-bold flex items-center justify-center mx-auto mb-4">
+                  <div className="relative bg-white rounded-xl p-4 sm:p-5 lg:p-6 h-full text-center sm:text-center border border-gray-100 group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(58,95,191,0.08)]">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-brand-blue to-brand-violet text-white font-stat text-base sm:text-lg font-bold flex items-center justify-center mx-auto mb-3 sm:mb-4">
                       {step.num}
                     </div>
-                    <span className="inline-block px-2 py-0.5 rounded-full bg-brand-blue/8 text-brand-blue text-[10px] font-semibold uppercase tracking-wider mb-3">{step.timeline}</span>
-                    <h3 className="font-semibold mb-2" style={{ color: "#1A1A2E" }}>{step.title}</h3>
-                    <p className="text-sm leading-relaxed" style={{ color: "#4A4A6A" }}>{step.desc}</p>
+                    <span className="inline-block px-2 py-0.5 rounded-full bg-brand-blue/8 text-brand-blue text-[10px] font-semibold uppercase tracking-wider mb-2 sm:mb-3">{step.timeline}</span>
+                    <h3 className="font-semibold text-sm sm:text-base mb-2" style={{ color: "#1A1A2E" }}>{step.title}</h3>
+                    <p className="text-xs sm:text-sm leading-relaxed" style={{ color: "#4A4A6A" }}>{step.desc}</p>
                     {i < processSteps.length - 1 && (
                       <div className="hidden lg:flex absolute top-1/2 -right-3 -translate-y-1/2 text-gray-300">
                         <ChevronRight className="w-5 h-5" />
@@ -859,7 +907,7 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-20 lg:py-28 relative bg-gray-50/50">
+      <section className="py-12 sm:py-16 lg:py-28 relative bg-gray-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Testimonials"
@@ -870,29 +918,29 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-4">
           <InfiniteTestimonialCarousel />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-          <div className="flex items-center justify-center gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
             <div className="flex items-center gap-2">
               <div className="flex -space-x-2">
                 {["J", "M", "S", "D"].map((letter, i) => (
-                  <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-brand-blue to-brand-violet flex items-center justify-center text-white text-xs font-semibold border-2 border-white">
+                  <div key={i} className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-brand-blue to-brand-violet flex items-center justify-center text-white text-xs font-semibold border-2 border-white">
                     {letter}
                   </div>
                 ))}
               </div>
-              <span className="text-sm font-medium" style={{ color: "#4A4A6A" }}>500+ happy clients</span>
+              <span className="text-xs sm:text-sm font-medium" style={{ color: "#4A4A6A" }}>500+ happy clients</span>
             </div>
             <div className="flex items-center gap-1.5">
-              {[1,2,3,4,5].map(s => <Star key={s} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
-              <span className="text-sm font-semibold ml-1" style={{ color: "#1A1A2E" }}>4.9/5</span>
-              <span className="text-sm" style={{ color: "#6B6B8B" }}>average rating</span>
+              {[1,2,3,4,5].map(s => <Star key={s} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-amber-400 text-amber-400" />)}
+              <span className="text-xs sm:text-sm font-semibold ml-1" style={{ color: "#1A1A2E" }}>4.9/5</span>
+              <span className="text-xs sm:text-sm" style={{ color: "#6B6B8B" }}>average rating</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* INDUSTRIES */}
-      <section className="py-20 lg:py-28 relative">
+      <section className="py-12 sm:py-16 lg:py-28 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Industries"
@@ -900,11 +948,11 @@ export default function Home() {
             subtitle="From law firms to restaurants, we understand your market and deliver results tailored to your industry."
           />
 
-          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4">
             {industries.map((ind, i) => (
               <FadeInSection key={ind.label} delay={i * 0.04}>
-                <div className="bg-white rounded-xl p-5 text-center border border-gray-100 group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(58,95,191,0.08)] hover:border-brand-blue/20">
-                  <ind.icon className="w-7 h-7 text-brand-blue mx-auto mb-2.5 group-hover:text-brand-violet group-hover:scale-110 transition-all" />
+                <div className="bg-white rounded-xl p-3 sm:p-4 lg:p-5 text-center border border-gray-100 group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(58,95,191,0.08)] hover:border-brand-blue/20 min-h-[44px]">
+                  <ind.icon className="w-6 h-6 sm:w-7 sm:h-7 text-brand-blue mx-auto mb-2 sm:mb-2.5 group-hover:text-brand-violet group-hover:scale-110 transition-all" />
                   <span className="text-xs sm:text-sm font-medium" style={{ color: "#4A4A6A" }}>{ind.label}</span>
                 </div>
               </FadeInSection>
@@ -914,7 +962,7 @@ export default function Home() {
       </section>
 
       {/* BLOG */}
-      <section className="py-20 lg:py-28 relative bg-gray-50/50">
+      <section className="py-12 sm:py-16 lg:py-28 relative bg-gray-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Blog"
@@ -922,40 +970,40 @@ export default function Home() {
             subtitle="Expert strategies and actionable tips to help your business grow online."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
             {blogPosts.map((post, i) => (
               <FadeInSection key={post.title} delay={i * 0.1}>
                 <div className="bg-white rounded-xl overflow-hidden border border-gray-100 group h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(58,95,191,0.08)]">
-                  <div className="h-48 relative overflow-hidden">
+                  <div className="h-40 sm:h-48 relative overflow-hidden">
                     <img
                       src={post.image}
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                    <div className="absolute bottom-4 left-4">
+                    <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4">
                       <span className="px-2.5 py-1 rounded-md bg-white/90 backdrop-blur-sm text-brand-blue text-xs font-semibold border border-brand-blue/10">
                         {post.category}
                       </span>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 text-xs mb-3" style={{ color: "#6B6B8B" }}>
+                  <div className="p-4 sm:p-6">
+                    <div className="flex items-center gap-2 text-xs mb-2 sm:mb-3" style={{ color: "#6B6B8B" }}>
                       <Clock className="w-3 h-3" /> {post.readTime}
                     </div>
-                    <h3 className="font-semibold text-base leading-snug group-hover:text-brand-blue transition-colors mb-2" style={{ color: "#1A1A2E" }}>
+                    <h3 className="font-semibold text-sm sm:text-base leading-snug group-hover:text-brand-blue transition-colors mb-2" style={{ color: "#1A1A2E" }}>
                       {post.title}
                     </h3>
-                    <p className="text-sm leading-relaxed" style={{ color: "#4A4A6A" }}>{post.excerpt}</p>
+                    <p className="text-xs sm:text-sm leading-relaxed" style={{ color: "#4A4A6A" }}>{post.excerpt}</p>
                   </div>
                 </div>
               </FadeInSection>
             ))}
           </div>
 
-          <FadeInSection className="text-center mt-10">
+          <FadeInSection className="text-center mt-8 sm:mt-10">
             <Link href="/blog">
-              <span className="inline-flex items-center gap-2 text-brand-blue font-semibold group text-sm">
+              <span className="inline-flex items-center gap-2 text-brand-blue font-semibold group text-sm min-h-[44px]">
                 View All Articles
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
@@ -965,35 +1013,35 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-28 relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/5 via-brand-violet/4 to-brand-blue-light/3" />
         <div className="absolute inset-0 noise-bg" />
-        <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-brand-blue/8 rounded-full blur-[150px] animate-blob-1" />
-        <div className="absolute bottom-1/3 right-1/4 w-[350px] h-[350px] bg-brand-violet/8 rounded-full blur-[130px] animate-blob-2" />
+        <div className="absolute top-1/3 left-1/4 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-brand-blue/8 rounded-full blur-[150px] animate-blob-1" />
+        <div className="absolute bottom-1/3 right-1/4 w-[200px] sm:w-[350px] h-[200px] sm:h-[350px] bg-brand-violet/8 rounded-full blur-[130px] animate-blob-2" />
 
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeInSection>
-            <h2 className="font-bold tracking-tight" style={{ fontSize: "clamp(28px, 3.5vw, 48px)", color: "#1A1A2E" }}>
+            <h2 className="font-bold tracking-tight" style={{ fontSize: "clamp(24px, 3.5vw, 48px)", color: "#1A1A2E" }}>
               Ready to Dominate Your Market?
             </h2>
-            <p className="mt-4 text-lg max-w-xl mx-auto" style={{ color: "#4A4A6A" }}>
+            <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg max-w-xl mx-auto" style={{ color: "#4A4A6A" }}>
               Join 500+ businesses that trust Infinite Rankers to drive their growth.
               Get your free audit today and see what's possible.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
               <Link href="/contact">
-                <span className="relative inline-flex items-center gap-2 px-7 py-3.5 bg-brand-blue text-white font-semibold rounded-lg group overflow-hidden shadow-[0_4px_20px_rgba(58,95,191,0.3)]">
+                <span className="relative inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-7 py-3.5 min-h-[44px] bg-brand-blue text-white font-semibold rounded-lg group overflow-hidden shadow-[0_4px_20px_rgba(58,95,191,0.3)] text-sm sm:text-base">
                   <span className="relative z-10">Get Your Free Audit</span>
                   <ArrowRight className="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent animate-shimmer" />
                 </span>
               </Link>
-              <a href="tel:+17034159373" className="inline-flex items-center gap-2 font-medium hover:text-brand-blue transition-colors" style={{ color: "#4A4A6A" }}>
+              <a href="tel:+17034159373" className="inline-flex items-center justify-center gap-2 min-h-[44px] font-medium hover:text-brand-blue transition-colors text-sm sm:text-base" style={{ color: "#4A4A6A" }}>
                 <Phone className="w-4 h-4" />
                 (703) 415-9373
               </a>
             </div>
-            <a href="https://infiniterankers.io" target="_blank" rel="noopener noreferrer" className="mt-8 inline-block text-sm hover:text-brand-blue transition-colors" style={{ color: "#6B6B8B" }}>
+            <a href="https://infiniterankers.io" target="_blank" rel="noopener noreferrer" className="mt-6 sm:mt-8 inline-block text-sm min-h-[44px] leading-[44px] hover:text-brand-blue transition-colors" style={{ color: "#6B6B8B" }}>
               Visit infiniterankers.io →
             </a>
           </FadeInSection>

@@ -38,7 +38,7 @@ export default function Services() {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const categories = useMemo(() => {
-    const cats = [...new Set(allServices.map(s => s.category))];
+    const cats = Array.from(new Set(allServices.map(s => s.category)));
     return ["All", ...cats];
   }, [allServices]);
 
@@ -58,6 +58,7 @@ export default function Services() {
       <SEO
         title="100+ Digital Marketing Services | Infinite Rankers — Google Partner Agency"
         description="Explore 100+ digital marketing services including SEO, PPC, social media, web design, content marketing, and more. Full-service Google Partner agency in the USA."
+        canonical="https://infiniterankers.io/services"
       />
 
       <section className="relative pt-32 pb-16 lg:pt-44 lg:pb-20 overflow-hidden">
