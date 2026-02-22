@@ -438,24 +438,6 @@ export default function Home() {
                 </Link>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="mt-10 flex flex-wrap items-center gap-8"
-              >
-                {[
-                  { value: "500+", label: "Clients" },
-                  { value: "$50M+", label: "Revenue" },
-                  { value: "100+", label: "Services" },
-                  { value: "98%", label: "Retention" },
-                ].map((stat) => (
-                  <div key={stat.label} className="text-center">
-                    <div className="font-stat text-xl sm:text-2xl font-bold text-brand-dark">{stat.value}</div>
-                    <div className="text-xs text-gray-400 mt-0.5" style={{ fontFamily: "'Inter', sans-serif" }}>{stat.label}</div>
-                  </div>
-                ))}
-              </motion.div>
             </div>
 
             <div className="lg:col-span-5 hidden lg:block">
@@ -475,7 +457,32 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-10 border-y border-gray-100 overflow-hidden">
+      <section className="py-16 lg:py-20 relative bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {[
+              { num: 500, suffix: "+", label: "Happy Clients", icon: Users },
+              { num: 50, prefix: "$", suffix: "M+", label: "Revenue Generated", icon: TrendingUp },
+              { num: 100, suffix: "+", label: "Services Offered", icon: Zap },
+              { num: 98, suffix: "%", label: "Client Retention", icon: Shield },
+            ].map((stat, i) => (
+              <FadeInSection key={stat.label} delay={i * 0.1}>
+                <div className="relative bg-white rounded-2xl p-6 sm:p-8 text-center border border-gray-100 group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_50px_rgba(58,95,191,0.08)] hover:border-brand-blue/15">
+                  <div className="w-12 h-12 rounded-xl bg-brand-blue/8 flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-blue/12 transition-colors">
+                    <stat.icon className="w-5 h-5 text-brand-blue" />
+                  </div>
+                  <div className="text-3xl sm:text-4xl text-brand-dark font-bold">
+                    <AnimatedNumber value={stat.num} prefix={stat.prefix} suffix={stat.suffix} />
+                  </div>
+                  <div className="text-sm text-gray-400 mt-2" style={{ fontFamily: "'Inter', sans-serif" }}>{stat.label}</div>
+                </div>
+              </FadeInSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-10 border-b border-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 mb-5">
           <p className="text-center text-[11px] uppercase tracking-[0.2em] text-gray-400 font-medium">
             Trusted Tools & Partnerships
