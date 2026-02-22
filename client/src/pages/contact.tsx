@@ -32,9 +32,9 @@ const contactMethods = [
     icon: Mail,
     title: "Email Us",
     desc: "Get a response within 24 hours",
-    value: "contact@infiniterankers.io",
+    value: "contact@infiniterankers.com",
     action: "Send Email",
-    href: "mailto:contact@infiniterankers.io",
+    href: "mailto:contact@infiniterankers.com",
   },
   {
     icon: MapPin,
@@ -82,7 +82,7 @@ export default function Contact() {
       <SEO
         title="Contact Us - Get Your Free Marketing Audit | Infinite Rankers"
         description="Contact Infinite Rankers for a free digital marketing audit. Get expert recommendations to grow your business online. No obligations, response within 24 hours."
-        canonical="https://infiniterankers.io/contact"
+        canonical="https://infiniterankers.com/contact"
       />
       <section className="relative pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-44 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-30" />

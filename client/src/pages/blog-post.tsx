@@ -41,18 +41,18 @@ export default function BlogPost() {
       <SEO
         title={`${post.title} | Infinite Rankers Blog`}
         description={post.excerpt}
-        canonical={`https://infiniterankers.io/${post.slug}`}
-        ogImage={`https://infiniterankers.io${post.image}`}
+        canonical={`https://infiniterankers.com/${post.slug}`}
+        ogImage={`https://infiniterankers.com${post.image}`}
         schema={{
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           "headline": post.title,
           "description": post.excerpt,
-          "image": `https://infiniterankers.io${post.image}`,
+          "image": `https://infiniterankers.com${post.image}`,
           "datePublished": post.date,
-          "author": { "@type": "Organization", "name": "Infinite Rankers", "url": "https://infiniterankers.io" },
-          "publisher": { "@type": "Organization", "name": "Infinite Rankers", "logo": { "@type": "ImageObject", "url": "https://infiniterankers.io/logo.webp" } },
-          "mainEntityOfPage": { "@type": "WebPage", "@id": `https://infiniterankers.io/${post.slug}` }
+          "author": { "@type": "Organization", "name": "Infinite Rankers", "url": "https://infiniterankers.com" },
+          "publisher": { "@type": "Organization", "name": "Infinite Rankers", "logo": { "@type": "ImageObject", "url": "https://infiniterankers.com/logo.webp" } },
+          "mainEntityOfPage": { "@type": "WebPage", "@id": `https://infiniterankers.com/${post.slug}` }
         }}
       />
 
@@ -147,9 +147,9 @@ export default function BlogPost() {
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-xs text-gray-500 mr-1">Share:</span>
-                <a href={`https://www.facebook.com/sharer/sharer.php?u=https://infiniterankers.io/${post.slug}`} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-gray-100 transition-colors"><Facebook className="w-4 h-4 text-gray-500" /></a>
-                <a href={`https://twitter.com/intent/tweet?url=https://infiniterankers.io/${post.slug}&text=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-gray-100 transition-colors"><Twitter className="w-4 h-4 text-gray-500" /></a>
-                <a href={`https://www.linkedin.com/shareArticle?mini=true&url=https://infiniterankers.io/${post.slug}&title=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-gray-100 transition-colors"><Linkedin className="w-4 h-4 text-gray-500" /></a>
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=https://infiniterankers.com/${post.slug}`} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-gray-100 transition-colors"><Facebook className="w-4 h-4 text-gray-500" /></a>
+                <a href={`https://twitter.com/intent/tweet?url=https://infiniterankers.com/${post.slug}&text=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-gray-100 transition-colors"><Twitter className="w-4 h-4 text-gray-500" /></a>
+                <a href={`https://www.linkedin.com/shareArticle?mini=true&url=https://infiniterankers.com/${post.slug}&title=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-gray-100 transition-colors"><Linkedin className="w-4 h-4 text-gray-500" /></a>
               </div>
             </div>
           </div>

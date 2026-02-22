@@ -42,7 +42,7 @@ export default function About() {
       <SEO
         title="About Us - Infinite Rankers | USA's Data-Driven Marketing Agency"
         description="Learn about Infinite Rankers — a certified Google Partner agency helping 500+ businesses grow with data-driven digital marketing strategies since 2019."
-        canonical="https://infiniterankers.io/about"
+        canonical="https://infiniterankers.com/about"
       />
       <section className="relative pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-44 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-30" />
@@ -190,7 +190,7 @@ export default function About() {
                 </span>
               </Link>
             </div>
-            <a href="https://infiniterankers.io" target="_blank" rel="noopener noreferrer" className="mt-4 sm:mt-6 inline-block text-sm text-brand-muted hover:text-brand-blue transition-colors min-h-[44px] flex items-center justify-center" data-testid="link-about-site">Visit infiniterankers.io →</a>
+            <a href="https://infiniterankers.com" target="_blank" rel="noopener noreferrer" className="mt-4 sm:mt-6 inline-block text-sm text-brand-muted hover:text-brand-blue transition-colors min-h-[44px] flex items-center justify-center" data-testid="link-about-site">Visit infiniterankers.com →</a>
           </FadeIn>
         </div>
       </section>

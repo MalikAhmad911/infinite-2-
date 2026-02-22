@@ -113,7 +113,7 @@ export default function ServicePage() {
       <SEO
         title={service.metaTitle}
         description={service.metaDesc}
-        canonical={`https://infiniterankers.io/${service.slug}`}
+        canonical={`https://infiniterankers.com/${service.slug}`}
         schema={{
           "@context": "https://schema.org",
           "@type": "Service",
@@ -122,15 +122,15 @@ export default function ServicePage() {
           "provider": {
             "@type": "Organization",
             "name": "Infinite Rankers",
-            "url": "https://infiniterankers.io",
-            "logo": "https://infiniterankers.io/logo.webp",
+            "url": "https://infiniterankers.com",
+            "logo": "https://infiniterankers.com/logo.webp",
             "address": { "@type": "PostalAddress", "streetAddress": "203 N Caroline Pl", "addressLocality": "Dover", "addressRegion": "DE", "postalCode": "19904", "addressCountry": "US" },
             "telephone": "+17034159373",
             "sameAs": ["https://www.google.com/partners"]
           },
           "areaServed": { "@type": "Country", "name": "United States" },
           "serviceType": service.category,
-          "url": `https://infiniterankers.io/${service.slug}`,
+          "url": `https://infiniterankers.com/${service.slug}`,
           "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "127", "bestRating": "5" }
         }}
       />

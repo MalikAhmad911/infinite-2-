@@ -84,7 +84,7 @@ Premium digital marketing agency website for Infinite Rankers, a USA-based Googl
 
 ## Contact Info
 - Phone: (703) 415-9373
-- Email: contact@infiniterankers.io
+- Email: contact@infiniterankers.com
 - Address: 203 N Caroline Pl, Dover, DE 19904, USA
 
 ## User Preferences
@@ -95,7 +95,7 @@ Premium digital marketing agency website for Infinite Rankers, a USA-based Googl
 - Premium animations with grain texture
 - SaaS/Agency-level UI quality (Awwwards/Webflow standards)
 - Mobile-first responsive design
-- Backlinks to infiniterankers.io across pages
+- Backlinks to infiniterankers.com across pages
 - Google Partner branding throughout
 - Logo: /logo.webp (circular blue-purple swirl)
 - 100 individual service pages with unique content per service

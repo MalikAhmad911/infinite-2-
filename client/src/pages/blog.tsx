@@ -33,7 +33,7 @@ export default function Blog() {
       <SEO
         title="Digital Marketing Blog & Insights | Infinite Rankers"
         description="Expert digital marketing strategies, SEO tips, PPC guides, and industry insights from Infinite Rankers. Stay ahead with actionable marketing knowledge."
-        canonical="https://infiniterankers.io/blog"
+        canonical="https://infiniterankers.com/blog"
       />
       <section className="relative pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-44 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-30" />
@@ -167,7 +167,7 @@ export default function Blog() {
           </div>
 
           <div className="text-center mt-8 sm:mt-12">
-            <a href="https://infiniterankers.io" target="_blank" rel="noopener noreferrer" className="text-sm text-brand-muted hover:text-brand-blue transition-colors min-h-[44px] inline-flex items-center">Read more at infiniterankers.io →</a>
+            <a href="https://infiniterankers.com" target="_blank" rel="noopener noreferrer" className="text-sm text-brand-muted hover:text-brand-blue transition-colors min-h-[44px] inline-flex items-center">Read more at infiniterankers.com →</a>
           </div>
         </div>
       </section>

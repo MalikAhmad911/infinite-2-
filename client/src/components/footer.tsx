@@ -47,9 +47,9 @@ export default function Footer() {
               AI Revenue Growth Agency. Automated systems that generate customers and revenue for businesses worldwide.
             </p>
             <div className="space-y-3 text-sm text-white/50 mb-6">
-              <a href="mailto:contact@infiniterankers.io" className="flex items-center gap-3 hover:text-brand-blue transition-colors">
+              <a href="mailto:contact@infiniterankers.com" className="flex items-center gap-3 hover:text-brand-blue transition-colors">
                 <Mail className="w-4 h-4 text-brand-blue" />
-                <span>contact@infiniterankers.io</span>
+                <span>contact@infiniterankers.com</span>
               </a>
               <a href="tel:+17034159373" className="flex items-center gap-3 hover:text-brand-blue transition-colors">
                 <Phone className="w-4 h-4 text-brand-blue" />
@@ -74,7 +74,7 @@ export default function Footer() {
               <span style={{ fontFamily: "'Inter', sans-serif", color: "#5F6368" }} className="text-xs font-medium">Google Partner</span>
             </div>
             <div>
-              <a href="https://infiniterankers.io" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-semibold text-brand-blue hover:text-brand-blue/80 transition-colors">
+              <a href="https://infiniterankers.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-semibold text-brand-blue hover:text-brand-blue/80 transition-colors">
                 We're Google Partners!
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
@@ -126,13 +126,13 @@ export default function Footer() {
             </ul>
             <div className="mt-6">
               <a
-                href="https://infiniterankers.io"
+                href="https://infiniterankers.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-sm text-brand-violet hover:text-brand-violet/80 transition-colors"
                 data-testid="link-infinite-rankers-io"
               >
-                infiniterankers.io
+                infiniterankers.com
                 <ArrowUpRight className="w-3 h-3" />
               </a>
             </div>

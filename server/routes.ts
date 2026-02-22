@@ -43,7 +43,7 @@ export async function registerRoutes(
   app: Express
 ): Promise<Server> {
   app.get("/sitemap.xml", (_req, res) => {
-    const base = "https://infiniterankers.io";
+    const base = "https://infiniterankers.com";
     const pages = ["/", "/about", "/services", "/results", "/blog", "/contact"];
     const urls = pages.map(p => `  <url><loc>${base}${p}</loc><changefreq>weekly</changefreq><priority>${p === "/" ? "1.0" : "0.8"}</priority></url>`);
     const serviceUrls = serviceSlugs.map(s => `  <url><loc>${base}/${s}</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>`);
@@ -54,7 +54,7 @@ export async function registerRoutes(
 
   app.get("/robots.txt", (_req, res) => {
     res.set("Content-Type", "text/plain");
-    res.send("User-agent: *\nAllow: /\nSitemap: https://infiniterankers.io/sitemap.xml\n");
+    res.send("User-agent: *\nAllow: /\nSitemap: https://infiniterankers.com/sitemap.xml\n");
   });
 
   return httpServer;

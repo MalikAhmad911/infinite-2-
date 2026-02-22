@@ -58,7 +58,7 @@ export default function Services() {
       <SEO
         title="100+ Digital Marketing Services | Infinite Rankers — Google Partner Agency"
         description="Explore 100+ digital marketing services including SEO, PPC, social media, web design, content marketing, and more. Full-service Google Partner agency in the USA."
-        canonical="https://infiniterankers.io/services"
+        canonical="https://infiniterankers.com/services"
       />
 
       <section className="relative pt-32 pb-16 lg:pt-44 lg:pb-20 overflow-hidden">
@@ -187,9 +187,9 @@ export default function Services() {
                 <Phone className="w-4 h-4" /> (703) 415-9373
               </a>
             </div>
-            <a href="https://infiniterankers.io" target="_blank" rel="noopener noreferrer"
+            <a href="https://infiniterankers.com" target="_blank" rel="noopener noreferrer"
               className="mt-8 inline-block text-sm hover:text-brand-blue transition-colors" style={{ color: "#6B6B8B" }}>
-              Visit infiniterankers.io →
+              Visit infiniterankers.com →
             </a>
           </FadeIn>
         </div>

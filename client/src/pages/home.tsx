@@ -389,13 +389,13 @@ export default function Home() {
       <SEO
         title="Infinite Rankers — #1 Digital Marketing Agency USA | Google Partner"
         description="Infinite Rankers is a USA-based Google Partner digital marketing agency offering 100+ services including SEO, PPC, social media, and web design. 500+ businesses trust us to generate leads and scale revenue."
-        canonical="https://infiniterankers.io/"
+        canonical="https://infiniterankers.com/"
         schema={{
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
           "name": "Infinite Rankers",
-          "url": "https://infiniterankers.io",
-          "logo": "https://infiniterankers.io/logo.webp",
+          "url": "https://infiniterankers.com",
+          "logo": "https://infiniterankers.com/logo.webp",
           "description": "USA's Premier Digital Marketing Agency. Google Partner. SEO, PPC, Social Media, Web Design & 100+ services.",
           "address": {
             "@type": "PostalAddress",
@@ -406,7 +406,7 @@ export default function Home() {
             "addressCountry": "US"
           },
           "telephone": "+17034159373",
-          "email": "contact@infiniterankers.io",
+          "email": "contact@infiniterankers.com",
           "priceRange": "$$",
           "aggregateRating": {
             "@type": "AggregateRating",
@@ -1041,8 +1041,8 @@ export default function Home() {
                 (703) 415-9373
               </a>
             </div>
-            <a href="https://infiniterankers.io" target="_blank" rel="noopener noreferrer" className="mt-6 sm:mt-8 inline-block text-sm min-h-[44px] leading-[44px] hover:text-brand-blue transition-colors" style={{ color: "#6B6B8B" }}>
-              Visit infiniterankers.io →
+            <a href="https://infiniterankers.com" target="_blank" rel="noopener noreferrer" className="mt-6 sm:mt-8 inline-block text-sm min-h-[44px] leading-[44px] hover:text-brand-blue transition-colors" style={{ color: "#6B6B8B" }}>
+              Visit infiniterankers.com →
             </a>
           </FadeInSection>
         </div>

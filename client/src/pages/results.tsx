@@ -103,7 +103,7 @@ export default function Results() {
       <SEO
         title="Case Studies & Results - Proven Digital Marketing Success | Infinite Rankers"
         description="See real results from our digital marketing campaigns. Explore case studies showing 340% revenue growth, 520% traffic increases, and more for businesses across industries."
-        canonical="https://infiniterankers.io/results"
+        canonical="https://infiniterankers.com/results"
       />
       <section className="relative pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-44 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-30" />
@@ -214,7 +214,7 @@ export default function Results() {
                 </span>
               </Link>
             </div>
-            <a href="https://infiniterankers.io" target="_blank" rel="noopener noreferrer" className="mt-4 sm:mt-6 inline-block text-sm text-brand-muted hover:text-brand-blue transition-colors min-h-[44px] leading-[44px]" data-testid="link-results-site">View more on infiniterankers.io →</a>
+            <a href="https://infiniterankers.com" target="_blank" rel="noopener noreferrer" className="mt-4 sm:mt-6 inline-block text-sm text-brand-muted hover:text-brand-blue transition-colors min-h-[44px] leading-[44px]" data-testid="link-results-site">View more on infiniterankers.com →</a>
           </FadeIn>
         </div>
       </section>
