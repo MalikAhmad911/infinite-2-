@@ -289,6 +289,115 @@ function HeroDashboard() {
   );
 }
 
+const workflowSteps = [
+  { icon: Search, label: "Research & Audit", color: "from-blue-500 to-blue-600" },
+  { icon: Target, label: "Strategy", color: "from-violet-500 to-purple-600" },
+  { icon: Zap, label: "Execute", color: "from-brand-blue to-brand-violet" },
+  { icon: BarChart3, label: "Optimize", color: "from-emerald-500 to-teal-600" },
+  { icon: TrendingUp, label: "Scale & Grow", color: "from-amber-500 to-orange-500" },
+];
+
+function WorkflowDiagram() {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
+
+  return (
+    <div ref={ref} className="relative">
+      <div className="bg-white rounded-2xl border border-gray-100 shadow-[0_16px_50px_rgba(58,95,191,0.08)] p-5 sm:p-7 overflow-hidden">
+        <div className="flex items-center gap-2 mb-6">
+          <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-brand-blue to-brand-violet flex items-center justify-center">
+            <Activity className="w-3.5 h-3.5 text-white" />
+          </div>
+          <span className="font-heading font-semibold text-sm text-brand-dark">Our Workflow</span>
+          <div className="ml-auto flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200/60">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+            </span>
+            <span className="text-[9px] text-emerald-700 font-semibold tracking-wide">ACTIVE</span>
+          </div>
+        </div>
+
+        <div className="relative flex flex-col gap-0">
+          {workflowSteps.map((step, i) => (
+            <div key={step.label} className="relative">
+              <motion.div
+                className="flex items-center gap-3 sm:gap-4 py-3 px-3 sm:px-4 rounded-xl transition-colors hover:bg-gray-50/80"
+                initial={{ opacity: 0, x: -30 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ delay: 0.2 + i * 0.15, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <motion.div
+                  className={`relative w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br ${step.color} flex items-center justify-center flex-shrink-0 shadow-sm`}
+                  initial={{ scale: 0 }}
+                  animate={isInView ? { scale: 1 } : {}}
+                  transition={{ delay: 0.3 + i * 0.15, duration: 0.4, type: "spring", stiffness: 200 }}
+                >
+                  <step.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                </motion.div>
+
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] text-gray-300 font-stat font-bold">0{i + 1}</span>
+                    <span className="font-heading font-semibold text-brand-dark text-sm">{step.label}</span>
+                  </div>
+                  <motion.div
+                    className="mt-1.5 h-1.5 rounded-full bg-gray-100 overflow-hidden"
+                    initial={{ opacity: 0 }}
+                    animate={isInView ? { opacity: 1 } : {}}
+                    transition={{ delay: 0.5 + i * 0.15 }}
+                  >
+                    <motion.div
+                      className={`h-full rounded-full bg-gradient-to-r ${step.color}`}
+                      initial={{ width: "0%" }}
+                      animate={isInView ? { width: `${100 - i * 8}%` } : {}}
+                      transition={{ delay: 0.6 + i * 0.15, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                    />
+                  </motion.div>
+                </div>
+
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ delay: 0.7 + i * 0.15, duration: 0.3 }}
+                >
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 flex-shrink-0" />
+                </motion.div>
+              </motion.div>
+
+              {i < workflowSteps.length - 1 && (
+                <motion.div
+                  className="absolute left-[30px] sm:left-[33px] top-[52px] w-px h-[12px] bg-gradient-to-b from-gray-200 to-gray-100"
+                  initial={{ scaleY: 0 }}
+                  animate={isInView ? { scaleY: 1 } : {}}
+                  transition={{ delay: 0.4 + i * 0.15, duration: 0.3 }}
+                  style={{ transformOrigin: "top" }}
+                />
+              )}
+            </div>
+          ))}
+        </div>
+
+        <motion.div
+          className="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between"
+          initial={{ opacity: 0, y: 10 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 1.2, duration: 0.5 }}
+        >
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-emerald-500" />
+            <span className="text-xs text-gray-400 font-medium">All systems operational</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="text-xs text-emerald-600 font-semibold font-stat">98%</span>
+            <span className="text-[10px] text-gray-400">success rate</span>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
 function TestimonialCarousel() {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -390,7 +499,7 @@ export default function Home() {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-blue/15 bg-white/60 backdrop-blur-sm mb-8"
               >
                 <div className="w-2 h-2 rounded-full bg-emerald-500" />
-                <span className="text-sm font-medium text-gray-600" style={{ fontFamily: "'Inter', sans-serif" }}>Google Partner </span>
+                <span className="text-sm font-medium text-gray-600" style={{ fontFamily: "'Inter', sans-serif" }}>Google Partner Agency — USA</span>
               </motion.div>
 
               <motion.h1
@@ -533,24 +642,7 @@ export default function Home() {
             </FadeInSection>
 
             <FadeInSection delay={0.15}>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { num: 500, suffix: "+", label: "Happy Clients" },
-                  { num: 50, prefix: "$", suffix: "M+", label: "Revenue Generated" },
-                  { num: 100, suffix: "+", label: "Services Offered" },
-                  { num: 98, suffix: "%", label: "Client Retention" },
-                ].map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="rounded-xl p-6 text-center bg-white border border-gray-100 shadow-sm hover:shadow-md hover:border-brand-blue/15 transition-all duration-300"
-                  >
-                    <div className="text-3xl sm:text-4xl text-brand-dark font-bold">
-                      <AnimatedNumber value={stat.num} prefix={stat.prefix} suffix={stat.suffix} />
-                    </div>
-                    <div className="text-sm text-gray-400 mt-2">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
+              <WorkflowDiagram />
             </FadeInSection>
           </div>
         </div>
