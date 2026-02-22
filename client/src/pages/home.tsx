@@ -391,19 +391,19 @@ export default function Home() {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-blue/15 bg-white/60 backdrop-blur-sm mb-8"
               >
                 <div className="w-2 h-2 rounded-full bg-emerald-500" />
-                <span className="text-sm font-medium text-gray-600">Google Partner Agency — USA</span>
+                <span className="text-sm font-medium text-gray-600" style={{ fontFamily: "'Inter', sans-serif" }}>AI Revenue Growth Agency</span>
               </motion.div>
 
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.15 }}
-                className="font-heading leading-[1.1] tracking-tight"
-                style={{ fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 700 }}
+                className="leading-[1.1] tracking-tight"
+                style={{ fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 700, fontFamily: "'Inter', sans-serif" }}
               >
-                <span className="text-brand-dark">We Don't Just Rank You —</span>
+                <span className="text-brand-dark">Turn Your Business Into an</span>
                 <br />
-                <span className="text-gradient-blue">We Grow Your Revenue</span>
+                <span className="text-gradient-blue">AI-Powered Revenue Machine</span>
               </motion.h1>
 
               <motion.p
@@ -411,11 +411,10 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="mt-6 text-gray-500 max-w-xl leading-relaxed"
-                style={{ fontSize: "clamp(15px, 1.1vw, 17px)" }}
+                style={{ fontSize: "clamp(15px, 1.1vw, 18px)", fontFamily: "'Inter', sans-serif" }}
               >
-                Infinite Rankers helps local businesses across the USA
-                dominate search, generate qualified leads, and scale revenue
-                with 100+ digital marketing services.
+                We build automated systems that generate customers and revenue.
+                Stop chasing leads manually — let AI do the heavy lifting.
               </motion.p>
 
               <motion.div
@@ -425,15 +424,15 @@ export default function Home() {
                 className="mt-8 flex flex-col sm:flex-row items-start gap-4"
               >
                 <Link href="/contact">
-                  <span className="relative inline-flex items-center gap-2 px-7 py-3.5 bg-brand-blue text-white font-semibold rounded-lg group overflow-hidden shadow-[0_4px_20px_rgba(58,95,191,0.3)] hover:shadow-[0_6px_30px_rgba(58,95,191,0.4)] transition-shadow">
-                    <span className="relative z-10">Start Growing Today</span>
+                  <span className="relative inline-flex items-center gap-2 px-7 py-3.5 bg-brand-blue text-white font-semibold rounded-lg group overflow-hidden shadow-[0_4px_20px_rgba(58,95,191,0.3)] hover:shadow-[0_6px_30px_rgba(58,95,191,0.4)] transition-shadow" style={{ fontFamily: "'Inter', sans-serif" }}>
+                    <span className="relative z-10">Book Free Strategy Session</span>
                     <ArrowRight className="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent animate-shimmer" />
                   </span>
                 </Link>
-                <Link href="/results">
-                  <span className="inline-flex items-center gap-2 px-7 py-3.5 border border-gray-200 text-gray-700 font-semibold rounded-lg hover:border-brand-blue/30 hover:text-brand-blue transition-all">
-                    See Our Results
+                <Link href="/services">
+                  <span className="inline-flex items-center gap-2 px-7 py-3.5 border border-gray-200 text-gray-700 font-semibold rounded-lg hover:border-brand-blue/30 hover:text-brand-blue transition-all" style={{ fontFamily: "'Inter', sans-serif" }}>
+                    Explore Services
                     <Play className="w-4 h-4" />
                   </span>
                 </Link>
@@ -446,14 +445,14 @@ export default function Home() {
                 className="mt-10 flex flex-wrap items-center gap-8"
               >
                 {[
-                  { value: "500+", label: "Clients" },
-                  { value: "$50M+", label: "Revenue" },
-                  { value: "100+", label: "Services" },
-                  { value: "98%", label: "Retention" },
+                  { value: "9,500+", label: "Clients" },
+                  { value: "$50M+", label: "Revenue Generated" },
+                  { value: "10M+", label: "Leads Qualified" },
+                  { value: "98%", label: "Retention Rate" },
                 ].map((stat) => (
                   <div key={stat.label} className="text-center">
                     <div className="font-stat text-xl sm:text-2xl font-bold text-brand-dark">{stat.value}</div>
-                    <div className="text-xs text-gray-400 mt-0.5">{stat.label}</div>
+                    <div className="text-xs text-gray-400 mt-0.5" style={{ fontFamily: "'Inter', sans-serif" }}>{stat.label}</div>
                   </div>
                 ))}
               </motion.div>
