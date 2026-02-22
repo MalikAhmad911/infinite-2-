@@ -113,7 +113,7 @@ export default function ServicePage() {
       <SEO
         title={service.metaTitle}
         description={service.metaDesc}
-        canonical={`https://infiniterankers.io/services/${service.slug}`}
+        canonical={`https://infiniterankers.io/${service.slug}`}
         schema={{
           "@context": "https://schema.org",
           "@type": "Service",
@@ -130,7 +130,7 @@ export default function ServicePage() {
           },
           "areaServed": { "@type": "Country", "name": "United States" },
           "serviceType": service.category,
-          "url": `https://infiniterankers.io/services/${service.slug}`,
+          "url": `https://infiniterankers.io/${service.slug}`,
           "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "127", "bestRating": "5" }
         }}
       />
@@ -380,7 +380,7 @@ export default function ServicePage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
             {relatedServices.map((rs, i) => rs && (
               <FadeInSection key={rs.slug} delay={i * 0.1}>
-                <Link href={`/services/${rs.slug}`}>
+                <Link href={`/${rs.slug}`}>
                   <div className="p-3 sm:p-4 lg:p-5 rounded-xl sm:rounded-2xl border border-gray-100 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(58,95,191,0.1)] hover:-translate-y-1 hover:border-brand-blue/20 transition-all duration-300 cursor-pointer group h-full">
                     <div className="inline-flex items-center gap-1 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full bg-brand-blue/5 text-brand-blue text-[8px] sm:text-[10px] font-semibold uppercase tracking-wider mb-2 sm:mb-3">
                       {rs.category}

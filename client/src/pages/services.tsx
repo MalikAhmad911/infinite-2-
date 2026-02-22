@@ -139,7 +139,7 @@ export default function Services() {
                   const colors = categoryColors[service.category] || { text: "text-gray-600", bg: "bg-gray-50", border: "border-gray-200" };
                   return (
                     <FadeIn key={service.slug} delay={Math.min(i * 0.03, 0.3)}>
-                      <Link href={`/services/${service.slug}`}>
+                      <Link href={`/${service.slug}`}>
                         <div className="group p-5 rounded-xl border border-gray-100 bg-white shadow-[0_1px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(58,95,191,0.1)] hover:-translate-y-1 hover:border-brand-blue/20 transition-all duration-300 cursor-pointer h-full">
                           <div className={`inline-flex items-center px-2 py-0.5 rounded-full ${colors.bg} ${colors.text} text-[10px] font-semibold uppercase tracking-wider mb-3`}>
                             {service.category}

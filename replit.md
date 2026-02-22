@@ -4,19 +4,15 @@
 Premium digital marketing agency website for Infinite Rankers, a USA-based Google Partner agency. Built with React + Tailwind CSS + Framer Motion with a blue-purple gradient mesh design aesthetic. Features 100 individual service pages with unique content, animated visuals, and SEO optimization.
 
 ## Recent Changes (Feb 2026)
+- **Flat URL Structure**: All pages use flat URLs (e.g., /website-design, /local-seo-strategies-2025) — no /services/ or /blog/ prefix
 - **100 Individual Service Pages**: Each with unique content, animated visuals, 4-step process, 6 benefits, stats, FAQs, mini case study, and related services
-- **Service Page Architecture**: Dynamic routing /services/:slug, reusable ServicePage template, 10 unique animated visual components mapped by category
+- **10 Blog Posts**: Full-length articles with stock images, social sharing, related posts, author info, and CTA sections
+- **Slug Resolver**: client/src/pages/slug-resolver.tsx handles routing for both blog posts and service pages via /:slug
 - **Services Index Page**: Searchable, filterable grid of all 100 services with category pills and color-coded cards
-- **Sitemap & Robots.txt**: Server-side generated with all 106 URLs (6 pages + 100 services)
-- **Growth Infrastructure Section**: 5 connected cards in zigzag layout before "Why Choose Us"
-- **Footer Enhanced**: Real Google Partner badge (inline SVG), "AI Revenue Growth Agency" description
-- **Typography overhaul**: Inter (body/headings), Space Mono (display), JetBrains Mono (stats)
-- **Color palette**: Darker, readable text (#1A1A2E, #4A4A6A, #6B6B8B) on white background
-- **16 Testimonials carousel**: rAF-based infinite auto-scroll
-- **Blog**: 3 posts with real stock images
-- **SEO**: Schema markup (ProfessionalService + Service per page), H1/H2 hierarchy, meta tags, canonical URLs, Open Graph + Twitter cards
-- **Workflow Diagrams**: Visual 4-step process flowcharts on all 100 service pages (horizontal desktop, vertical timeline mobile)
-- **Full Responsive Design**: All pages (home, about, services, results, blog, contact) optimized for mobile with clamp() fonts, touch targets, responsive grids
+- **Sitemap & Robots.txt**: Server-side generated with all 116 URLs (6 pages + 100 services + 10 blogs)
+- **SEO**: Schema markup (ProfessionalService + Service + BlogPosting), canonical URLs, Open Graph + Twitter cards
+- **Workflow Diagrams**: Visual 4-step process flowcharts on all 100 service pages
+- **Full Responsive Design**: All pages optimized for mobile with clamp() fonts, touch targets, responsive grids
 
 ## Architecture
 - Frontend: React + Tailwind CSS + Framer Motion
@@ -27,6 +23,9 @@ Premium digital marketing agency website for Infinite Rankers, a USA-based Googl
 - Service Data: client/src/data/services-data.ts (100 services, ~5400 lines)
 - Service Visuals: client/src/components/service-visuals.tsx (10 unique animated components)
 - Service Template: client/src/pages/service-page.tsx (reusable page layout)
+- Blog Data: client/src/data/blog-data.ts (10 posts with full content)
+- Blog Post Page: client/src/pages/blog-post.tsx (individual blog article layout)
+- Slug Resolver: client/src/pages/slug-resolver.tsx (routes /:slug to blog or service)
 
 ## Service Categories (100 total)
 - SEO (15): local-seo, seo-audit, keyword-research, technical-seo, ecommerce-seo, national-seo, international-seo, youtube-seo, voice-search-seo, mobile-seo, on-page-seo, off-page-seo, schema-markup, google-my-business + more

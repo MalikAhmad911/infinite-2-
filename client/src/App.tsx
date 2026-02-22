@@ -11,7 +11,7 @@ import Services from "@/pages/services";
 import Results from "@/pages/results";
 import Blog from "@/pages/blog";
 import Contact from "@/pages/contact";
-import ServicePage from "@/pages/service-page";
+import SlugResolver from "@/pages/slug-resolver";
 import NotFound from "@/pages/not-found";
 import SmoothScroll from "@/components/smooth-scroll";
 import { useEffect } from "react";
@@ -31,10 +31,10 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/services" component={Services} />
-      <Route path="/services/:slug" component={ServicePage} />
       <Route path="/results" component={Results} />
       <Route path="/blog" component={Blog} />
       <Route path="/contact" component={Contact} />
+      <Route path="/:slug" component={SlugResolver} />
       <Route component={NotFound} />
     </Switch>
   );

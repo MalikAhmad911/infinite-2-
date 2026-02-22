@@ -25,6 +25,19 @@ const serviceSlugs = [
   "sms-marketing","whatsapp-marketing","ab-testing","competitor-analysis","digital-marketing-consulting"
 ];
 
+const blogSlugs = [
+  "local-seo-strategies-2025",
+  "cut-google-ads-spend-40-percent",
+  "instagram-marketing-local-businesses",
+  "content-marketing-roi-measurement",
+  "website-killing-conversions",
+  "technical-seo-checklist",
+  "email-marketing-automation-sequences",
+  "google-analytics-4-setup-guide",
+  "performance-max-campaigns-guide",
+  "social-media-strategy-small-business"
+];
+
 export async function registerRoutes(
   httpServer: Server,
   app: Express
@@ -33,9 +46,10 @@ export async function registerRoutes(
     const base = "https://infiniterankers.io";
     const pages = ["/", "/about", "/services", "/results", "/blog", "/contact"];
     const urls = pages.map(p => `  <url><loc>${base}${p}</loc><changefreq>weekly</changefreq><priority>${p === "/" ? "1.0" : "0.8"}</priority></url>`);
-    const serviceUrls = serviceSlugs.map(s => `  <url><loc>${base}/services/${s}</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>`);
+    const serviceUrls = serviceSlugs.map(s => `  <url><loc>${base}/${s}</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>`);
+    const blogUrls = blogSlugs.map(s => `  <url><loc>${base}/${s}</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>`);
     res.set("Content-Type", "application/xml");
-    res.send(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n${serviceUrls.join("\n")}\n</urlset>`);
+    res.send(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n${serviceUrls.join("\n")}\n${blogUrls.join("\n")}\n</urlset>`);
   });
 
   app.get("/robots.txt", (_req, res) => {
