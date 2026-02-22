@@ -44,17 +44,27 @@ export async function registerRoutes(
 ): Promise<Server> {
   app.get("/sitemap.xml", (_req, res) => {
     const base = "https://infiniterankers.com";
-    const pages = ["/", "/about", "/services", "/results", "/blog", "/contact"];
-    const urls = pages.map(p => `  <url><loc>${base}${p}</loc><changefreq>weekly</changefreq><priority>${p === "/" ? "1.0" : "0.8"}</priority></url>`);
-    const serviceUrls = serviceSlugs.map(s => `  <url><loc>${base}/${s}</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>`);
-    const blogUrls = blogSlugs.map(s => `  <url><loc>${base}/${s}</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>`);
+    const today = new Date().toISOString().split("T")[0];
+    const pages = [
+      { path: "/", freq: "daily", priority: "1.0" },
+      { path: "/about", freq: "monthly", priority: "0.8" },
+      { path: "/services", freq: "weekly", priority: "0.9" },
+      { path: "/results", freq: "monthly", priority: "0.8" },
+      { path: "/blog", freq: "weekly", priority: "0.8" },
+      { path: "/contact", freq: "monthly", priority: "0.7" },
+    ];
+    const urls = pages.map(p => `  <url>\n    <loc>${base}${p.path}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${p.freq}</changefreq>\n    <priority>${p.priority}</priority>\n  </url>`);
+    const serviceUrls = serviceSlugs.map(s => `  <url>\n    <loc>${base}/${s}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`);
+    const blogUrls = blogSlugs.map(s => `  <url>\n    <loc>${base}/${s}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>`);
     res.set("Content-Type", "application/xml");
-    res.send(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n${serviceUrls.join("\n")}\n${blogUrls.join("\n")}\n</urlset>`);
+    res.set("Cache-Control", "public, max-age=3600");
+    res.send(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${urls.join("\n")}\n${serviceUrls.join("\n")}\n${blogUrls.join("\n")}\n</urlset>`);
   });
 
   app.get("/robots.txt", (_req, res) => {
     res.set("Content-Type", "text/plain");
-    res.send("User-agent: *\nAllow: /\nSitemap: https://infiniterankers.com/sitemap.xml\n");
+    res.set("Cache-Control", "public, max-age=86400");
+    res.send(`User-agent: *\nAllow: /\n\nUser-agent: Googlebot\nAllow: /\n\nUser-agent: Bingbot\nAllow: /\n\nSitemap: https://infiniterankers.com/sitemap.xml\n`);
   });
 
   return httpServer;
