@@ -44,26 +44,33 @@ export default function Footer() {
               <span style={{ fontFamily: "'Inter', sans-serif" }} className="text-2xl font-bold tracking-tight text-brand-blue">RANKERS</span>
             </div>
             <p className="text-white/50 text-sm leading-relaxed max-w-sm mb-6">
-              USA's premier digital marketing agency helping local businesses dominate search,
-              generate leads, and scale revenue. Google Partner with proven results.
+              AI Revenue Growth Agency. Automated systems that generate customers and revenue for businesses worldwide.
             </p>
-            <div className="flex items-center gap-2 px-3 py-2 rounded-md border border-white/10 bg-white/5 w-fit mb-6">
-              <div className="w-2 h-2 rounded-full bg-green-500" />
-              <span className="text-xs text-white/60 font-medium">Google Partner Certified</span>
-            </div>
-            <div className="space-y-3 text-sm text-white/50">
-              <a href="tel:+17034159373" className="flex items-center gap-3 hover:text-brand-blue transition-colors">
-                <Phone className="w-4 h-4 text-brand-blue" />
-                <span>(703) 415-9373</span>
-              </a>
+            <div className="space-y-3 text-sm text-white/50 mb-6">
               <a href="mailto:contact@infiniterankers.io" className="flex items-center gap-3 hover:text-brand-blue transition-colors">
                 <Mail className="w-4 h-4 text-brand-blue" />
                 <span>contact@infiniterankers.io</span>
+              </a>
+              <a href="tel:+17034159373" className="flex items-center gap-3 hover:text-brand-blue transition-colors">
+                <Phone className="w-4 h-4 text-brand-blue" />
+                <span>(703) 415-9373</span>
               </a>
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-brand-blue" />
                 <span>203 N Caroline Pl, Dover, DE 19904, USA</span>
               </div>
+            </div>
+            <div className="flex items-center gap-2 mb-6">
+              <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
+              <span className="text-sm text-white/70 font-medium">24/7 Support — Weekends too</span>
+            </div>
+            <div className="inline-block rounded-lg bg-white p-4 mb-3">
+              <img src="/images/google-partner-badge.svg" alt="Google Partner Badge" className="h-14 w-auto" />
+            </div>
+            <div>
+              <a href="https://infiniterankers.io" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-brand-blue hover:text-brand-blue/80 transition-colors">
+                We're Google Partners!
+              </a>
             </div>
           </div>
 
