@@ -1,6 +1,18 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
+import nodemailer from "nodemailer";
+
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+const contactRateLimit = new Map<string, { count: number; resetAt: number }>();
 
 const serviceSlugs = [
   "local-seo","google-ads","social-media-management","content-marketing","website-design",
@@ -42,6 +54,100 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+  app.post("/api/contact", async (req, res) => {
+    try {
+      const ip = req.ip || req.socket.remoteAddress || "unknown";
+      const now = Date.now();
+      const rateData = contactRateLimit.get(ip);
+      if (rateData && now < rateData.resetAt) {
+        if (rateData.count >= 5) {
+          return res.status(429).json({ error: "Too many requests. Please try again later." });
+        }
+        rateData.count++;
+      } else {
+        contactRateLimit.set(ip, { count: 1, resetAt: now + 3600000 });
+      }
+
+      const { firstName, lastName, email, phone, website, service, message } = req.body;
+
+      if (!firstName || !email || !message) {
+        return res.status(400).json({ error: "Please fill in all required fields." });
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        return res.status(400).json({ error: "Please provide a valid email address." });
+      }
+
+      if (req.body.honeypot) {
+        return res.json({ success: true, message: "Thank you! We'll get back to you within 24 hours." });
+      }
+
+      const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: parseInt(process.env.SMTP_PORT || "465"),
+        secure: parseInt(process.env.SMTP_PORT || "465") === 465,
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS,
+        },
+      });
+
+      const serviceLabels: Record<string, string> = {
+        seo: "SEO Services",
+        ppc: "PPC & Google Ads",
+        social: "Social Media Marketing",
+        web: "Web Design & Development",
+        content: "Content Marketing",
+        email: "Email Marketing",
+        full: "Full-Service Package",
+        other: "Other",
+      };
+
+      const safe = {
+        firstName: escapeHtml(String(firstName).slice(0, 100)),
+        lastName: escapeHtml(String(lastName || "").slice(0, 100)),
+        email: escapeHtml(String(email).slice(0, 200)),
+        phone: escapeHtml(String(phone || "Not provided").slice(0, 50)),
+        website: escapeHtml(String(website || "Not provided").slice(0, 300)),
+        service: escapeHtml(serviceLabels[service] || String(service || "Not specified").slice(0, 100)),
+        message: escapeHtml(String(message).slice(0, 5000)),
+      };
+
+      await transporter.sendMail({
+        from: `"Infinite Rankers Website" <${process.env.SMTP_USER}>`,
+        to: "contact@infiniterankers.com",
+        replyTo: email,
+        subject: `New Lead: ${safe.firstName} ${safe.lastName} - ${safe.service}`,
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <div style="background: linear-gradient(135deg, #3A5FBF, #8B5CF6); padding: 24px; border-radius: 8px 8px 0 0;">
+              <h1 style="color: white; margin: 0; font-size: 20px;">New Contact Form Submission</h1>
+            </div>
+            <div style="padding: 24px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 8px 8px;">
+              <table style="width: 100%; border-collapse: collapse;">
+                <tr><td style="padding: 8px 0; font-weight: bold; color: #1A1A2E; width: 140px;">Name:</td><td style="padding: 8px 0; color: #4A4A6A;">${safe.firstName} ${safe.lastName}</td></tr>
+                <tr><td style="padding: 8px 0; font-weight: bold; color: #1A1A2E;">Email:</td><td style="padding: 8px 0; color: #4A4A6A;">${safe.email}</td></tr>
+                <tr><td style="padding: 8px 0; font-weight: bold; color: #1A1A2E;">Phone:</td><td style="padding: 8px 0; color: #4A4A6A;">${safe.phone}</td></tr>
+                <tr><td style="padding: 8px 0; font-weight: bold; color: #1A1A2E;">Website:</td><td style="padding: 8px 0; color: #4A4A6A;">${safe.website}</td></tr>
+                <tr><td style="padding: 8px 0; font-weight: bold; color: #1A1A2E;">Service:</td><td style="padding: 8px 0; color: #4A4A6A;">${safe.service}</td></tr>
+              </table>
+              <div style="margin-top: 16px; padding: 16px; background: #f9fafb; border-radius: 8px;">
+                <p style="font-weight: bold; color: #1A1A2E; margin: 0 0 8px;">Message:</p>
+                <p style="color: #4A4A6A; margin: 0; white-space: pre-wrap;">${safe.message}</p>
+              </div>
+            </div>
+          </div>
+        `,
+      });
+
+      res.json({ success: true, message: "Thank you! We'll get back to you within 24 hours." });
+    } catch (error: any) {
+      console.error("Contact form error:", error);
+      res.status(500).json({ error: "Failed to send message. Please try again or call us directly." });
+    }
+  });
+
   app.get("/sitemap.xml", (_req, res) => {
     const base = "https://infiniterankers.com";
     const today = new Date().toISOString().split("T")[0];

@@ -1,10 +1,10 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useInView } from "framer-motion";
 import {
   Phone, Mail, MapPin, ArrowRight, Clock, MessageCircle,
-  Calendar, Send, CheckCircle2
+  Calendar, Send, CheckCircle2, Loader2
 } from "lucide-react";
 import SectionHeading from "@/components/section-heading";
 import SEO from "@/components/seo";
@@ -77,6 +77,45 @@ const faqs = [
 ];
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    firstName: "", lastName: "", email: "", phone: "", website: "", service: "", message: "", honeypot: ""
+  });
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [statusMsg, setStatusMsg] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.firstName || !formData.email || !formData.message) {
+      setStatus("error");
+      setStatusMsg("Please fill in your name, email, and message.");
+      return;
+    }
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setStatus("success");
+        setStatusMsg(data.message || "Thank you! We'll get back to you within 24 hours.");
+        setFormData({ firstName: "", lastName: "", email: "", phone: "", website: "", service: "", message: "", honeypot: "" });
+      } else {
+        setStatus("error");
+        setStatusMsg(data.error || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setStatus("error");
+      setStatusMsg("Network error. Please try again or call us directly at (703) 415-9373.");
+    }
+  };
+
   return (
     <div className="bg-white min-h-screen">
       <SEO
@@ -128,13 +167,34 @@ export default function Contact() {
                   <h2 className="font-heading font-bold text-brand-dark mb-2" style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.5rem)" }}>Get Your Free Audit</h2>
                   <p className="text-xs sm:text-sm text-brand-muted mb-6 sm:mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
 
-                  <form className="space-y-4 sm:space-y-6" onSubmit={(e) => e.preventDefault()}>
+                  {status === "success" ? (
+                    <div className="text-center py-10 sm:py-16">
+                      <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                        <CheckCircle2 className="w-8 h-8 text-green-500" />
+                      </div>
+                      <h3 className="font-heading font-bold text-brand-dark text-lg mb-2">Message Sent!</h3>
+                      <p className="text-sm text-brand-muted mb-6">{statusMsg}</p>
+                      <button onClick={() => setStatus("idle")} className="px-6 py-2.5 border border-brand-blue/20 rounded-md text-sm font-medium text-brand-blue hover:bg-brand-blue/5 transition-colors">
+                        Send Another Message
+                      </button>
+                    </div>
+                  ) : (
+                  <form className="space-y-4 sm:space-y-6" onSubmit={handleSubmit}>
+                    <input type="text" name="honeypot" value={formData.honeypot} onChange={handleChange} className="absolute opacity-0 h-0 w-0 pointer-events-none" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+                    {status === "error" && (
+                      <div className="p-3 rounded-md bg-red-50 border border-red-200 text-red-700 text-sm">
+                        {statusMsg}
+                      </div>
+                    )}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                       <div>
-                        <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">First Name</label>
+                        <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">First Name *</label>
                         <input
                           type="text"
-                          data-testid="input-first-name"
+                          name="firstName"
+                          value={formData.firstName}
+                          onChange={handleChange}
+                          required
                           placeholder="John"
                           className="w-full px-3 sm:px-4 py-3 min-h-[44px] rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm"
                         />
@@ -143,17 +203,22 @@ export default function Contact() {
                         <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">Last Name</label>
                         <input
                           type="text"
-                          data-testid="input-last-name"
+                          name="lastName"
+                          value={formData.lastName}
+                          onChange={handleChange}
                           placeholder="Doe"
                           className="w-full px-3 sm:px-4 py-3 min-h-[44px] rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm"
                         />
                       </div>
                     </div>
                     <div>
-                      <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">Email Address</label>
+                      <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">Email Address *</label>
                       <input
                         type="email"
-                        data-testid="input-email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
                         placeholder="john@company.com"
                         className="w-full px-3 sm:px-4 py-3 min-h-[44px] rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm"
                       />
@@ -162,7 +227,9 @@ export default function Contact() {
                       <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">Phone Number</label>
                       <input
                         type="tel"
-                        data-testid="input-phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
                         placeholder="(555) 123-4567"
                         className="w-full px-3 sm:px-4 py-3 min-h-[44px] rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm"
                       />
@@ -171,7 +238,9 @@ export default function Contact() {
                       <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">Website URL</label>
                       <input
                         type="url"
-                        data-testid="input-website"
+                        name="website"
+                        value={formData.website}
+                        onChange={handleChange}
                         placeholder="https://yourwebsite.com"
                         className="w-full px-3 sm:px-4 py-3 min-h-[44px] rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm"
                       />
@@ -179,8 +248,10 @@ export default function Contact() {
                     <div>
                       <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">What services are you interested in?</label>
                       <select
-                        data-testid="select-service"
-                        className="w-full px-3 sm:px-4 py-3 min-h-[44px] rounded-md bg-white border border-brand-blue/10 text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm appearance-none"
+                        name="service"
+                        value={formData.service}
+                        onChange={handleChange}
+                        className="w-full px-3 sm:px-4 py-3 min-h-[44px] rounded-md bg-white border border-brand-blue/10 text-brand-dark focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm appearance-none"
                       >
                         <option value="">Select a service...</option>
                         <option value="seo">SEO Services</option>
@@ -194,9 +265,12 @@ export default function Contact() {
                       </select>
                     </div>
                     <div>
-                      <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">Tell us about your goals</label>
+                      <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">Tell us about your goals *</label>
                       <textarea
-                        data-testid="textarea-message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
                         rows={4}
                         placeholder="What are your main marketing challenges and goals?"
                         className="w-full px-3 sm:px-4 py-3 rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm resize-none"
@@ -204,14 +278,24 @@ export default function Contact() {
                     </div>
                     <button
                       type="submit"
-                      data-testid="button-submit-form"
-                      className="relative w-full inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[44px] bg-brand-blue text-white font-semibold rounded-md cursor-pointer group overflow-hidden"
+                      disabled={status === "sending"}
+                      className="relative w-full inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[44px] bg-brand-blue text-white font-semibold rounded-md cursor-pointer group overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed"
                     >
-                      <span className="relative z-10">Get My Free Audit</span>
-                      <Send className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
+                      {status === "sending" ? (
+                        <>
+                          <Loader2 className="relative z-10 w-5 h-5 animate-spin" />
+                          <span className="relative z-10">Sending...</span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="relative z-10">Get My Free Audit</span>
+                          <Send className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
+                        </>
+                      )}
                     </button>
                   </form>
+                  )}
 
                   <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-2 sm:gap-4 text-xs text-brand-muted">
                     <span className="flex items-center gap-1 min-h-[44px] sm:min-h-0"><CheckCircle2 className="w-3 h-3 text-green-500" /> Free consultation</span>
