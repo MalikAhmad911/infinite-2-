@@ -68,7 +68,7 @@ export async function registerRoutes(
         contactRateLimit.set(ip, { count: 1, resetAt: now + 3600000 });
       }
 
-      const { firstName, lastName, email, phone, website, service, message } = req.body;
+      const { firstName, lastName, email, phone, businessName, service, message } = req.body;
 
       if (!firstName || !email || !message) {
         return res.status(400).json({ error: "Please fill in all required fields." });
@@ -93,24 +93,13 @@ export async function registerRoutes(
         },
       });
 
-      const serviceLabels: Record<string, string> = {
-        seo: "SEO Services",
-        ppc: "PPC & Google Ads",
-        social: "Social Media Marketing",
-        web: "Web Design & Development",
-        content: "Content Marketing",
-        email: "Email Marketing",
-        full: "Full-Service Package",
-        other: "Other",
-      };
-
       const safe = {
         firstName: escapeHtml(String(firstName).slice(0, 100)),
         lastName: escapeHtml(String(lastName || "").slice(0, 100)),
         email: escapeHtml(String(email).slice(0, 200)),
         phone: escapeHtml(String(phone || "Not provided").slice(0, 50)),
-        website: escapeHtml(String(website || "Not provided").slice(0, 300)),
-        service: escapeHtml(serviceLabels[service] || String(service || "Not specified").slice(0, 100)),
+        businessName: escapeHtml(String(businessName || "Not provided").slice(0, 200)),
+        service: escapeHtml(String(service || "Not specified").slice(0, 200)),
         message: escapeHtml(String(message).slice(0, 5000)),
       };
 
@@ -129,7 +118,7 @@ export async function registerRoutes(
                 <tr><td style="padding: 8px 0; font-weight: bold; color: #1A1A2E; width: 140px;">Name:</td><td style="padding: 8px 0; color: #4A4A6A;">${safe.firstName} ${safe.lastName}</td></tr>
                 <tr><td style="padding: 8px 0; font-weight: bold; color: #1A1A2E;">Email:</td><td style="padding: 8px 0; color: #4A4A6A;">${safe.email}</td></tr>
                 <tr><td style="padding: 8px 0; font-weight: bold; color: #1A1A2E;">Phone:</td><td style="padding: 8px 0; color: #4A4A6A;">${safe.phone}</td></tr>
-                <tr><td style="padding: 8px 0; font-weight: bold; color: #1A1A2E;">Website:</td><td style="padding: 8px 0; color: #4A4A6A;">${safe.website}</td></tr>
+                <tr><td style="padding: 8px 0; font-weight: bold; color: #1A1A2E;">Business:</td><td style="padding: 8px 0; color: #4A4A6A;">${safe.businessName}</td></tr>
                 <tr><td style="padding: 8px 0; font-weight: bold; color: #1A1A2E;">Service:</td><td style="padding: 8px 0; color: #4A4A6A;">${safe.service}</td></tr>
               </table>
               <div style="margin-top: 16px; padding: 16px; background: #f9fafb; border-radius: 8px;">

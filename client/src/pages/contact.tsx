@@ -78,7 +78,7 @@ const faqs = [
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    firstName: "", lastName: "", email: "", phone: "", website: "", service: "", message: "", honeypot: ""
+    firstName: "", lastName: "", email: "", phone: "", businessName: "", service: "", message: "", honeypot: ""
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [statusMsg, setStatusMsg] = useState("");
@@ -105,7 +105,7 @@ export default function Contact() {
       if (res.ok) {
         setStatus("success");
         setStatusMsg(data.message || "Thank you! We'll get back to you within 24 hours.");
-        setFormData({ firstName: "", lastName: "", email: "", phone: "", website: "", service: "", message: "", honeypot: "" });
+        setFormData({ firstName: "", lastName: "", email: "", phone: "", businessName: "", service: "", message: "", honeypot: "" });
       } else {
         setStatus("error");
         setStatusMsg(data.error || "Something went wrong. Please try again.");
@@ -235,34 +235,26 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">Website URL</label>
+                      <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">Business Name</label>
                       <input
-                        type="url"
-                        name="website"
-                        value={formData.website}
+                        type="text"
+                        name="businessName"
+                        value={formData.businessName}
                         onChange={handleChange}
-                        placeholder="https://yourwebsite.com"
+                        placeholder="Your business name"
                         className="w-full px-3 sm:px-4 py-3 min-h-[44px] rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm"
                       />
                     </div>
                     <div>
                       <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">What services are you interested in?</label>
-                      <select
+                      <input
+                        type="text"
                         name="service"
                         value={formData.service}
                         onChange={handleChange}
-                        className="w-full px-3 sm:px-4 py-3 min-h-[44px] rounded-md bg-white border border-brand-blue/10 text-brand-dark focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm appearance-none"
-                      >
-                        <option value="">Select a service...</option>
-                        <option value="seo">SEO Services</option>
-                        <option value="ppc">PPC & Google Ads</option>
-                        <option value="social">Social Media Marketing</option>
-                        <option value="web">Web Design & Development</option>
-                        <option value="content">Content Marketing</option>
-                        <option value="email">Email Marketing</option>
-                        <option value="full">Full-Service Package</option>
-                        <option value="other">Other</option>
-                      </select>
+                        placeholder="e.g. SEO, Google Ads, Web Design..."
+                        className="w-full px-3 sm:px-4 py-3 min-h-[44px] rounded-md bg-white border border-brand-blue/10 text-brand-dark placeholder:text-brand-muted focus:outline-none focus:border-brand-blue/50 focus:ring-1 focus:ring-brand-blue/20 transition-all text-sm"
+                      />
                     </div>
                     <div>
                       <label className="text-xs sm:text-sm text-brand-muted font-medium mb-1.5 sm:mb-2 block">Tell us about your goals *</label>
