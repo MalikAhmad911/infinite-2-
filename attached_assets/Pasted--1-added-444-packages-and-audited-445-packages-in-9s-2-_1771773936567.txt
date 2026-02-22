@@ -1,0 +1,197 @@
+
+
+1
+
+added 444 packages, and audited 445 packages in 9s
+
+2
+
+
+3
+
+73 packages are looking for funding
+
+4
+
+run `npm fund` for details
+
+5
+
+
+6
+
+5 vulnerabilities (1 low, 1 moderate, 3 high)
+
+7
+
+
+8
+
+To address all issues, run:
+
+9
+
+npm audit fix
+
+10
+
+
+11
+
+Run `npm audit` for details.
+
+12
+
+
+13
+
+> infinite-rankers@1.0.0 build
+
+14
+
+> node build.mjs
+
+15
+
+
+16
+
+building client...
+
+17
+
+vite v7.3.0 building client environment for production...
+
+18
+
+transforming...
+
+19
+
+✓ 3 modules transformed.
+
+20
+
+✗ Build failed in 330ms
+
+21
+
+[vite:css] Failed to load PostCSS config (searchPath: /home/u944181541/domains/khaki-butterfly-420331.hostingersite.com/public_html/.builds/source/repository/client): [Error] Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
+
+22
+
+Require stack:
+
+23
+
+- /home/u944181541/domains/khaki-butterfly-420331.hostingersite.com/public_html/.builds/source/repository/postcss.config.js
+
+24
+
+
+25
+
+(@/home/u944181541/domains/khaki-butterfly-420331.hostingersite.com/public_html/.builds/source/repository/postcss.config.js)
+
+26
+
+Error: Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
+
+27
+
+Require stack:
+
+28
+
+- /home/u944181541/domains/khaki-butterfly-420331.hostingersite.com/public_html/.builds/source/repository/postcss.config.js
+
+29
+
+
+30
+
+(@/home/u944181541/domains/khaki-butterfly-420331.hostingersite.com/public_html/.builds/source/repository/postcss.config.js)
+
+31
+
+at load (file:///home/u944181541/domains/khaki-butterfly-420331.hostingersite.com/public_html/.builds/source/repository/node_modules/vite/dist/node/chunks/config.js:7660:10)
+
+32
+
+at async Promise.all (index 1)
+
+33
+
+at async plugins (file:///home/u944181541/domains/khaki-butterfly-420331.hostingersite.com/public_html/.builds/source/repository/node_modules/vite/dist/node/chunks/config.js:7682:11)
+
+34
+
+at async processResult (file:///home/u944181541/domains/khaki-butterfly-420331.hostingersite.com/public_html/.builds/source/repository/node_modules/vite/dist/node/chunks/config.js:7721:13)
+
+35
+
+file: /home/u944181541/domains/khaki-butterfly-420331.hostingersite.com/public_html/.builds/source/repository/client/src/index.css
+
+36
+
+{
+
+37
+
+code: 'PLUGIN_ERROR',
+
+38
+
+plugin: 'vite:css',
+
+39
+
+hook: 'transform',
+
+40
+
+id: '/home/u944181541/domains/khaki-butterfly-420331.hostingersite.com/public_html/.builds/source/repository/client/src/index.css',
+
+41
+
+watchFiles: [
+
+42
+
+'/home/u944181541/domains/khaki-butterfly-420331.hostingersite.com/public_html/.builds/source/repository/client/index.html',
+
+43
+
+'/home/u944181541/domains/khaki-butterfly-420331.hostingersite.com/public_html/.builds/source/repository/client/src/main.tsx',
+
+44
+
+'/home/u944181541/domains/khaki-butterfly-420331.hostingersite.com/public_html/.builds/source/repository/package.json',
+
+45
+
+'/home/u944181541/domains/khaki-butterfly-420331.hostingersite.com/public_html/.builds/source/repository/node_modules/react/jsx-runtime.js',
+
+46
+
+'/home/u944181541/domains/khaki-butterfly-420331.hostingersite.com/public_html/.builds/source/repository/node_modules/react-dom/client.js',
+
+47
+
+'/home/u944181541/domains/khaki-butterfly-420331.hostingersite.com/public_html/.builds/source/repository/client/src/App.tsx',
+
+48
+
+'/home/u944181541/domains/khaki-butterfly-420331.hostingersite.com/public_html/.builds/source/repository/client/src/index.css'
+
+49
+
+]
+
+50
+
+}
+
+51
+
+ERROR: Failed to build the application
