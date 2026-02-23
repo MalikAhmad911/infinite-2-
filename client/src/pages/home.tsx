@@ -14,18 +14,18 @@ import SectionHeading from "@/components/section-heading";
 import SEO from "@/components/seo";
 
 const services = [
-  { icon: Search, title: "Local SEO", desc: "Dominate Google Maps and local search results. We optimize your Google Business Profile, build local citations, and earn reviews that bring customers to your door.", example: "Google Business Profile, Local Citations, Map Pack" },
-  { icon: BarChart3, title: "Technical SEO", desc: "Fix crawl errors, improve site speed, and build the technical foundation search engines love. Better infrastructure means higher rankings.", example: "Site Audits, Schema Markup, Core Web Vitals" },
-  { icon: ShoppingCart, title: "E-commerce SEO", desc: "Optimize product pages, category structures, and internal linking to drive organic sales. More visibility means more revenue.", example: "Product Optimization, Shopify SEO, WooCommerce" },
-  { icon: Target, title: "PPC & Google Ads", desc: "Data-driven paid campaigns that maximize every dollar. We reduce wasted spend and scale what converts for predictable lead generation.", example: "Search Ads, Display, Remarketing, Shopping" },
-  { icon: Users, title: "Social Media Marketing", desc: "Strategic social presence across Facebook, Instagram, LinkedIn, and TikTok. Build community, drive engagement, and convert followers into customers.", example: "Content Strategy, Paid Social, Community Mgmt" },
-  { icon: Palette, title: "Content Marketing", desc: "Compelling blog posts, landing pages, and resources that attract organic traffic, build authority, and convert readers into leads.", example: "Blog Writing, Whitepapers, Infographics" },
-  { icon: Globe, title: "Web Design & Development", desc: "Stunning, conversion-optimized websites built for performance. Fast load times, mobile-first design, and seamless user experience.", example: "Custom Design, WordPress, Landing Pages" },
-  { icon: Mail, title: "Email Marketing", desc: "Automated email sequences that nurture leads, boost retention, and drive repeat purchases. Personalized campaigns that feel human.", example: "Drip Campaigns, Newsletters, Automation" },
-  { icon: Video, title: "Video Production", desc: "Professional video content that captivates audiences and drives engagement across YouTube, social media, and your website.", example: "Brand Videos, Testimonials, Social Clips" },
-  { icon: Shield, title: "Reputation Management", desc: "Protect and enhance your online reputation. We monitor reviews, respond professionally, and build the 5-star presence your business deserves.", example: "Review Generation, Crisis Management, Monitoring" },
-  { icon: Link2, title: "Link Building", desc: "High-authority backlinks from relevant, trusted websites that boost your domain authority and search rankings naturally.", example: "Guest Posts, Digital PR, HARO Outreach" },
-  { icon: TrendingUp, title: "Conversion Optimization", desc: "Turn more website visitors into paying customers with data-backed A/B testing, UX improvements, and landing page optimization.", example: "A/B Testing, Heatmaps, Funnel Analysis" },
+  { icon: Search, title: "Local SEO", slug: "local-seo", desc: "Dominate Google Maps and local search results. We optimize your Google Business Profile, build local citations, and earn reviews that bring customers to your door.", example: "Google Business Profile, Local Citations, Map Pack" },
+  { icon: BarChart3, title: "Technical SEO", slug: "technical-seo", desc: "Fix crawl errors, improve site speed, and build the technical foundation search engines love. Better infrastructure means higher rankings.", example: "Site Audits, Schema Markup, Core Web Vitals" },
+  { icon: ShoppingCart, title: "E-commerce SEO", slug: "ecommerce-seo", desc: "Optimize product pages, category structures, and internal linking to drive organic sales. More visibility means more revenue.", example: "Product Optimization, Shopify SEO, WooCommerce" },
+  { icon: Target, title: "PPC & Google Ads", slug: "google-ads", desc: "Data-driven paid campaigns that maximize every dollar. We reduce wasted spend and scale what converts for predictable lead generation.", example: "Search Ads, Display, Remarketing, Shopping" },
+  { icon: Users, title: "Social Media Marketing", slug: "social-media-management", desc: "Strategic social presence across Facebook, Instagram, LinkedIn, and TikTok. Build community, drive engagement, and convert followers into customers.", example: "Content Strategy, Paid Social, Community Mgmt" },
+  { icon: Palette, title: "Content Marketing", slug: "content-marketing", desc: "Compelling blog posts, landing pages, and resources that attract organic traffic, build authority, and convert readers into leads.", example: "Blog Writing, Whitepapers, Infographics" },
+  { icon: Globe, title: "Web Design & Development", slug: "website-design", desc: "Stunning, conversion-optimized websites built for performance. Fast load times, mobile-first design, and seamless user experience.", example: "Custom Design, WordPress, Landing Pages" },
+  { icon: Mail, title: "Email Marketing", slug: "email-marketing", desc: "Automated email sequences that nurture leads, boost retention, and drive repeat purchases. Personalized campaigns that feel human.", example: "Drip Campaigns, Newsletters, Automation" },
+  { icon: Video, title: "Video Production", slug: "video-production", desc: "Professional video content that captivates audiences and drives engagement across YouTube, social media, and your website.", example: "Brand Videos, Testimonials, Social Clips" },
+  { icon: Shield, title: "Reputation Management", slug: "reputation-management", desc: "Protect and enhance your online reputation. We monitor reviews, respond professionally, and build the 5-star presence your business deserves.", example: "Review Generation, Crisis Management, Monitoring" },
+  { icon: Link2, title: "Link Building", slug: "off-page-seo", desc: "High-authority backlinks from relevant, trusted websites that boost your domain authority and search rankings naturally.", example: "Guest Posts, Digital PR, HARO Outreach" },
+  { icon: TrendingUp, title: "Conversion Optimization", slug: "conversion-rate-optimization", desc: "Turn more website visitors into paying customers with data-backed A/B testing, UX improvements, and landing page optimization.", example: "A/B Testing, Heatmaps, Funnel Analysis" },
 ];
 
 const caseStudies = [
@@ -115,9 +115,9 @@ const industries = [
 ];
 
 const blogPosts = [
-  { category: "SEO", title: "The 7 Local SEO Strategies That Will Dominate in 2025", readTime: "8 min read", image: "/images/blog-seo.jpg", excerpt: "Discover the proven local SEO tactics that top-performing businesses use to dominate their market and attract qualified leads." },
-  { category: "PPC", title: "How to Cut Your Google Ads Spend by 40% Without Losing Leads", readTime: "6 min read", image: "/images/blog-ppc.jpg", excerpt: "Learn the exact optimization strategies our team uses to dramatically reduce wasted ad spend while maintaining lead volume." },
-  { category: "Social Media", title: "The Complete Guide to Instagram Marketing for Local Businesses", readTime: "10 min read", image: "/images/blog-social.jpg", excerpt: "A step-by-step blueprint for turning your Instagram presence into a reliable customer acquisition channel." },
+  { category: "SEO", title: "The 7 Local SEO Strategies That Will Dominate in 2025", slug: "local-seo-strategies-2025", readTime: "8 min read", image: "/images/blog-seo.jpg", excerpt: "Discover the proven local SEO tactics that top-performing businesses use to dominate their market and attract qualified leads." },
+  { category: "PPC", title: "How to Cut Your Google Ads Spend by 40% Without Losing Leads", slug: "cut-google-ads-spend-40-percent", readTime: "6 min read", image: "/images/blog-ppc.jpg", excerpt: "Learn the exact optimization strategies our team uses to dramatically reduce wasted ad spend while maintaining lead volume." },
+  { category: "Social Media", title: "The Complete Guide to Instagram Marketing for Local Businesses", slug: "instagram-marketing-local-businesses", readTime: "10 min read", image: "/images/blog-social.jpg", excerpt: "A step-by-step blueprint for turning your Instagram presence into a reliable customer acquisition channel." },
 ];
 
 const partnerLogos = [
@@ -625,17 +625,19 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
             {services.map((service, i) => (
               <FadeInSection key={service.title} delay={i * 0.04}>
-                <div className="bg-white rounded-xl p-4 sm:p-5 lg:p-6 h-full border border-gray-100 group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(58,95,191,0.1)] hover:border-brand-blue/15">
-                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-brand-blue/8 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-brand-blue/12 transition-colors">
-                    <service.icon className="w-5 h-5 text-brand-blue" />
+                <Link href={`/${service.slug}`}>
+                  <div className="bg-white rounded-xl p-4 sm:p-5 lg:p-6 h-full border border-gray-100 group cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgba(58,95,191,0.1)] hover:border-brand-blue/15">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-brand-blue/8 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-brand-blue/12 transition-colors">
+                      <service.icon className="w-5 h-5 text-brand-blue" />
+                    </div>
+                    <h3 className="font-semibold text-sm sm:text-base mb-2" style={{ color: "#1A1A2E" }}>{service.title}</h3>
+                    <p className="text-xs sm:text-sm leading-relaxed mb-3" style={{ color: "#4A4A6A" }}>{service.desc}</p>
+                    <p className="text-xs font-medium" style={{ color: "#6B6B8B" }}>{service.example}</p>
+                    <div className="flex items-center gap-1.5 mt-3 sm:mt-4 text-brand-blue text-xs sm:text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity min-h-[44px]">
+                      Explore This Service <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
-                  <h3 className="font-semibold text-sm sm:text-base mb-2" style={{ color: "#1A1A2E" }}>{service.title}</h3>
-                  <p className="text-xs sm:text-sm leading-relaxed mb-3" style={{ color: "#4A4A6A" }}>{service.desc}</p>
-                  <p className="text-xs font-medium" style={{ color: "#6B6B8B" }}>{service.example}</p>
-                  <div className="flex items-center gap-1 mt-3 sm:mt-4 text-brand-blue text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity min-h-[44px]">
-                    Learn More <ArrowRight className="w-3 h-3" />
-                  </div>
-                </div>
+                </Link>
               </FadeInSection>
             ))}
           </div>
@@ -973,30 +975,35 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
             {blogPosts.map((post, i) => (
               <FadeInSection key={post.title} delay={i * 0.1}>
-                <div className="bg-white rounded-xl overflow-hidden border border-gray-100 group h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(58,95,191,0.08)]">
-                  <div className="h-40 sm:h-48 relative overflow-hidden">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                    <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4">
-                      <span className="px-2.5 py-1 rounded-md bg-white/90 backdrop-blur-sm text-brand-blue text-xs font-semibold border border-brand-blue/10">
-                        {post.category}
+                <Link href={`/${post.slug}`}>
+                  <div className="bg-white rounded-xl overflow-hidden border border-gray-100 group h-full cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(58,95,191,0.08)]">
+                    <div className="h-40 sm:h-48 relative overflow-hidden">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                      <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4">
+                        <span className="px-2.5 py-1 rounded-md bg-white/90 backdrop-blur-sm text-brand-blue text-xs font-semibold border border-brand-blue/10">
+                          {post.category}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-4 sm:p-6">
+                      <div className="flex items-center gap-2 text-xs mb-2 sm:mb-3" style={{ color: "#6B6B8B" }}>
+                        <Clock className="w-3 h-3" /> {post.readTime}
+                      </div>
+                      <h3 className="font-semibold text-sm sm:text-base leading-snug group-hover:text-brand-blue transition-colors mb-2" style={{ color: "#1A1A2E" }}>
+                        {post.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm leading-relaxed mb-3" style={{ color: "#4A4A6A" }}>{post.excerpt}</p>
+                      <span className="inline-flex items-center gap-1.5 text-brand-blue text-xs sm:text-sm font-medium group-hover:gap-2 transition-all">
+                        Read Full Article <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                       </span>
                     </div>
                   </div>
-                  <div className="p-4 sm:p-6">
-                    <div className="flex items-center gap-2 text-xs mb-2 sm:mb-3" style={{ color: "#6B6B8B" }}>
-                      <Clock className="w-3 h-3" /> {post.readTime}
-                    </div>
-                    <h3 className="font-semibold text-sm sm:text-base leading-snug group-hover:text-brand-blue transition-colors mb-2" style={{ color: "#1A1A2E" }}>
-                      {post.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm leading-relaxed" style={{ color: "#4A4A6A" }}>{post.excerpt}</p>
-                  </div>
-                </div>
+                </Link>
               </FadeInSection>
             ))}
           </div>
