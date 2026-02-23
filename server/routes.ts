@@ -96,23 +96,6 @@ export async function registerRoutes(
         return res.json({ success: true, message: "Thank you! We'll get back to you within 24 hours." });
       }
 
-      const smtpPort = parseInt(process.env.SMTP_PORT || "465");
-      const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: smtpPort,
-        secure: smtpPort === 465,
-        auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS,
-        },
-        tls: {
-          rejectUnauthorized: false,
-        },
-        connectionTimeout: 10000,
-        greetingTimeout: 10000,
-        socketTimeout: 15000,
-      });
-
       const safe = {
         firstName: escapeHtml(String(firstName).slice(0, 100)),
         lastName: escapeHtml(String(lastName || "").slice(0, 100)),
@@ -123,7 +106,7 @@ export async function registerRoutes(
         message: escapeHtml(String(message).slice(0, 5000)),
       };
 
-      await transporter.sendMail({
+      const mailOptions = {
         from: `"Infinite Rankers Website" <${process.env.SMTP_USER}>`,
         to: "contact@infiniterankers.com",
         replyTo: email,
@@ -148,12 +131,44 @@ export async function registerRoutes(
             </div>
           </div>
         `,
-      });
+      };
 
-      res.json({ success: true, message: "Thank you! We'll get back to you within 24 hours." });
+      const smtpConfigs = [
+        { port: 465, secure: true },
+        { port: 587, secure: false },
+        { port: 25, secure: false },
+      ];
+
+      let lastError: any = null;
+      for (const config of smtpConfigs) {
+        try {
+          const transporter = nodemailer.createTransport({
+            host: process.env.SMTP_HOST,
+            port: config.port,
+            secure: config.secure,
+            auth: {
+              user: process.env.SMTP_USER,
+              pass: process.env.SMTP_PASS,
+            },
+            tls: { rejectUnauthorized: false },
+            connectionTimeout: 10000,
+            greetingTimeout: 10000,
+            socketTimeout: 15000,
+          });
+          await transporter.sendMail(mailOptions);
+          console.log(`Email sent successfully via port ${config.port}`);
+          res.json({ success: true, message: "Thank you! We'll get back to you within 24 hours." });
+          return;
+        } catch (err: any) {
+          console.error(`SMTP port ${config.port} failed:`, err?.message);
+          lastError = err;
+        }
+      }
+
+      console.error("All SMTP ports failed. Last error:", lastError?.message);
+      res.status(500).json({ error: "Failed to send message. Please try again or call us directly." });
     } catch (error: any) {
       console.error("Contact form error:", error?.message || error);
-      console.error("SMTP Config - Host:", process.env.SMTP_HOST ? "SET" : "MISSING", "Port:", process.env.SMTP_PORT ? "SET" : "MISSING", "User:", process.env.SMTP_USER ? "SET" : "MISSING", "Pass:", process.env.SMTP_PASS ? "SET" : "MISSING");
       res.status(500).json({ error: "Failed to send message. Please try again or call us directly." });
     }
   });
