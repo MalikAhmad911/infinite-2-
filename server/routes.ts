@@ -2,6 +2,8 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import nodemailer from "nodemailer";
+import fs from "fs";
+import path from "path";
 
 function escapeHtml(str: string): string {
   return str
@@ -10,6 +12,29 @@ function escapeHtml(str: string): string {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
+}
+
+function saveToFallbackFile(data: Record<string, string>) {
+  try {
+    const fallbackDir = path.join(process.cwd(), "data");
+    if (!fs.existsSync(fallbackDir)) {
+      fs.mkdirSync(fallbackDir, { recursive: true });
+    }
+    const filePath = path.join(fallbackDir, "contact-submissions.json");
+    let existing: any[] = [];
+    if (fs.existsSync(filePath)) {
+      try {
+        existing = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+      } catch { existing = []; }
+    }
+    existing.push({ ...data, submittedAt: new Date().toISOString(), emailSent: false });
+    fs.writeFileSync(filePath, JSON.stringify(existing, null, 2));
+    console.log("[CONTACT] Submission saved to fallback file:", filePath);
+    return true;
+  } catch (err: any) {
+    console.error("[CONTACT] Failed to save fallback file:", err?.message);
+    return false;
+  }
 }
 
 const contactRateLimit = new Map<string, { count: number; resetAt: number }>();
@@ -134,14 +159,21 @@ export async function registerRoutes(
       };
 
       const smtpConfigs = [
-        { port: 465, secure: true },
         { port: 587, secure: false },
+        { port: 465, secure: true },
         { port: 25, secure: false },
       ];
 
+      console.log("[CONTACT] New submission from:", safe.firstName, safe.lastName, "Email:", safe.email);
+      console.log("[CONTACT] SMTP Host:", process.env.SMTP_HOST || "NOT SET");
+      console.log("[CONTACT] SMTP User:", process.env.SMTP_USER || "NOT SET");
+      console.log("[CONTACT] SMTP Pass:", process.env.SMTP_PASS ? "SET (" + process.env.SMTP_PASS.length + " chars)" : "NOT SET");
+
       let lastError: any = null;
+      let emailSent = false;
       for (const config of smtpConfigs) {
         try {
+          console.log(`[CONTACT] Trying SMTP port ${config.port} (secure: ${config.secure})...`);
           const transporter = nodemailer.createTransport({
             host: process.env.SMTP_HOST,
             port: config.port,
@@ -156,21 +188,46 @@ export async function registerRoutes(
             socketTimeout: 15000,
           });
           await transporter.sendMail(mailOptions);
-          console.log(`Email sent successfully via port ${config.port}`);
-          res.json({ success: true, message: "Thank you! We'll get back to you within 24 hours." });
-          return;
+          console.log(`[CONTACT] Email sent successfully via port ${config.port}`);
+          emailSent = true;
+          break;
         } catch (err: any) {
-          console.error(`SMTP port ${config.port} failed:`, err?.message);
+          console.error(`[CONTACT] SMTP port ${config.port} failed:`, err?.message);
           lastError = err;
         }
       }
 
-      console.error("All SMTP ports failed. Last error:", lastError?.message);
-      res.status(500).json({ error: "Failed to send message. Please try again or call us directly." });
+      if (emailSent) {
+        res.json({ success: true, message: "Thank you! We'll get back to you within 24 hours." });
+      } else {
+        console.error("[CONTACT] All SMTP ports failed. Saving to fallback file...");
+        const saved = saveToFallbackFile({
+          firstName: safe.firstName,
+          lastName: safe.lastName,
+          email: safe.email,
+          phone: safe.phone,
+          businessName: safe.businessName,
+          service: safe.service,
+          message: safe.message,
+        });
+        if (saved) {
+          res.json({ success: true, message: "Thank you! We've received your message and will get back to you within 24 hours." });
+        } else {
+          res.status(500).json({ error: "Failed to send message. Please call us directly at (703) 415-9373." });
+        }
+      }
     } catch (error: any) {
-      console.error("Contact form error:", error?.message || error);
-      res.status(500).json({ error: "Failed to send message. Please try again or call us directly." });
+      console.error("[CONTACT] Unexpected error:", error?.message || error);
+      res.status(500).json({ error: "Failed to send message. Please call us directly at (703) 415-9373." });
     }
+  });
+
+  app.get("/api/health", (_req, res) => {
+    res.json({
+      status: "ok",
+      timestamp: new Date().toISOString(),
+      uptime: process.uptime(),
+    });
   });
 
   app.get("/sitemap.xml", (_req, res) => {
