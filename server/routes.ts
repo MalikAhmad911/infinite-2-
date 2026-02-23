@@ -96,14 +96,21 @@ export async function registerRoutes(
         return res.json({ success: true, message: "Thank you! We'll get back to you within 24 hours." });
       }
 
+      const smtpPort = parseInt(process.env.SMTP_PORT || "465");
       const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
-        port: parseInt(process.env.SMTP_PORT || "465"),
-        secure: parseInt(process.env.SMTP_PORT || "465") === 465,
+        port: smtpPort,
+        secure: smtpPort === 465,
         auth: {
           user: process.env.SMTP_USER,
           pass: process.env.SMTP_PASS,
         },
+        tls: {
+          rejectUnauthorized: false,
+        },
+        connectionTimeout: 10000,
+        greetingTimeout: 10000,
+        socketTimeout: 15000,
       });
 
       const safe = {
