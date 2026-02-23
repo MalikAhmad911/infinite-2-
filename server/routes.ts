@@ -145,7 +145,8 @@ export async function registerRoutes(
 
       res.json({ success: true, message: "Thank you! We'll get back to you within 24 hours." });
     } catch (error: any) {
-      console.error("Contact form error:", error);
+      console.error("Contact form error:", error?.message || error);
+      console.error("SMTP Config - Host:", process.env.SMTP_HOST ? "SET" : "MISSING", "Port:", process.env.SMTP_PORT ? "SET" : "MISSING", "User:", process.env.SMTP_USER ? "SET" : "MISSING", "Pass:", process.env.SMTP_PASS ? "SET" : "MISSING");
       res.status(500).json({ error: "Failed to send message. Please try again or call us directly." });
     }
   });
