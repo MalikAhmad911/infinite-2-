@@ -187,9 +187,8 @@ export default function Services() {
                 <Phone className="w-4 h-4" /> (703) 415-9373
               </a>
             </div>
-            <a href="https://infiniterankers.com" target="_blank" rel="noopener noreferrer"
-              className="mt-8 inline-block text-sm hover:text-brand-blue transition-colors" style={{ color: "#6B6B8B" }}>
-              Visit infiniterankers.com →
+            <a href="https://infiniterankers.io" target="_blank" rel="noopener noreferrer" className="mt-8 inline-block text-sm hover:text-brand-violet transition-colors" style={{ color: "#6B6B8B" }}>
+              Visit infiniterankers.io →
             </a>
           </FadeIn>
         </div>

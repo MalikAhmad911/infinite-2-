@@ -74,8 +74,13 @@ export default function Footer() {
               <span style={{ fontFamily: "'Inter', sans-serif", color: "#5F6368" }} className="text-xs font-medium">Google Partner</span>
             </div>
             <div>
-              <a href="https://infiniterankers.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-semibold text-brand-blue hover:text-brand-blue/80 transition-colors">
+              <span className="inline-flex items-center gap-1 text-sm font-semibold text-brand-blue">
                 We're Google Partners!
+              </span>
+            </div>
+            <div className="mt-4">
+              <a href="https://infiniterankers.io" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-semibold text-brand-violet hover:text-brand-violet/80 transition-colors">
+                Visit infiniterankers.io
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -125,14 +130,8 @@ export default function Footer() {
               ))}
             </ul>
             <div className="mt-6">
-              <a
-                href="https://infiniterankers.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm text-brand-violet hover:text-brand-violet/80 transition-colors"
-                data-testid="link-infinite-rankers-io"
-              >
-                infiniterankers.com
+              <a href="https://infiniterankers.io" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-brand-violet hover:text-brand-violet/80 transition-colors">
+                infiniterankers.io
                 <ArrowUpRight className="w-3 h-3" />
               </a>
             </div>

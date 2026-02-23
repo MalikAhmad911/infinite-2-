@@ -190,7 +190,7 @@ export default function About() {
                 </span>
               </Link>
             </div>
-            <a href="https://infiniterankers.com" target="_blank" rel="noopener noreferrer" className="mt-4 sm:mt-6 inline-block text-sm text-brand-muted hover:text-brand-blue transition-colors min-h-[44px] flex items-center justify-center" data-testid="link-about-site">Visit infiniterankers.com →</a>
+            <a href="https://infiniterankers.io" target="_blank" rel="noopener noreferrer" className="mt-4 sm:mt-6 inline-block text-sm text-brand-muted hover:text-brand-violet transition-colors min-h-[44px] flex items-center justify-center">Visit infiniterankers.io →</a>
           </FadeIn>
         </div>
       </section>

@@ -214,7 +214,7 @@ export default function Results() {
                 </span>
               </Link>
             </div>
-            <a href="https://infiniterankers.com" target="_blank" rel="noopener noreferrer" className="mt-4 sm:mt-6 inline-block text-sm text-brand-muted hover:text-brand-blue transition-colors min-h-[44px] leading-[44px]" data-testid="link-results-site">View more on infiniterankers.com →</a>
+            <a href="https://infiniterankers.io" target="_blank" rel="noopener noreferrer" className="mt-4 sm:mt-6 inline-block text-sm text-brand-muted hover:text-brand-violet transition-colors min-h-[44px] leading-[44px]">View more on infiniterankers.io →</a>
           </FadeIn>
         </div>
       </section>
