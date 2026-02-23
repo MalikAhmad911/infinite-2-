@@ -26,10 +26,10 @@ const resourceLinks = [
 ];
 
 const socialLinks = [
-  { icon: SiFacebook, label: "Facebook", href: "#" },
-  { icon: SiInstagram, label: "Instagram", href: "#" },
-  { icon: SiLinkedin, label: "LinkedIn", href: "#" },
-  { icon: SiX, label: "X", href: "#" },
+  { icon: SiFacebook, label: "Facebook", href: "https://www.facebook.com/share/18CXgeBNeY/", color: "#1877F2" },
+  { icon: SiInstagram, label: "Instagram", href: "https://www.instagram.com/infiniterankers?igsh=MXNxdWUwOGRidGk2eg==", color: "#E4405F" },
+  { icon: SiLinkedin, label: "LinkedIn", href: "#", color: "#0A66C2" },
+  { icon: SiX, label: "X", href: "#", color: "#ffffff" },
 ];
 
 export default function Footer() {
@@ -138,15 +138,18 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex items-center gap-4 mt-10">
+        <div className="flex items-center gap-3 sm:gap-4 mt-10">
           {socialLinks.map((social) => (
             <a
               key={social.label}
               href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
               data-testid={`link-social-${social.label.toLowerCase()}`}
-              className="w-10 h-10 rounded-md border border-white/10 bg-white/5 flex items-center justify-center text-white/50 hover:text-brand-violet hover:border-brand-violet/30 transition-all"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-md border border-white/10 bg-white/5 flex items-center justify-center transition-all hover:scale-110 hover:border-white/20"
+              style={{ color: social.color }}
             >
-              <social.icon className="w-4 h-4" />
+              <social.icon className="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
           ))}
         </div>
